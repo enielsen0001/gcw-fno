@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { DarkModeToggle } from '@/components/ui/DarkModeToggle';
 // Assuming your logo is in the public folder for Next.js
 import logo from '@/../public/images/gcw-logo.svg';
+import { navLinks } from '@/constants/layout';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,15 +19,6 @@ export function Header() {
     if (path !== '/' && pathname.startsWith(path)) return true;
     return false;
   };
-
-  const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/services', label: 'Services' },
-    { path: '/case-studies', label: 'Case Studies' },
-    { path: '/about', label: 'About' },
-    { path: '/process', label: 'Process' },
-    { path: '/contact', label: 'Contact' },
-  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border z-50">
