@@ -7,9 +7,10 @@ import { CheckCircle2 } from 'lucide-react';
 import { groq } from 'next-sanity';
 
 export default async function ServiceDetailPage({ params }: { params: { slug: string } }) {
+  const { slug } = await params;
   const service = await sanityFetch<any>({
     query: SERVICE_BY_SLUG_QUERY,
-    params: { slug: params.slug }
+    params: { slug: slug }
   });
 
   // If Sanity returns nothing, trigger the Next.js 404 page

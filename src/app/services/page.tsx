@@ -9,8 +9,6 @@ export default async function ServicesPage() {
     query: SERVICE_CARD_QUERY
   });
 
-  console.log('Fetched services:', services); // Debug log to verify data structure
-
   return (
     <div className="py-16 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">

@@ -12,9 +12,9 @@ const CASE_STUDY_CARD_FIELDS = groq`
   "slug": slug.current,
   title,
   subtitle,
-  "description": cardDescription,
+  cardDescription,
   tags,
-  "impact": featuredMetric
+  featuredMetric
 `
 
 export const ALL_CASE_STUDIES_QUERY = groq`

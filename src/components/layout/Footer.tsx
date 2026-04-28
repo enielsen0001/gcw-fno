@@ -41,7 +41,7 @@ export function Footer() {
               <h3 className="mb-4 font-semibold text-foreground">Legal</h3>
               <nav className="flex flex-col gap-3">
                 {footerLinksCol2.map((item) => (
-                <Link href="{item.href}" className="footer-link">
+                <Link key={item.name} href="{item.href}" className="footer-link">
                  {item.name}
                 </Link>))}
               </nav>
