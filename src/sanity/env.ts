@@ -11,6 +11,11 @@ export const projectId = assertValue(
   'Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID'
 )
 
+export const basePath = assertValue(
+  process.env.NEXT_PUBLIC_SANITY_BASE_PATH,
+  'Missing environment variable: NEXT_PUBLIC_SANITY_BASE_PATH'
+);
+
 function assertValue<T>(v: T | undefined, errorMessage: string): T {
   if (v === undefined) {
     throw new Error(errorMessage)
