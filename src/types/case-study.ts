@@ -1,72 +1,84 @@
-// Base internal Sanity fields
-interface SanityMetadata {
-  _createdAt: string;
-  _id: string;
-  _rev: string;
-  _type: string;
-  _updatedAt: string;
+/**
+ * Sanity specific helper types
+ */
+export interface SanitySlug {
+  _type: "slug";
+  current: string;
 }
 
-// Modular Sub-types
-export interface Metric {
-  _key: string;
-  _type: 'cs-metric';
-  detail: string;
-  metric: string;
+/**
+ * Case Study Sub-Interfaces
+ */
+export interface CaseStudyMetric {
+  value: string; // Renamed from 'metric' to match Sanity schema 'featuredMetric.value'
+  label: string; // Renamed from 'detail' to match Sanity schema 'featuredMetric.label'
 }
 
-export interface Decision {
-  _key: string;
-  _type: 'cs-decision';
-  decision: string;
+export interface KeyDecision {
+  title: string; // Updated from 'decision' to 'title'
   rationale: string;
 }
 
-export interface Phase {
-  _key: string;
-  _type: 'cs-phase';
-  details: string;
+export interface TechnicalPhase {
   phase: string;
+  details: string;
 }
 
-// Main Document Sections
-export interface CaseStudyContext {
-  industry: string;
-  problemStatement: string;
-  teamSize: string;
-  technologies: string[];
-  timeline: string;
+export interface CaseStudyOutcome {
+  label: string;
+  description: string;
 }
 
-export interface ExecutiveSummary {
-  approach: string;
-  challenge: string;
-  impact: Metric[];
+export interface RelatedLink {
+  label: string;
+  url: string;
+  type?: 'external' | 'github' | 'docs' | 'other';
 }
 
-export interface Outcomes {
-  businessImpact: string;
-  lessonsLearned: string[];
-  technicalImpact: string;
+export interface FooterCTA {
+  title?: string;
+  description?: string;
+  buttonText?: string;
 }
 
-export interface Solution {
-  architecturalApproach: string;
-  keyDecisions: Decision[];
-  technicalImplementation: Phase[];
-}
-
-// The Master CaseStudy Interface
-export interface CaseStudy extends SanityMetadata {
+/**
+ * Main Case Study Interface
+ */
+export interface CaseStudy {
+  _id?: string;
+  _type: "caseStudy";
   title: string;
-  subtitle: string;
-  summary: string;
-  tags: string[];
   slug: string;
-  context: CaseStudyContext;
-  executiveSummary: ExecutiveSummary;
+  subtitle: string;
+  tags: string[];
+
+  // Preview specific fields
   cardDescription: string;
-  featuredMetric: string;
-  outcomes: Outcomes;
-  solution: Solution;
+  featuredMetric?: string;
+
+  context: {
+    industry: string;
+    timeline: string;
+    technologies: string[];
+    // problemStatement is handled by executiveSummary.challenge in the new layout
+  };
+
+  executiveSummary: {
+    challenge: string;
+    approach: string;
+    impact?: CaseStudyMetric[]; // Keep if you still use the 4-column metric tray
+  };
+
+  // Modernized to match the flat structure in our new component
+  keyDecisions: KeyDecision[];
+
+  solution: {
+    technicalImplementation: TechnicalPhase[];
+    // architecturalApproach is often covered in 'approach' or 'keyDecisions'
+  };
+
+  outcomes: CaseStudyOutcome[];
+
+  relevantLinks?: RelatedLink[];
+  footerCTA?: FooterCTA;
 }

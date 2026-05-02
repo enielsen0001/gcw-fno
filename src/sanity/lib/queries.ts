@@ -54,6 +54,14 @@ export const SERVICE_BY_SLUG_QUERY = groq`
     testimonials[] {
       quote,
       author
+    },
+    "featuredCaseStudies": featuredCaseStudies[]-> {
+      _id,
+      title,
+      slug,
+      cardDescription,
+      featuredMetric,
+      context { industry }
     }
   }
 `

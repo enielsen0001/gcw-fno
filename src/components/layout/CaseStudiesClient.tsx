@@ -2,9 +2,9 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
 import { CaseStudy } from '@/types/case-study';
+import { CaseStudyCard } from '../ui/CaseStudyCard';
+import { PageHeader } from '../ui/PageHeader';
 
 export function CaseStudiesClient({ initialData }: { initialData: CaseStudy[] }) {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
@@ -27,13 +27,11 @@ export function CaseStudiesClient({ initialData }: { initialData: CaseStudy[] })
         <div className="py-16 px-6 lg:px-12">
             <div className="max-w-7xl mx-auto">
                 <div className="mb-16 fade-up-reveal">
-                    <h1 className="text-5xl md:text-6xl tracking-tight mb-6 text-foreground">
-                        Transformation Portfolio
-                    </h1>
-                    <p className="text-xl md:text-2xl text-foreground/60 max-w-3xl leading-relaxed">
-                        Real-world case studies of architectural modernization and legacy system evolution.
-                        Each transformation demonstrates strategic planning, incremental execution, and measurable business impact.
-                    </p>
+                    <PageHeader
+                        title='Transformation Portfolio'
+                        description='Real-world case studies of architectural modernization and legacy system evolution.
+                        Each transformation demonstrates strategic planning, incremental execution, and measurable business impact.'
+                    />
                 </div>
 
                 <div className="mb-12 fade-up-reveal stagger-1">
@@ -65,46 +63,21 @@ export function CaseStudiesClient({ initialData }: { initialData: CaseStudy[] })
                 <div className="grid md:grid-cols-2 gap-8">
                     {filteredStudies.map((study, index) => {
                         const staggerClass = `stagger-${Math.min(index + 1, 4)}`;
+                        const impact = typeof study.featuredMetric === 'string'
+                            ? study.featuredMetric
+                            : study.featuredMetric?.value ?? '';
 
                         return (
-                            <Link
+                            <CaseStudyCard
                                 key={study.slug}
-                                href={`/case-studies/${study.slug}`} // Changed 'to' to 'href'
-                                className={`group relative p-8 rounded-lg border border-border bg-card hover:border-primary/30 transition-all fade-up-reveal ${staggerClass}`}
-                            >
-                                <div className="mb-6">
-                                    <div className="flex items-start justify-between mb-2">
-                                        <h2 className="text-2xl text-foreground group-hover:text-primary transition-colors">
-                                            {study.title}
-                                        </h2>
-                                        <ArrowUpRight className="w-5 h-5 text-foreground/40 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                                    </div>
-                                    <p className="text-foreground/50 mb-4">
-                                        {study.subtitle}
-                                    </p>
-                                </div>
-
-                                <p className="text-foreground/70 mb-6 leading-relaxed">
-                                    {study.cardDescription}
-                                </p>
-
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {study.tags.map((tag) => (
-                                        <span
-                                            key={tag}
-                                            className="px-3 py-1 text-sm bg-muted text-foreground/70 rounded-md"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                <div className="pt-4 border-t border-border">
-                                    <p className="text-primary font-medium">
-                                        {study.featuredMetric}
-                                    </p>
-                                </div>
-                            </Link>
+                                slug={study.slug}
+                                title={study.title}
+                                subtitle={study.subtitle}
+                                description={study.cardDescription}
+                                tags={study.tags}
+                                impact={impact}
+                                index={0}
+                            />
                         );
                     })}
                 </div>

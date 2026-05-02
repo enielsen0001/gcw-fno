@@ -2,6 +2,9 @@ import Link from 'next/link';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { SERVICE_CARD_QUERY } from '@/sanity/lib/queries';
 import { ServiceIcon } from '@/components/ui/ServiceIcon';
+import { ArrowUpRight } from 'lucide-react';
+import { PageHeader } from '@/components/ui/PageHeader';
+import { FooterCTA } from '@/components/ui/FooterCTA';
 
 export default async function ServicesPage() {
   // Fetch the data from Sanity
@@ -11,61 +14,56 @@ export default async function ServicesPage() {
 
   return (
     <div className="py-16 px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="mb-16 animate-fade-up">
-          <h1 className="text-5xl md:text-6xl tracking-tight mb-6 text-foreground">
-            Stewardship Services
-          </h1>
-          <p className="text-xl md:text-2xl text-foreground/60 max-w-3xl leading-relaxed">
-            Specialized expertise in modernizing and maintaining complex software systems.
-            Each service is designed to balance technical excellence with pragmatic business outcomes.
-          </p>
-        </div>
+  <div className="max-w-7xl mx-auto">
+    <PageHeader
+      title="Stewardship Services"
+      description="Specialized expertise in modernizing and maintaining complex software systems. Each service is designed to balance technical excellence with pragmatic business outcomes."
+    />
 
-        {/* Dynamic Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Link
-              key={service.slug}
-              href={`/services/${service.slug}`}
-              className="group p-8 rounded-lg border border-border bg-card hover:border-primary/30 transition-all animate-fade-up"
-              style={{ animationDelay: `${index * 100}ms` }} // Clean way to stagger
-            >
-              <ServiceIcon
-                iconName={service.icon}
-                className="w-12 h-12 mb-6 text-primary stroke-[1.5]"
-              />
-              <h2 className="text-2xl mb-4 text-foreground group-hover:text-primary transition-colors">
-                {service.title}
-              </h2>
-              <p className="text-foreground/60 leading-relaxed mb-6">
-                {service.description}
-              </p>
-              <div className="text-primary group-hover:underline">
-                Learn more →
-              </div>
-            </Link>
-          ))}
-        </div>
+    {/* Capability List */}
+    <div className="flex flex-col border-t border-border">
+      {services.map((service, index) => (
+        <Link
+          key={service.slug}
+          href={`/services/${service.slug}`}
+          className="group relative py-12 flex flex-col md:flex-row md:items-center gap-8 border-b border-border transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:px-6 hover:bg-card/50"
+          style={{ animationDelay: `${index * 100}ms` }}
+        >
 
-        {/* CTA Section */}
-        <div className="mt-24 p-12 rounded-lg bg-card border border-border animate-fade-up">
-          <h2 className="text-3xl tracking-tight mb-4 text-foreground">
-            Custom Engagements
-          </h2>
-          <p className="text-foreground/60 mb-6 leading-relaxed max-w-2xl">
-            Every organization has unique challenges. If you need a combination of services or have
-            specific requirements not listed here, let's discuss a custom engagement tailored to your needs.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block py-3 px-6 rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors"
-          >
-            Schedule a Consultation
-          </Link>
-        </div>
-      </div>
+          {/* Icon Area */}
+          <div className="shrink-0">
+            <ServiceIcon
+              iconName={service.icon}
+              className="w-10 h-10 text-primary/40 group-hover:text-primary transition-colors duration-500"
+            />
+          </div>
+
+          {/* Content Area */}
+          <div className="flex-1">
+            <h2 className="text-2xl mb-2 group-hover:text-primary transition-colors">
+              {service.title}
+            </h2>
+            <p className="text-foreground/60 max-w-2xl">
+              {service.description}
+            </p>
+          </div>
+
+          {/* Action Arrow */}
+          <div className="hidden md:flex items-center justify-center w-12 h-12 rounded-full border border-border group-hover:border-primary/30 group-hover:bg-primary/5 transition-all duration-500">
+            <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-transform duration-500 " />
+          </div>
+        </Link>
+      ))}
     </div>
+
+    <FooterCTA
+      title="Systems designed for the long haul"
+      description="Whether you're paying down technical debt or architecting a new core, I focus on building stable, autonomous environments that grow with your team."
+      buttonText="Discuss Your Architecture"
+      variant="solid"
+      buttonHref="/contact"
+    />
+  </div>
+</div>
   );
 }
