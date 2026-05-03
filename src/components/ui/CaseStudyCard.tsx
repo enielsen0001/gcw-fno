@@ -34,19 +34,19 @@ export function CaseStudyCard({ slug, title, subtitle, description, tags, impact
             </h3>
             <ArrowUpRight
                 className={`
-                    w-5 h-5 text-foreground/40 transition-all duration-500
+                    w-5 h-5 text-fg-40 transition-all duration-500
                     ease-[cubic-bezier(0.34,1.56,0.64,1)]
                     group-hover:text-primary group-hover:scale-125
                     group-hover:translate-x-1 group-hover:-translate-y-1
                 `}
             />
         </div>
-        <p className="text-foreground/50">
+        <p className="text-fg-60 uppercase leading-tight">
             {subtitle}
         </p>
     </div>
 
-    <p className="text-foreground/70 mb-6 ">
+    <p className="text-fg-70 mb-6 ">
         {description}
     </p>
 

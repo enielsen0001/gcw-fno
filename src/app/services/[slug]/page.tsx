@@ -2,8 +2,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { SERVICE_BY_SLUG_QUERY } from '@/sanity/lib/queries';
-import { ServiceIcon } from '@/components/ui/ServiceIcon';
-import { CheckCircle2 } from 'lucide-react';
 import { groq } from 'next-sanity';
 import Timeline from '@/components/ui/Timeline';
 import { FeaturedCaseStudies } from '@/components/ui/FeaturedCaseStudies';
@@ -36,8 +34,8 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
                 {/* 03. The Decoder Section: Jargon vs. Value */}
                 <section className="grid lg:grid-cols-3 gap-16 mb-32">
                     <div className="lg:col-span-1">
-                        <h2 className="text-sm uppercase tracking-[0.3em] text-primary/50 font-semibold sticky top-24">
-                            Capabilities & Jargon
+                        <h2 className="text-sm uppercase tracking-[0.3em] text-primary font-semibold sticky top-24">
+                            Capabilities
                         </h2>
                     </div>
                     <div className="lg:col-span-2 space-y-12">
@@ -46,7 +44,7 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
                                 <h3 className="text-xl mb-3 group-hover:text-primary transition-colors">
                                     {cap.term}
                                 </h3>
-                                <p className="text-foreground/70 leading-relaxed max-w-2xl">
+                                <p className="text-fg-80 leading-relaxed max-w-2xl">
                                     {/* This is where you explain what 'Legacy Refactoring' or 'CI/CD' means for them */}
                                     {cap.definition}
                                 </p>
@@ -58,18 +56,18 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
                 {/* 04. The "Meet the Need" Section: Content Heavy / Headline Light */}
                 <section className="grid lg:grid-cols-3 gap-16 mb-32 py-24 bg-card/30 -mx-6 px-6 lg:-mx-12 lg:px-12 rounded-xl">
                     <div className="lg:col-span-1">
-                        <h2 className="text-sm uppercase tracking-[0.3em] text-primary/50 font-semibold">
+                        <h2 className="text-sm uppercase tracking-[0.3em] text-primary font-semibold">
                             Addressing Your Challenges
                         </h2>
                     </div>
                     <div className="lg:col-span-2">
-                        <div className="prose prose-invert prose-p:text-xl prose-p:font-light prose-p:text-foreground/80">
+                        <div className="prose prose-invert prose-p:text-xl prose-p:font-light prose-p:text-fg-80">
                             <p>{service.valueProposition}</p>
                             <div className="mt-8 grid md:grid-cols-2 gap-8 not-prose">
                                 {/* Dynamic list of pain points you solve */}
                                 {service.solutions?.map((item: string) => (
-                                    <div key={item} className="flex gap-3 text-sm text-foreground/60 italic">
-                                        <span className="text-primary">/</span> {item}
+                                    <div key={item} className="flex gap-3 text-sm text-fg-80 italic">
+                                        {item}
                                     </div>
                                 ))}
                             </div>
@@ -80,7 +78,7 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
                 {/* 05. The Compact Process */}
                 <section className="grid lg:grid-cols-3 gap-16 mb-32">
                     <div className="lg:col-span-1">
-                        <h2 className="text-sm uppercase tracking-[0.3em] text-primary/50 font-semibold">
+                        <h2 className="text-sm uppercase tracking-[0.3em] text-primary font-semibold">
                             Engagement Workflow
                         </h2>
                     </div>
@@ -89,7 +87,7 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
                     </div>
                 </section>
 
-                <FeaturedCaseStudies relatedCaseStudies={service.relatedCaseStudies} />
+                <FeaturedCaseStudies relatedCaseStudies={service.featuredCaseStudies} />
 
                 <FooterCTA
   title={service.footerCTA?.title || "Engineering with integrity"}

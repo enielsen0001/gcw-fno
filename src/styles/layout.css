@@ -1,6 +1,6 @@
 @layer components {
   .footer-link {
-    color: color-mix(in srgb, var(--foreground) 60%, transparent);
+    color: var(--text-foreground-70);
 
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);

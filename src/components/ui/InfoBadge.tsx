@@ -13,8 +13,8 @@ export default function InfoBadge({
 }: InfoBadgeProps) {
 
   const variants = {
-    subtle: "bg-muted/20 text-foreground/70 border-border/30",
-    outline: "bg-transparent text-foreground/60 border-border",
+    subtle: "bg-muted/20 text-fg-70 border-border/30",
+    outline: "bg-transparent text-fg-60 border-border",
     primary: "bg-primary/10 text-primary border-primary/20",
   };
 

@@ -40,7 +40,7 @@ export function CaseStudiesClient({ initialData }: { initialData: CaseStudy[] })
                             onClick={() => setSelectedTag(null)}
                             className={`px-4 py-2 rounded-md btn-hover ${selectedTag === null
                                     ? 'bg-primary text-primary-foreground'
-                                    : 'bg-card border border-border text-foreground/70 hover:border-primary/30'
+                                    : 'bg-card border border-border text-fg-70 hover:border-primary/30'
                                 }`}
                         >
                             All
@@ -51,7 +51,7 @@ export function CaseStudiesClient({ initialData }: { initialData: CaseStudy[] })
                                 onClick={() => setSelectedTag(tag)}
                                 className={`px-4 py-2 rounded-md btn-hover ${selectedTag === tag
                                         ? 'bg-primary text-primary-foreground'
-                                        : 'bg-card border border-border text-foreground/70 hover:border-primary/30'
+                                        : 'bg-card border border-border text-fg-70 hover:border-primary/30'
                                     }`}
                             >
                                 {tag}

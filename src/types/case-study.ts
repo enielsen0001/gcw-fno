@@ -54,7 +54,7 @@ export interface CaseStudy {
 
   // Preview specific fields
   cardDescription: string;
-  featuredMetric?: string;
+  featuredMetric?: string | CaseStudyMetric;
 
   context: {
     industry: string;

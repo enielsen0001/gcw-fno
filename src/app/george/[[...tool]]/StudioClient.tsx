@@ -31,7 +31,7 @@ export default function StudioClient() {
   if (loading) {
     return (
       <div className="h-screen w-full bg-[#101112] flex items-center justify-center">
-        <div className="text-[10px] uppercase tracking-[0.3em] text-foreground/20">
+        <div className="text-[10px] uppercase tracking-[0.3em] text-fg-20">
           Initializing Engine...
         </div>
       </div>

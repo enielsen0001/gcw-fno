@@ -13,7 +13,7 @@ export default function NotFound() {
           Looks like we took a wrong turn.
         </h1>
 
-        <p className="text-lg text-foreground/60 mb-12 leading-relaxed">
+        <p className="text-lg text-fg-60 mb-12 leading-relaxed">
           The page you’re looking for has wandered off the grid. Don't worry the rest of the site is still running smoothly. Let's get you back on track.
         </p>
 

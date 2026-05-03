@@ -34,7 +34,7 @@ export default async function ServicesPage() {
           <div className="shrink-0">
             <ServiceIcon
               iconName={service.icon}
-              className="w-10 h-10 text-primary/40 group-hover:text-primary transition-colors duration-500"
+              className="w-10 h-10 text-primary-40 group-hover:text-primary transition-colors duration-500"
             />
           </div>
 
@@ -43,7 +43,7 @@ export default async function ServicesPage() {
             <h2 className="text-2xl mb-2 group-hover:text-primary transition-colors">
               {service.title}
             </h2>
-            <p className="text-foreground/60 max-w-2xl">
+            <p className="text-fg-80 max-w-2xl">
               {service.description}
             </p>
           </div>

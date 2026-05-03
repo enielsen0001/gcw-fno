@@ -41,7 +41,7 @@ export function PageHeader({
           {backLink && (
             <Link
               href={backLink.href}
-              className="group inline-flex items-center gap-3 text-foreground/40 hover:text-primary transition-colors"
+              className="group inline-flex items-center gap-3 text-fg-80 hover:text-primary transition-colors"
             >
               < Icons.ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
               <span className="text-[10px] uppercase tracking-[0.3em] font-bold">
@@ -84,7 +84,7 @@ export function PageHeader({
               )}
 
               {eyebrow && (
-                <span className="text-primary/60 text-[10px] uppercase tracking-[0.5em] font-bold block">
+                <span className="text-primary text-[12px] uppercase tracking-[0.4em] font-bold block">
                   {eyebrow}
                 </span>
               )}
@@ -94,13 +94,13 @@ export function PageHeader({
             </div>
 
               {subtitle && (
-                <span className="text-2xl text-foreground/60 max-w-4xl leading-relaxed">
+                <span className="text-2xl text-fg-60 max-w-4xl leading-relaxed">
                   {subtitle}
                 </span>
               )}
 
             {description && (
-              <p className="text-xl lg:text-2xl text-foreground/60 max-w-3xl font-light leading-relaxed">
+              <p className="text-xl lg:text-2xl text-fg-60 max-w-3xl font-light leading-relaxed">
                 {description}
               </p>
             )}

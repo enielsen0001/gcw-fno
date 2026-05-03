@@ -56,12 +56,7 @@ export const SERVICE_BY_SLUG_QUERY = groq`
       author
     },
     "featuredCaseStudies": featuredCaseStudies[]-> {
-      _id,
-      title,
-      slug,
-      cardDescription,
-      featuredMetric,
-      context { industry }
+      ${CASE_STUDY_CARD_FIELDS}
     }
   }
 `

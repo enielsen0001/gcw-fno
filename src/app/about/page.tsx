@@ -40,7 +40,7 @@ export default function AboutPage() {
             <h2 className="text-4xl tracking-tight text-foreground">
               Tactile Problem Solving
             </h2>
-            <div className="space-y-6 text-lg text-foreground/70 leading-relaxed font-light">
+            <div className="space-y-6 text-lg text-fg-70 leading-relaxed font-light">
               <p>
                 My background in multimedia art and physical mechanical repair informs how I write code. Whether it's rigging a vintage cabinet hinge to work like new or refactoring a Laravel monolith into services, the goal is the same:
                 <strong> Functional Longevity.</strong>
@@ -55,8 +55,8 @@ export default function AboutPage() {
         {/* New Professional Background Section */}
 <section className="py-24 border-t border-border">
   <div className="grid lg:grid-cols-2 gap-20">
-    <div className="space-y-8 text-lg font-light text-foreground/80 leading-relaxed">
-      <h3 className="text-xs uppercase tracking-[0.4em] text-primary/60 font-semibold">
+    <div className="space-y-8 text-lg font-light text-fg-80 leading-relaxed">
+      <h3 className="text-xs uppercase tracking-[0.4em] text-primary-60 font-semibold">
         Professional Philosophy
       </h3>
       <p>
@@ -68,7 +68,7 @@ export default function AboutPage() {
 
       <Link
   href="https://linkedin.com/in/yourprofile"
-  className="group inline-flex items-center gap-3 text-foreground/50 hover:text-primary transition-colors mt-8"
+  className="group inline-flex items-center gap-3 text-fg-50 hover:text-primary transition-colors mt-8"
 >
   <span className="text-[10px] uppercase tracking-[0.3em] font-bold">
     Detailed Professional History
@@ -79,21 +79,21 @@ export default function AboutPage() {
     </div>
 
     <div className="bg-card/30 border border-border p-12 rounded-xl">
-      <h4 className="text-xs uppercase tracking-[0.4em] text-primary/60 font-semibold mb-8">
+      <h4 className="text-xs uppercase tracking-[0.4em] text-primary-60 font-semibold mb-8">
         Core Competencies
       </h4>
       <div className="space-y-6">
         <div>
           <span className="text-sm font-bold block mb-1">Modernization</span>
-          <p className="text-sm text-foreground/60">Transitioning legacy monoliths into modern, scalable architectures.</p>
+          <p className="text-sm text-fg-60">Transitioning legacy monoliths into modern, scalable architectures.</p>
         </div>
         <div>
           <span className="text-sm font-bold block mb-1">Design Engineering</span>
-          <p className="text-sm text-foreground/60">Bridging the gap between high-fidelity UI and functional performance.</p>
+          <p className="text-sm text-fg-60">Bridging the gap between high-fidelity UI and functional performance.</p>
         </div>
         <div>
           <span className="text-sm font-bold block mb-1">Autonomy</span>
-          <p className="text-sm text-foreground/60">Building "set it and forget it" systems with minimal maintenance debt.</p>
+          <p className="text-sm text-fg-60">Building "set it and forget it" systems with minimal maintenance debt.</p>
         </div>
 
         {competencies.map((item, index) => (
@@ -103,7 +103,7 @@ export default function AboutPage() {
                 <span className="text-sm font-bold block mb-1">
                   {item.principle}
                 </span>
-                <p className="text-sm text-foreground/60">
+                <p className="text-sm text-fg-60">
                   {item.description}
                 </p>
               </div>
@@ -118,7 +118,7 @@ export default function AboutPage() {
         <div className="grid lg:grid-cols-12 gap-16 mb-40">
           <div className="lg:col-span-8 lg:col-start-3 text-center space-y-8 fade-up-reveal">
             <h2 className="text-4xl font-light tracking-tight">The Gray Coast Identity</h2>
-            <p className="text-xl text-foreground/60 leading-relaxed font-light">
+            <p className="text-xl text-fg-60 leading-relaxed font-light">
               Gray Coast Web represents a specific intersection: where the "gray" of legacy infrastructure meets the "coast" of modern deployment. Like a well-built harbor, architectural modernization requires respecting the environment while building for the next century of tides.
             </p>
           </div>

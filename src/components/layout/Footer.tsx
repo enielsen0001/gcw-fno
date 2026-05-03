@@ -10,7 +10,7 @@ export function Footer() {
             <h2 className="text-3xl tracking-tight mb-4 text-foreground">
               Let's Build Something Resilient
             </h2>
-            <p className="text-foreground/60 mb-6 leading-relaxed">
+            <p className="text-fg-70 mb-6 leading-relaxed">
               If you're ready to modernize your legacy systems or need strategic guidance on architectural decisions, let's talk.
             </p>
             <Link
@@ -50,10 +50,10 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-foreground/50 text-sm">
+          <p className="text-fg-50 text-sm">
             © {new Date().getFullYear()} GrayCoastWeb. All rights reserved.
           </p>
-          <p className="text-foreground/50 text-sm italic">
+          <p className="text-fg-50 text-sm italic">
             Architectural Modernization & Legacy System Stewardship
           </p>
         </div>

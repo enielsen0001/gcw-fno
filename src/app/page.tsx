@@ -25,7 +25,7 @@ function Hero() {
           <h1 className="text-5xl md:text-6xl lg:text-7xl tracking-tight mb-8 text-foreground leading-none">
             Modernizing Legacy Systems for Modern Growth
           </h1>
-          <p className="text-xl md:text-2xl text-foreground/80 mb-12 max-w-2xl leading-relaxed">
+          <p className="text-xl md:text-2xl text-fg-80 mb-12 max-w-2xl leading-relaxed">
             Strategic architectural modernization and legacy
             system stewardship for organizations ready to scale
             their technical foundation.
@@ -51,7 +51,7 @@ export default function HomePage() {
         <h2 className="text-4xl md:text-5xl">
           Stewardship Services
         </h2>
-        <p className="text-xl text-foreground/60 max-w-3xl">
+        <p className="text-xl text-fg-60 max-w-3xl">
           Specialized expertise in modernizing and maintaining
           complex software systems.
         </p>
@@ -73,7 +73,7 @@ export default function HomePage() {
       <h2 className="text-4xl md:text-5xl">
         Transformation Portfolio
       </h2>
-      <p className="text-xl text-foreground/60 max-w-3xl">
+      <p className="text-xl text-fg-70 max-w-3xl">
         Real-world examples of architectural modernization and legacy system evolution.
       </p>
     </header>

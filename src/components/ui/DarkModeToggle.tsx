@@ -13,9 +13,9 @@ export function DarkModeToggle() {
       aria-label="Toggle dark mode"
     >
       {isDark ? (
-        <Sun className="w-5 h-5 text-foreground/70" />
+        <Sun className="w-5 h-5 text-fg-70" />
       ) : (
-        <Moon className="w-5 h-5 text-foreground/70" />
+        <Moon className="w-5 h-5 text-fg-70" />
       )}
     </button>
   );

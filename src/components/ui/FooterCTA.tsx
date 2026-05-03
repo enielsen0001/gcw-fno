@@ -41,7 +41,7 @@ export function FooterCTA({
 
         <p className={cn(
           "mb-12 max-w-xl mx-auto font-light",
-          variant === 'solid' ? "text-primary-foreground/80" : "text-foreground/60"
+          variant === 'solid' ? "text-primary-foreground/80" : "text-fg-60"
         )}>
           {description}
         </p>
@@ -49,7 +49,7 @@ export function FooterCTA({
         <Link
           href={buttonHref}
           className={cn(
-            "inline-flex items-center gap-2 px-8 py-3 tracking-[0.025em] font-medium transition-all",
+            "inline-flex items-center gap-2 px-8 py-3 tracking-[0.025em] leading-tight font-medium transition-all",
             variant === 'solid'
               ? "border border-white bg-transparent text-primary-foreground hover:bg-white hover:text-primary"
               : "border border-primary/20 hover:bg-white hover:text-primary"

@@ -8,12 +8,13 @@
   --card-foreground: #3D4451;
   --popover: #ffffff;
   --popover-foreground: #3D4451;
-  --primary: #4A7C7E;
+  --primary: #48797b;
   --primary-foreground: #ffffff;
   --secondary: #8B9A8E;
   --secondary-foreground: #3D4451;
   --muted: #D4CFC4;
   --muted-foreground: #A8ADB5;
+  --muted-foreground: #6e7176;
   --accent: #6B5D52;
   --accent-foreground: #ffffff;
   --destructive: #d4183d;
@@ -41,7 +42,27 @@
   --sidebar-ring: #4A7C7E;
   --font-weight-light: 300;   /* Narrative & Body */
   --font-weight-medium: 500;  /* Functional UI */
-  --font-weight-bold: 700;    /* Structural Headlines */
+  --font-weight-bold: 700;
+  /* Safe for body text (Passes 4.5:1) */
+  --text-foreground-80: #646974;
+
+  /* Borderline: Safe for large text (Passes 3:1), but fails small text */
+  --text-foreground-70: #777C85;
+  --text-foreground-60: #8B8F97;
+
+  /* Decorative only: Do not use for informative text */
+  --text-foreground-50: #9EA2A8;
+  --text-foreground-40: #B1B5BA;
+  --text-foreground-30: #C5C8CB;
+  --text-foreground-20: #D8DADC;   /* Structural Headlines */
+
+  --primary-80: #5B8F91;
+  --primary-70: #6E9A9C;
+  --primary-60: #80A5A7;
+  --primary-50: #93B1B2;
+  --primary-40: #A5BCBD;
+  --primary-30: #B8C7C8;
+  --primary-20: #CCD3D4;
 }
 
 .dark {
@@ -79,6 +100,29 @@
   --sidebar-accent-foreground: #E8EAED;
   --sidebar-border: #2F3541;
   --sidebar-ring: #6FA8A3;
+
+  /* High Contrast / Primary Text */
+  --text-foreground-80: #BFC2C6;
+  /* --text-foreground-70: #AAB0B7; */
+   --text-foreground-70:#6d7179;
+  /* --text-foreground-60: #969CA4; */
+    --text-foreground-60: #72757c;
+  --text-foreground-50: #828992;
+  --text-foreground-40: #6E757E;
+
+  /* UI Elements / Secondary Text (Use with caution) */
+  --text-foreground-30: #59626B;
+
+  /* Decorative / Disabled Only */
+  --text-foreground-20: #454E59;
+
+  --primary-80: #5E8986;
+  --primary-70: #557A77;
+  --primary-60: #4D6B68;
+  --primary-50: #455C5A;
+  --primary-40: #3C4D4B;
+  --primary-30: #343D3C;
+  --primary-20: #2B2F2E;
 }
 
 @theme inline {
@@ -193,7 +237,22 @@
     font-weight: var(--font-weight-light);
     line-height: 1.5;
   }
+
+  .text-fg-80 { color: var(--text-foreground-80); }
+.text-fg-70 { color: var(--text-foreground-70); }
+.text-fg-60 { color: var(--text-foreground-60); }
+.text-fg-50 { color: var(--text-foreground-50); }
+.text-fg-40 { color: var(--text-foreground-40); }
+.text-fg-30 { color: var(--text-foreground-30); }
 }
+
+.text-primary-80 { color: var(--primary-80); }
+.text-primary-70 { color: var(--primary-70); }
+.text-primary-60 { color: var(--primary-60); }
+.text-primary-50 { color: var(--primary-50); }
+.text-primary-40 { color: var(--primary-40); }
+.text-primary-30 { color: var(--primary-30); }
+.text-primary-20 { color: var(--primary-20); }
 
 @layer components {
   .btn-ghost {

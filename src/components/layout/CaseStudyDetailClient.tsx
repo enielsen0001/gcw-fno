@@ -24,14 +24,14 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                         {/* Executive Summary: Two-Column Clarity */}
                         <section className="grid md:grid-cols-2 gap-16 border-t border-border pt-12 fade-up-reveal">
                             <div className="space-y-6">
-                                <h3 className="text-xs uppercase tracking-[0.3em] text-primary/60 font-semibold">The Challenge</h3>
-                                <p className="text-foreground/80 text-xl font-light leading-relaxed italic border-l-2 border-primary/10 pl-6">
+                                <h3 className="text-xs uppercase tracking-[0.3em] text-primary-60 font-semibold">The Challenge</h3>
+                                <p className="text-fg-80 text-xl font-light leading-relaxed italic border-l-2 border-primary/10 pl-6">
                                     {study.executiveSummary.challenge}
                                 </p>
                             </div>
                             <div className="space-y-6">
-                                <h3 className="text-xs uppercase tracking-[0.3em] text-primary/60 font-semibold">The Approach</h3>
-                                <p className="text-foreground/80 text-xl font-light leading-relaxed">
+                                <h3 className="text-xs uppercase tracking-[0.3em] text-primary-60 font-semibold">The Approach</h3>
+                                <p className="text-fg-80 text-xl font-light leading-relaxed">
                                     {study.executiveSummary.approach}
                                 </p>
                             </div>
@@ -44,10 +44,10 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                                 {study.keyDecisions?.map((decision: any, index: number) => (
                                     <div key={index} className="p-8 border border-border bg-card/20 rounded-lg group hover:border-primary/30 transition-colors">
                                         <div className="flex gap-4 mb-4">
-                                            <span className="text-xs font-mono text-primary/40">[{String(index + 1).padStart(2, '0')}]</span>
+                                            <span className="text-xs font-mono text-primary-40">[{String(index + 1).padStart(2, '0')}]</span>
                                             <h4 className="text-lg font-medium">{decision.title}</h4>
                                         </div>
-                                        <p className="text-foreground/60 text-sm leading-relaxed">
+                                        <p className="text-fg-60 text-sm leading-relaxed">
                                             {decision.rationale}
                                         </p>
                                     </div>
@@ -61,11 +61,11 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                             <div className="relative">
                                 {study.solution.technicalImplementation.map((phase: any, index: number) => (
                                     <div key={index} className="group relative pl-16 pb-20 border-l border-border last:border-l-0 last:pb-0">
-                                        <div className="absolute left-0 top-0 -translate-x-1/2 w-10 h-10 bg-background border border-border rounded-full flex items-center justify-center text-foreground/40 text-sm transition-all group-hover:border-primary group-hover:text-primary">
+                                        <div className="absolute left-0 top-0 -translate-x-1/2 w-10 h-10 bg-background border border-border rounded-full flex items-center justify-center text-fg-40 text-sm transition-all group-hover:border-primary group-hover:text-primary">
                                             {String(index + 1).padStart(2, '0')}
                                         </div>
                                         <h4 className="text-2xl mb-4 group-hover:text-primary transition-colors">{phase.phase}</h4>
-                                        <p className="text-foreground/60 text-lg max-w-2xl font-light">
+                                        <p className="text-fg-60 text-lg max-w-2xl font-light">
                                             {phase.details}
                                         </p>
                                     </div>
@@ -86,7 +86,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                                 <h5 className="text-sm font-semibold uppercase tracking-wider">
                                     {outcome.label}
                                 </h5>
-                                <p className="text-foreground/60 font-light leading-relaxed">
+                                <p className="text-fg-60 font-light leading-relaxed">
                                     {outcome.description}
                                 </p>
                                 </div>
@@ -100,7 +100,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                     <aside className="lg:w-80 space-y-8 fade-up-reveal">
                         <div className="sticky top-12 space-y-1 border-t border-border pt-12">
                             <div className="pb-8">
-                                <label className="text-[10px] uppercase tracking-[0.4em] text-primary/50 block mb-3">Context</label>
+                                <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-3">Context</label>
                                 <div className="space-y-1">
                                     <p className="text-lg font-light">{study.context.industry}</p>
                                     <p className="text-xs text-muted-foreground italic">{study.context.timeline}</p>
@@ -108,10 +108,10 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                             </div>
 
                             <div className="pb-8">
-                                <label className="text-[10px] uppercase tracking-[0.4em] text-primary/50 block mb-4">Architecture</label>
+                                <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-4">Architecture</label>
                                 <div className="flex flex-wrap gap-2">
                                     {study.context.technologies.map((tech: string) => (
-                                        <span key={tech} className="px-2 py-1 bg-muted/20 text-foreground/70 text-[10px] tracking-wider rounded-sm border border-border/30">
+                                        <span key={tech} className="px-2 py-1 bg-muted/20 text-fg-70 text-[10px] tracking-wider rounded-sm border border-border/30">
                                             {tech}
                                         </span>
                                     ))}
@@ -120,10 +120,10 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
 
                             {study.relevantLinks && (
                                 <div className="pt-8 border-t border-border/50">
-                                    <label className="text-[10px] uppercase tracking-[0.4em] text-primary/50 block mb-4">Artifacts</label>
+                                    <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-4">Artifacts</label>
                                     <div className="space-y-4">
                                         {study.relevantLinks.map((link: RelatedLink, index: number) => (
-                                            <a key={index} href={link.url} className="group flex items-center justify-between text-sm text-foreground/60 hover:text-primary transition-colors">
+                                            <a key={index} href={link.url} className="group flex items-center justify-between text-sm text-fg-60 hover:text-primary transition-colors">
                                                 <span className="border-b border-transparent group-hover:border-primary/30">{link.label}</span>
                                                 <span className="text-xs">↗</span>
                                             </a>

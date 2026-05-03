@@ -25,16 +25,16 @@ export function CaseStudyDetailClientCopy({ study }: { study: CaseStudy }) {
               <section className="grid md:grid-cols-2 gap-16 border-t border-border pt-12 fade-up-reveal">
                 {study.executiveSummary.challenge && (
                   <div className="space-y-6">
-                    <h3 className="text-xs uppercase tracking-[0.3em] text-primary/60 font-semibold">The Challenge</h3>
-                    <p className="text-foreground/80 text-xl font-light leading-relaxed italic border-l-2 border-primary/10 pl-6">
+                    <h3 className="text-xs uppercase tracking-[0.3em] text-primary-60 font-semibold">The Challenge</h3>
+                    <p className="text-fg-80 text-xl font-light leading-relaxed italic border-l-2 border-primary/10 pl-6">
                       {study.executiveSummary.challenge}
                     </p>
                   </div>
                 )}
                 {study.executiveSummary.approach && (
                   <div className="space-y-6">
-                    <h3 className="text-xs uppercase tracking-[0.3em] text-primary/60 font-semibold">The Approach</h3>
-                    <p className="text-foreground/80 text-xl font-light leading-relaxed">
+                    <h3 className="text-xs uppercase tracking-[0.3em] text-primary-60 font-semibold">The Approach</h3>
+                    <p className="text-fg-80 text-xl font-light leading-relaxed">
                       {study.executiveSummary.approach}
                     </p>
                   </div>
@@ -50,10 +50,10 @@ export function CaseStudyDetailClientCopy({ study }: { study: CaseStudy }) {
                   {study.keyDecisions.map((decision: any, index: number) => (
                     <div key={index} className="p-8 border border-border bg-card/20 rounded-lg">
                       <div className="flex gap-4 mb-4">
-                         <span className="text-xs font-mono text-primary/40">[{String(index + 1).padStart(2, '0')}]</span>
+                         <span className="text-xs font-mono text-primary-40">[{String(index + 1).padStart(2, '0')}]</span>
                          <h4 className="text-lg font-medium">{decision.title}</h4>
                       </div>
-                      <p className="text-foreground/60 text-sm leading-relaxed">
+                      <p className="text-fg-60 text-sm leading-relaxed">
                         {decision.rationale}
                       </p>
                     </div>
@@ -69,11 +69,11 @@ export function CaseStudyDetailClientCopy({ study }: { study: CaseStudy }) {
                 <div className="relative">
                   {study.solution.technicalImplementation.map((phase: any, index: number) => (
                     <div key={index} className="group relative pl-16 pb-20 border-l border-border last:border-l-0 last:pb-0">
-                      <div className="absolute left-0 top-0 -translate-x-1/2 w-10 h-10 bg-background border border-border rounded-full flex items-center justify-center text-foreground/40 text-sm transition-all group-hover:border-primary group-hover:text-primary">
+                      <div className="absolute left-0 top-0 -translate-x-1/2 w-10 h-10 bg-background border border-border rounded-full flex items-center justify-center text-fg-40 text-sm transition-all group-hover:border-primary group-hover:text-primary">
                         {String(index + 1).padStart(2, '0')}
                       </div>
                       <h4 className="text-2xl mb-4 group-hover:text-primary transition-colors">{phase.phase}</h4>
-                      <p className="text-foreground/60 text-lg max-w-2xl font-light">
+                      <p className="text-fg-60 text-lg max-w-2xl font-light">
                         {phase.details}
                       </p>
                     </div>
@@ -91,7 +91,7 @@ export function CaseStudyDetailClientCopy({ study }: { study: CaseStudy }) {
                     <div key={index} className="space-y-4">
                       <div className="h-px w-12 bg-primary/30 mb-6" />
                       <h5 className="text-sm font-semibold uppercase tracking-wider">{outcome.label}</h5>
-                      <p className="text-foreground/60 font-light leading-relaxed">
+                      <p className="text-fg-60 font-light leading-relaxed">
                         {outcome.description}
                       </p>
                     </div>
@@ -108,24 +108,24 @@ export function CaseStudyDetailClientCopy({ study }: { study: CaseStudy }) {
               <div className="space-y-8">
                 {study.context?.industry && (
                   <div>
-                    <label className="text-[10px] uppercase tracking-[0.4em] text-primary/50 block mb-3 font-semibold">Industry</label>
-                    <p className="text-lg font-light text-foreground/80">{study.context.industry}</p>
+                    <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-3 font-semibold">Industry</label>
+                    <p className="text-lg font-light text-fg-80">{study.context.industry}</p>
                   </div>
                 )}
 
                 {study.context?.timeline && (
                   <div>
-                    <label className="text-[10px] uppercase tracking-[0.4em] text-primary/50 block mb-3 font-semibold">Timeline</label>
-                    <p className="text-lg font-light text-foreground/80">{study.context.timeline}</p>
+                    <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-3 font-semibold">Timeline</label>
+                    <p className="text-lg font-light text-fg-80">{study.context.timeline}</p>
                   </div>
                 )}
 
                 {study.context?.technologies?.length > 0 && (
                   <div>
-                    <label className="text-[10px] uppercase tracking-[0.4em] text-primary/50 block mb-4 font-semibold">Architecture</label>
+                    <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-4 font-semibold">Architecture</label>
                     <div className="flex flex-wrap gap-2">
                       {study.context.technologies.map((tech: string) => (
-                        <span key={tech} className="px-2 py-1 bg-muted/20 text-foreground/70 text-[10px] tracking-wider rounded-sm border border-border/30">
+                        <span key={tech} className="px-2 py-1 bg-muted/20 text-fg-70 text-[10px] tracking-wider rounded-sm border border-border/30">
                           {tech}
                         </span>
                       ))}
@@ -136,7 +136,7 @@ export function CaseStudyDetailClientCopy({ study }: { study: CaseStudy }) {
 
               {!!study.relevantLinks?.length && (
                 <div className="pt-12 border-t border-border/50">
-                  <label className="text-[10px] uppercase tracking-[0.4em] text-primary/50 block mb-6 font-semibold">Artifacts</label>
+                  <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-6 font-semibold">Artifacts</label>
                   <nav className="space-y-4">
                     {study.relevantLinks.map((link: RelatedLink, index: number) => (
                       <a
@@ -144,12 +144,12 @@ export function CaseStudyDetailClientCopy({ study }: { study: CaseStudy }) {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex items-center justify-between text-sm text-foreground/60 hover:text-primary transition-colors"
+                        className="group flex items-center justify-between text-sm text-fg-60 hover:text-primary transition-colors"
                       >
                         <span className="border-b border-transparent group-hover:border-primary/30 transition-all">
                           {link.label}
                         </span>
-                        <ExternalLink className="w-3 h-3 text-foreground/30 group-hover:text-primary transition-all" />
+                        <ExternalLink className="w-3 h-3 text-fg-30 group-hover:text-primary transition-all" />
                       </a>
                     ))}
                   </nav>

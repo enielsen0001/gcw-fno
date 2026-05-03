@@ -47,12 +47,18 @@ export default function Timeline({
               </div>
 
               <div className="pt-1">
-                <h3 className="text-2xl mb-4 text-foreground font-light tracking-tight group-hover:text-primary transition-colors">
+                {item.title &&
+                  <h3 className="text-2xl mb-4 text-foreground font-light tracking-tight group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-foreground/60 leading-relaxed text-lg max-w-2xl font-light">
+                }
+
+                {item.description &&
+                <p className="text-fg-80 leading-relaxed text-lg max-w-2xl font-light m-0">
                   {item.description}
                 </p>
+                }
+
               </div>
             </div>
           ))}

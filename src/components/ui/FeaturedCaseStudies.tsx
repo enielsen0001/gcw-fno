@@ -19,7 +19,7 @@ export function FeaturedCaseStudies({ relatedCaseStudies }: { relatedCaseStudies
       <div className="space-y-16">
         <header className="flex flex-col md:flex-row justify-between items-end gap-8">
           <div className="max-w-2xl space-y-6">
-            <h3 className="text-xs uppercase tracking-[0.4em] text-primary/60 font-semibold">
+            <h3 className="text-xs uppercase tracking-[0.4em] text-primary-60 font-semibold">
               Transformation Portfolio
             </h3>
             <h2 className="text-4xl lg:text-5xl font-light">
@@ -29,7 +29,7 @@ export function FeaturedCaseStudies({ relatedCaseStudies }: { relatedCaseStudies
 
           <Link
             href="/case-studies"
-            className="group flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-foreground/40 hover:text-primary transition-colors"
+            className="group flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-fg-40 hover:text-primary transition-colors"
           >
             View All Work
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -39,8 +39,8 @@ export function FeaturedCaseStudies({ relatedCaseStudies }: { relatedCaseStudies
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {relatedCaseStudies.map((study) => (
             <Link
-              key={study._id}
-              href={`/case-studies/${study.slug.current}`}
+              key={study.slug}
+              href={`/case-studies/${study.slug}`}
               className="group relative block p-8 border border-border bg-card/20 rounded-xl hover:border-primary/30 transition-all duration-500 overflow-hidden"
             >
               {/* Subtle hover background accent */}
@@ -48,12 +48,12 @@ export function FeaturedCaseStudies({ relatedCaseStudies }: { relatedCaseStudies
 
               <div className="relative z-10 space-y-6">
                 <div className="flex justify-between items-start">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground border border-border px-2 py-1 rounded-sm">
-                    {study.context.industry}
-                  </span>
+
                   {study.featuredMetric && (
                     <span className="text-primary font-mono text-sm">
-                      {study.featuredMetric.value}
+                      {typeof study.featuredMetric === 'string'
+                        ? study.featuredMetric
+                        : study.featuredMetric.value}
                     </span>
                   )}
                 </div>
@@ -62,7 +62,7 @@ export function FeaturedCaseStudies({ relatedCaseStudies }: { relatedCaseStudies
                   <h4 className="text-xl font-medium group-hover:text-primary transition-colors">
                     {study.title}
                   </h4>
-                  <p className="text-sm text-foreground/60 line-clamp-3 font-light leading-relaxed">
+                  <p className="text-sm text-fg-60 line-clamp-3 font-light leading-relaxed">
                     {study.cardDescription}
                   </p>
                 </div>

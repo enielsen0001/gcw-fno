@@ -42,7 +42,7 @@ export function Header() {
                   className={`hover-underline transition-colors ${
                     isActive(link.path)
                       ? 'text-foreground'
-                      : 'text-foreground/70 hover:text-foreground'
+                      : 'text-fg-70 hover:text-foreground'
                   }`}
                 >
                   {link.label}
@@ -74,7 +74,7 @@ export function Header() {
                   className={`py-2 transition-colors ${
                     isActive(link.path)
                       ? 'text-foreground font-medium'
-                      : 'text-foreground/70 hover:text-foreground'
+                      : 'text-fg-70 hover:text-foreground'
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
