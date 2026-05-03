@@ -1,48 +1,48 @@
-import { CaseStudy } from './case-study'; // Adjust path as needed
-import { SanitySlug } from './case-study';
+import { CaseStudy } from "./case-study"; // Adjust path as needed
+import { SanitySlug } from "./case-study";
 
 /**
  * Service Sub-Interfaces
  */
 export interface Capability {
-  term: string;
-  definition: string;
+    term: string;
+    definition: string;
 }
 
 export interface ProcessPhase {
-  phase: string;
-  description: string;
+    phase: string;
+    description: string;
 }
 
 export interface Testimonial {
-  quote: string;
-  author: string;
-  role?: string;
+    quote: string;
+    author: string;
+    role?: string;
 }
 
 /**
  * Main Service Interface
  */
 export interface Service {
-  _id: string;
-  _type: 'service';
-  title: string;
-  slug: SanitySlug;
-  icon: string; // The Lucide icon name string
+    _id: string;
+    _type: "service";
+    title: string;
+    slug: SanitySlug;
+    icon: string; // The Lucide icon name string
 
-  // High-level Narrative
-  cardDescription: string;
-  shortDescription: string;
-  valueProposition: string;
+    // High-level Narrative
+    cardDescription: string;
+    shortDescription: string;
+    valueProposition: string;
 
-  // Strategic Content
-  capabilities: Capability[];
-  solutions: string[]; // The "Target Problems" list
-  process: ProcessPhase[];
+    // Strategic Content
+    capabilities: Capability[];
+    solutions: string[]; // The "Target Problems" list
+    process: ProcessPhase[];
 
-  // Relationships
-  featuredCaseStudies?: CaseStudy[];
+    // Relationships
+    featuredCaseStudies?: CaseStudy[];
 
-  // Feedback
-  testimonials?: Testimonial[];
+    // Feedback
+    testimonials?: Testimonial[];
 }

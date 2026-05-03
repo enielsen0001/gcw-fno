@@ -3,20 +3,22 @@ import Link from "next/link";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { CaseStudyCard } from "@/components//ui/CaseStudyCard";
 import { caseStudiesPreview } from "@/constants/case-studies";
-import { services } from '@/constants/services';
+import { services } from "@/constants/services";
 import heroImage from "@/../public/images/gray-horizon.jpg";
 import { ArrowRight } from "lucide-react";
 import { homeMetadata } from "@/constants/metadata";
 import { homeContent } from "@/constants/page-content";
 import { sanityFetch } from "@/sanity/lib/fetch";
-import { CASE_STUDIES_PREVIEW_QUERY, SERVICE_CARD_QUERY } from "@/sanity/lib/queries";
+import {
+    CASE_STUDIES_PREVIEW_QUERY,
+    SERVICE_CARD_QUERY,
+} from "@/sanity/lib/queries";
 import { Service } from "@/types/service";
 import { CaseStudy } from "@/types/case-study";
 
 export const metadata = homeMetadata;
 
 function Hero() {
-
     const { hero } = homeContent;
 
     return (
@@ -49,7 +51,6 @@ function Hero() {
 }
 
 export default async function HomePage() {
-
     const { servicesContent, portfolio } = homeContent;
     const serviceCards = await sanityFetch<any>({
         query: SERVICE_CARD_QUERY,
@@ -84,7 +85,6 @@ export default async function HomePage() {
 
             {/* Case Studies Section */}
             <section className="py-24 px-6 lg:px-12">
-
                 <div className="max-w-7xl mx-auto">
                     <header className="mb-16">
                         <h2 className="text-4xl md:text-5xl">
@@ -96,12 +96,11 @@ export default async function HomePage() {
                     </header>
 
                     <div className="grid md:grid-cols-2 gap-8 mb-16">
-                        {caseStudyCardsPreview.map((study: CaseStudy, index: number) => (
-                            <CaseStudyCard
-                                key={study._id}
-                                {...study}
-                            />
-                        ))}
+                        {caseStudyCardsPreview.map(
+                            (study: CaseStudy, index: number) => (
+                                <CaseStudyCard key={study._id} {...study} />
+                            ),
+                        )}
                     </div>
 
                     <div className="flex justify-center pt-8">

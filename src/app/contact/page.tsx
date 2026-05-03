@@ -1,19 +1,23 @@
-import { Mail } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from '@/components/ui/SocialIcons';
-import { PageHeader } from '@/components/ui/PageHeader';
-import { contactMetadata } from '@/constants/metadata';
-import { contactContent } from '@/constants/page-content';
-import { m } from 'motion/react';
+import { Mail } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { contactMetadata } from "@/constants/metadata";
+import { contactContent } from "@/constants/page-content";
 
 export const metadata = contactMetadata;
 
 export default function ContactPage() {
-
     const { header, main, channels, sidebar, footer } = contactContent;
     const IconMap = {
-        email: <Mail className="w-6 h-6 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3" />,
-        linkedin: <LinkedinIcon className="w-6 h-6 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" />,
-        github: <GithubIcon className="w-6 h-6 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5" />,
+        email: (
+            <Mail className="w-6 h-6 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3" />
+        ),
+        linkedin: (
+            <LinkedinIcon className="w-6 h-6 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" />
+        ),
+        github: (
+            <GithubIcon className="w-6 h-6 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5" />
+        ),
     };
 
     return (
@@ -32,13 +36,15 @@ export default function ContactPage() {
                             {main.title}
                         </h2>
                         {main.description.map((paragraph, index) => (
-                            <p key={index} className="text-fg-70 mb-4 leading-relaxed">
+                            <p
+                                key={index}
+                                className="text-fg-70 mb-4 leading-relaxed"
+                            >
                                 {paragraph}
                             </p>
                         ))}
 
                         <div className="space-y-4">
-
                             {channels.map((channel, index) => (
                                 <a
                                     key={index}
@@ -50,8 +56,9 @@ export default function ContactPage() {
                hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
                                 >
                                     <div className="p-2 rounded-md bg-primary/5 transition-colors group-hover:bg-primary/10">
-                                        {IconMap[channel.type as keyof typeof IconMap] || null}
-
+                                        {IconMap[
+                                            channel.type as keyof typeof IconMap
+                                        ] || null}
                                     </div>
                                     <div>
                                         <p className="text-foreground font-medium group-hover:text-primary transition-colors mb-0">
@@ -63,8 +70,6 @@ export default function ContactPage() {
                                     </div>
                                 </a>
                             ))}
-
-
                         </div>
                     </section>
 
@@ -77,12 +82,19 @@ export default function ContactPage() {
                                 {sidebar.consultation.text}
                             </p>
                             <ul className="space-y-3">
-                                {sidebar.consultation.items.map((item, index) => (
-                                    <li key={index} className="flex gap-2 text-fg-60">
-                                        <span className="text-primary ">•</span>
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
+                                {sidebar.consultation.items.map(
+                                    (item, index) => (
+                                        <li
+                                            key={index}
+                                            className="flex gap-2 text-fg-60"
+                                        >
+                                            <span className="text-primary ">
+                                                •
+                                            </span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ),
+                                )}
                             </ul>
                         </div>
 
@@ -95,7 +107,10 @@ export default function ContactPage() {
                             </p>
                             <ul className="space-y-3">
                                 {sidebar.intake.items.map((item, index) => (
-                                    <li key={index} className="flex gap-2 text-fg-60">
+                                    <li
+                                        key={index}
+                                        className="flex gap-2 text-fg-60"
+                                    >
                                         <span className="text-primary">•</span>
                                         <span>{item}</span>
                                     </li>
@@ -105,14 +120,14 @@ export default function ContactPage() {
                     </aside>
                 </div>
 
-                <div className="p-16 text-center rounded-sm border transition-all duration-500 bg-primary/5 text-foreground border-primary/10"
-                >
-                    <h2 className="text-4xl font-light mb-8">
-                        {footer.title}
-                    </h2>
+                <div className="p-16 text-center rounded-sm border transition-all duration-500 bg-primary/5 text-foreground border-primary/10">
+                    <h2 className="text-4xl font-light mb-8">{footer.title}</h2>
 
                     {footer.text.map((paragraph, index) => (
-                        <p key={index} className="text-fg-60 mb-6 max-w-xl mx-auto font-light">
+                        <p
+                            key={index}
+                            className="text-fg-60 mb-6 max-w-xl mx-auto font-light"
+                        >
                             {paragraph}
                         </p>
                     ))}

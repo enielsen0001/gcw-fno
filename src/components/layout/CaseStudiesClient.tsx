@@ -1,18 +1,21 @@
+"use client";
 
-'use client';
+import { useState, useMemo } from "react";
+import { CaseStudy } from "@/types/case-study";
+import { CaseStudyCard } from "../ui/CaseStudyCard";
+import { PageHeader } from "../ui/PageHeader";
+import { caseStudiesContent } from "@/constants/page-content";
 
-import { useState, useMemo } from 'react';
-import { CaseStudy } from '@/types/case-study';
-import { CaseStudyCard } from '../ui/CaseStudyCard';
-import { PageHeader } from '../ui/PageHeader';
-import { caseStudiesContent } from '@/constants/page-content';
-
-export function CaseStudiesClient({ initialData }: { initialData: CaseStudy[] }) {
+export function CaseStudiesClient({
+    initialData,
+}: {
+    initialData: CaseStudy[];
+}) {
     const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
     const allTags = useMemo(() => {
         return Array.from(
-            new Set(initialData.flatMap((study) => study.tags))
+            new Set(initialData.flatMap((study) => study.tags)),
         ).sort();
     }, [initialData]);
 
@@ -38,10 +41,11 @@ export function CaseStudiesClient({ initialData }: { initialData: CaseStudy[] })
                     <div className="flex flex-wrap gap-3">
                         <button
                             onClick={() => setSelectedTag(null)}
-                            className={`px-4 py-2 rounded-md btn-hover ${selectedTag === null
-                                ? 'bg-primary text-primary-foreground'
-                                : 'bg-card border border-border text-fg-70 hover:border-primary/30'
-                                }`}
+                            className={`px-4 py-2 rounded-md btn-hover ${
+                                selectedTag === null
+                                    ? "bg-primary text-primary-foreground"
+                                    : "bg-card border border-border text-fg-70 hover:border-primary/30"
+                            }`}
                         >
                             {filter.allLabel}
                         </button>
@@ -49,10 +53,11 @@ export function CaseStudiesClient({ initialData }: { initialData: CaseStudy[] })
                             <button
                                 key={tag}
                                 onClick={() => setSelectedTag(tag)}
-                                className={`px-4 py-2 rounded-md btn-hover ${selectedTag === tag
-                                    ? 'bg-primary text-primary-foreground'
-                                    : 'bg-card border border-border text-fg-70 hover:border-primary/30'
-                                    }`}
+                                className={`px-4 py-2 rounded-md btn-hover ${
+                                    selectedTag === tag
+                                        ? "bg-primary text-primary-foreground"
+                                        : "bg-card border border-border text-fg-70 hover:border-primary/30"
+                                }`}
                             >
                                 {tag}
                             </button>
@@ -63,9 +68,10 @@ export function CaseStudiesClient({ initialData }: { initialData: CaseStudy[] })
                 <div className="grid md:grid-cols-2 gap-8">
                     {filteredStudies.map((study, index) => {
                         const staggerClass = `stagger-${Math.min(index + 1, 4)}`;
-                        const impact = typeof study.featuredMetric === 'string'
-                            ? study.featuredMetric
-                            : study.featuredMetric?.value ?? '';
+                        const impact =
+                            typeof study.featuredMetric === "string"
+                                ? study.featuredMetric
+                                : (study.featuredMetric?.value ?? "");
 
                         return (
                             <CaseStudyCard

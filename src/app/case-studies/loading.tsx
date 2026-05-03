@@ -1,36 +1,60 @@
 export default function Loading() {
-  return (
-    <div className="py-20 px-6 lg:px-12 max-w-5xl mx-auto animate-pulse">
-      <div className="h-4 w-32 bg-muted rounded mb-12" />
+    return (
+        <div className="py-16 px-6 lg:px-12 animate-pulse">
+            <div className="max-w-7xl mx-auto">
+                {/* Page Header Skeleton */}
+                <div className="mb-16">
+                    <div className="h-12 w-3/4 md:w-1/2 bg-muted rounded mb-6" />
+                    <div className="h-6 w-full md:w-2/3 bg-muted/60 rounded" />
+                </div>
 
-      {/* Header Skeleton */}
-      <div className="space-y-4 mb-16">
-        <div className="h-16 w-3/4 bg-muted rounded" />
-        <div className="h-8 w-1/2 bg-muted rounded" />
-      </div>
+                {/* Filter Bar Skeleton */}
+                <div className="mb-12">
+                    <div className="flex flex-wrap gap-3">
+                        <div className="h-10 w-16 bg-muted rounded-md" />{" "}
+                        {/* "All" button */}
+                        {[...Array(5)].map((_, i) => (
+                            <div
+                                key={i}
+                                className="h-10 w-24 bg-muted/40 rounded-md"
+                            />
+                        ))}
+                    </div>
+                </div>
 
-      {/* Stats Bar Skeleton */}
-      <div className="grid grid-cols-4 gap-8 py-8 border-y border-border mb-16">
-        {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="space-y-2">
-            <div className="h-3 w-16 bg-muted rounded" />
-            <div className="h-5 w-24 bg-muted rounded" />
-          </div>
-        ))}
-      </div>
+                {/* Case Study Grid Skeleton */}
+                <div className="grid md:grid-cols-2 gap-8">
+                    {[...Array(4)].map((_, i) => (
+                        <div
+                            key={i}
+                            className="p-8 rounded-xl border border-border bg-card/30 space-y-6"
+                        >
+                            {/* Header: Title & Subtitle */}
+                            <div className="space-y-3">
+                                <div className="h-7 w-3/4 bg-muted rounded" />
+                                <div className="h-4 w-1/2 bg-muted/60 rounded" />
+                            </div>
 
-      {/* Content Skeleton */}
-      <div className="grid grid-cols-3 gap-16">
-        <div className="col-span-2 space-y-12">
-          <div className="h-8 w-48 bg-muted rounded" />
-          <div className="space-y-4">
-            <div className="h-4 w-full bg-muted rounded" />
-            <div className="h-4 w-full bg-muted rounded" />
-            <div className="h-4 w-2/3 bg-muted rounded" />
-          </div>
+                            {/* Description Body */}
+                            <div className="space-y-2">
+                                <div className="h-4 w-full bg-muted/40 rounded" />
+                                <div className="h-4 w-full bg-muted/40 rounded" />
+                                <div className="h-4 w-2/3 bg-muted/40 rounded" />
+                            </div>
+
+                            {/* Tags & Metric Footer */}
+                            <div className="pt-4 flex justify-between items-end">
+                                <div className="flex gap-2">
+                                    <div className="h-6 w-16 bg-muted/30 rounded-full" />
+                                    <div className="h-6 w-16 bg-muted/30 rounded-full" />
+                                </div>
+                                <div className="h-8 w-20 bg-primary/10 rounded-md" />{" "}
+                                {/* Impact Metric */}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
-        <div className="h-64 bg-card border border-border rounded-xl" />
-      </div>
-    </div>
-  );
+    );
 }

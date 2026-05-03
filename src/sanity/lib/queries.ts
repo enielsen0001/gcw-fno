@@ -5,7 +5,7 @@
 */
 
 // src/sanity/lib/queries.ts
-import { groq } from 'next-sanity'
+import { groq } from "next-sanity";
 
 // Fragment for repeated card data to keep things DRY
 const CASE_STUDY_CARD_FIELDS = groq`
@@ -15,19 +15,19 @@ const CASE_STUDY_CARD_FIELDS = groq`
   cardDescription,
   tags,
   featuredMetric
-`
+`;
 
 export const ALL_CASE_STUDIES_QUERY = groq`
   *[_type == "caseStudy"] | order(_createdAt desc) {
     ${CASE_STUDY_CARD_FIELDS}
   }
-`
+`;
 
-export const CASE_STUDIES_PREVIEW_QUERY= groq`
+export const CASE_STUDIES_PREVIEW_QUERY = groq`
   *[_type == "caseStudy"] | order(_createdAt desc) [0...4] {
     ${CASE_STUDY_CARD_FIELDS}
   }
-`
+`;
 
 export const CASE_STUDY_BY_SLUG_QUERY = groq`
   *[_type == "caseStudy" && slug.current == $slug][0] {
@@ -37,7 +37,7 @@ export const CASE_STUDY_BY_SLUG_QUERY = groq`
        detail
     }
   }
-`
+`;
 
 // For the landing page cards
 export const SERVICE_CARD_QUERY = groq`
@@ -47,7 +47,7 @@ export const SERVICE_CARD_QUERY = groq`
     icon,
     "description": shortDescription
   }
-`
+`;
 
 // For the service detail pages
 export const SERVICE_BY_SLUG_QUERY = groq`
@@ -65,4 +65,4 @@ export const SERVICE_BY_SLUG_QUERY = groq`
       ${CASE_STUDY_CARD_FIELDS}
     }
   }
-`
+`;

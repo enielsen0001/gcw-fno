@@ -2,137 +2,141 @@
 
 /* Fade-Up Reveal (Scroll-Triggered) */
 @keyframes fadeUpReveal {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .fade-up-reveal {
-  animation: fadeUpReveal 0.6s ease-out forwards;
+    animation: fadeUpReveal 0.6s ease-out forwards;
 }
 
 /* Staggered Sequence Delays */
 .stagger-1 {
-  animation-delay: 0s;
+    animation-delay: 0s;
 }
 
 .stagger-2 {
-  animation-delay: 0.1s;
+    animation-delay: 0.1s;
 }
 
 .stagger-3 {
-  animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 
 .stagger-4 {
-  animation-delay: 0.3s;
+    animation-delay: 0.3s;
 }
 
 .stagger-5 {
-  animation-delay: 0.4s;
+    animation-delay: 0.4s;
 }
 
 .stagger-6 {
-  animation-delay: 0.5s;
+    animation-delay: 0.5s;
 }
 
 /* Initial state for animated elements */
 .fade-up-reveal {
-  opacity: 0;
+    opacity: 0;
 }
 
 /* Hover Interaction: Underline Expansion */
 .hover-underline {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .hover-underline::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background-color: #4A7C7E;
-  transition: width 0.3s ease-out, left 0.3s ease-out;
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #4a7c7e;
+    transition:
+        width 0.3s ease-out,
+        left 0.3s ease-out;
 }
 
 .hover-underline:hover::after {
-  width: 100%;
-  left: 0;
+    width: 100%;
+    left: 0;
 }
 
 /* Button hover states - no scale, clean transitions */
 .btn-hover {
-  letter-spacing: 0.025em;
-  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+    letter-spacing: 0.025em;
+    transition:
+        background-color 0.3s ease-out,
+        color 0.3s ease-out;
 }
 
 /* Ghost Button - Light Background */
 .btn-ghost {
-  display: inline-block;
-  padding: 0.625rem 2.5rem;
-  border-radius: 0;
-  font-weight: 500;
-  text-align: center;
-  letter-spacing: 0.025em;
-  background-color: transparent;
-  border: 1.5px solid #4A7C7E;
-  color: #3D4451;
-  transition: all 0.3s ease-out;
+    display: inline-block;
+    padding: 0.625rem 2.5rem;
+    border-radius: 0;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.025em;
+    background-color: transparent;
+    border: 1.5px solid #4a7c7e;
+    color: #3d4451;
+    transition: all 0.3s ease-out;
 }
 
 .btn-ghost:hover {
-  background-color: #4A7C7E;
-  border-color: #3A6264;
-  color: #ffffff;
+    background-color: #4a7c7e;
+    border-color: #3a6264;
+    color: #ffffff;
 }
 
 /* Dark mode */
 .dark .btn-ghost {
-  border-color: #6FA8A3;
-  color: #E8EAED;
+    border-color: #6fa8a3;
+    color: #e8eaed;
 }
 
 .dark .btn-ghost:hover {
-  background-color: #6FA8A3;
-  border-color: #5A8A85;
-  color: #1C1F26;
+    background-color: #6fa8a3;
+    border-color: #5a8a85;
+    color: #1c1f26;
 }
 
 /* Ghost Button - Dark/Colored Background */
 .btn-ghost-on-dark {
-  display: inline-block;
-  padding: 0.625rem 2.5rem;
-  border-radius: 0;
-  font-weight: 500;
-  text-align: center;
-  letter-spacing: 0.025em;
-  background-color: transparent;
-  border: 1.5px solid #ffffff;
-  color: #ffffff;
-  transition: all 0.3s ease-out;
+    display: inline-block;
+    padding: 0.625rem 2.5rem;
+    border-radius: 0;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.025em;
+    background-color: transparent;
+    border: 1.5px solid #ffffff;
+    color: #ffffff;
+    transition: all 0.3s ease-out;
 }
 
 .btn-ghost-on-dark:hover {
-  background-color: #ffffff;
-  border-color: #ffffff;
-  color: #4A7C7E;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #4a7c7e;
 }
 
 /* Prohibit animations */
 .no-animation {
-  animation: none !important;
-  transition: none !important;
+    animation: none !important;
+    transition: none !important;
 }
 
 /* Static Hero - No animations */
 .static-hero {
-  animation: none;
+    animation: none;
 }

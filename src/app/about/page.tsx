@@ -1,14 +1,15 @@
-import Link from 'next/link';
-import { PageHeader } from '@/components/ui/PageHeader';
-import { LinkedinIcon } from '@/components/ui/SocialIcons';
-import { FooterCTA } from '@/components/ui/FooterCTA';
-import { aboutMetadata } from '@/constants/metadata';
-import { aboutContent } from '@/constants/page-content';
+import Link from "next/link";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { LinkedinIcon } from "@/components/ui/SocialIcons";
+import { FooterCTA } from "@/components/ui/FooterCTA";
+import { aboutMetadata } from "@/constants/metadata";
+import { aboutContent } from "@/constants/page-content";
 
 export const metadata = aboutMetadata;
 
 export default function AboutPage() {
-    const { header, tactile, philosophy, competencies, identity, footer } = aboutContent;
+    const { header, tactile, philosophy, competencies, identity, footer } =
+        aboutContent;
     return (
         <div className="relative min-h-screen bg-background">
             {/* Subtle Architectural Texture */}
@@ -16,12 +17,11 @@ export default function AboutPage() {
                 className="absolute inset-0 opacity-[0.03] pointer-events-none"
                 style={{
                     backgroundImage: `radial-gradient(var(--foreground) 0.5px, transparent 0.5px)`,
-                    backgroundSize: '32px 32px'
+                    backgroundSize: "32px 32px",
                 }}
             />
 
             <div className="relative py-24 px-6 lg:px-12 max-w-7xl mx-auto">
-
                 <PageHeader
                     eyebrow={header.eyebrow}
                     title={header.title}
@@ -33,7 +33,8 @@ export default function AboutPage() {
                         <div className="aspect-[4/5] bg-muted/20 border border-border flex items-center justify-center p-12">
                             <div className="text-center">
                                 <p className="text-[10px] uppercase tracking-widest text-muted-foreground italic">
-                                    [ Multimedia Drawing / Technical Blueprint Placeholder ]
+                                    [ Multimedia Drawing / Technical Blueprint
+                                    Placeholder ]
                                 </p>
                             </div>
                         </div>
@@ -44,14 +45,11 @@ export default function AboutPage() {
                         </h2>
                         <div className="space-y-6 text-lg text-fg-70 leading-relaxed font-light">
                             {tactile.description.map((paragraph, index) => (
-                                <p key={index}>
-                                    {paragraph}
-                                </p>
+                                <p key={index}>{paragraph}</p>
                             ))}
                         </div>
                     </div>
                 </div>
-
 
                 <section className="py-24 border-t border-border">
                     <div className="grid lg:grid-cols-2 gap-20">
@@ -60,9 +58,7 @@ export default function AboutPage() {
                                 {philosophy.label}
                             </h3>
                             {philosophy.content.map((paragraph, index) => (
-                                <p key={index}>
-                                    {paragraph}
-                                </p>
+                                <p key={index}>{paragraph}</p>
                             ))}
 
                             <Link
@@ -82,11 +78,8 @@ export default function AboutPage() {
                                 Core Competencies
                             </h4>
                             <div className="space-y-6">
-
                                 {competencies.defaults.map((item, index) => (
-                                    <div
-                                        key={item.principle}
-                                    >
+                                    <div key={item.principle}>
                                         <span className="text-sm font-bold block mb-1">
                                             {item.principle}
                                         </span>
@@ -94,17 +87,17 @@ export default function AboutPage() {
                                             {item.description}
                                         </p>
                                     </div>
-
                                 ))}
                             </div>
                         </div>
                     </div>
                 </section>
 
-
                 <div className="grid lg:grid-cols-12 gap-16 mb-40">
                     <div className="lg:col-span-8 lg:col-start-3 text-center space-y-8 fade-up-reveal">
-                        <h2 className="text-4xl font-light tracking-tight">{identity.title}</h2>
+                        <h2 className="text-4xl font-light tracking-tight">
+                            {identity.title}
+                        </h2>
                         <p className="text-xl text-fg-60 leading-relaxed font-light">
                             {identity.description}
                         </p>
