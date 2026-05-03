@@ -3,6 +3,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import {Poppins} from 'next/font/google';
 import '@/lib/main.js';
+import { baseMetadata } from '@/constants/metadata';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -10,10 +11,7 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
-export const metadata = {
-  title: '',
-  description: '',
-};
+export const metadata = baseMetadata;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

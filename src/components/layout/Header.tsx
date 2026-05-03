@@ -6,13 +6,13 @@ import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { DarkModeToggle } from '@/components/ui/DarkModeToggle';
-// Assuming your logo is in the public folder for Next.js
 import logo from '@/../public/images/gcw-logo.svg';
-import { navLinks } from '@/constants/layout';
+import { headerContent } from '@/constants/page-content';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { navigation } = headerContent;
 
   const isActive = (path: string) => {
     if (path === '/' && pathname === '/') return true;
@@ -35,7 +35,7 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-8">
             <nav className="flex items-center gap-8">
-              {navLinks.map((link) => (
+              {navigation.map((link) => (
                 <Link
                   key={link.path}
                   href={link.path}

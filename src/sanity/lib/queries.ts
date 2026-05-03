@@ -23,6 +23,12 @@ export const ALL_CASE_STUDIES_QUERY = groq`
   }
 `
 
+export const CASE_STUDIES_PREVIEW_QUERY= groq`
+  *[_type == "caseStudy"] | order(_createdAt desc) [0...4] {
+    ${CASE_STUDY_CARD_FIELDS}
+  }
+`
+
 export const CASE_STUDY_BY_SLUG_QUERY = groq`
   *[_type == "caseStudy" && slug.current == $slug][0] {
     ...,

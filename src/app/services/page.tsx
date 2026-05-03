@@ -5,19 +5,25 @@ import { ServiceIcon } from '@/components/ui/ServiceIcon';
 import { ArrowUpRight } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { FooterCTA } from '@/components/ui/FooterCTA';
+import { servicesIndexMetadata } from '@/constants/metadata';
+import { servicesIndexContent } from '@/constants/page-content';
+
+export const metadata = servicesIndexMetadata;
 
 export default async function ServicesPage() {
-  // Fetch the data from Sanity
+
   const services = await sanityFetch<any[]>({
     query: SERVICE_CARD_QUERY
   });
+
+  const { title, description } = servicesIndexContent;
 
   return (
     <div className="py-16 px-6 lg:px-12">
   <div className="max-w-7xl mx-auto">
     <PageHeader
-      title="Stewardship Services"
-      description="Specialized expertise in modernizing and maintaining complex software systems. Each service is designed to balance technical excellence with pragmatic business outcomes."
+      title={title}
+      description={description}
     />
 
     {/* Capability List */}
@@ -57,11 +63,11 @@ export default async function ServicesPage() {
     </div>
 
     <FooterCTA
-      title="Systems designed for the long haul"
-      description="Whether you're paying down technical debt or architecting a new core, I focus on building stable, autonomous environments that grow with your team."
-      buttonText="Discuss Your Architecture"
       variant="solid"
-      buttonHref="/contact"
+      title={servicesIndexContent.footer.title}
+      description={servicesIndexContent.footer.description}
+      buttonText={servicesIndexContent.footer.buttonText}
+      buttonHref={servicesIndexContent.footer.buttonHref}
     />
   </div>
 </div>

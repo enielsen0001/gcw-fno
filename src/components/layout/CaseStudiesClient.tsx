@@ -5,32 +5,32 @@ import { useState, useMemo } from 'react';
 import { CaseStudy } from '@/types/case-study';
 import { CaseStudyCard } from '../ui/CaseStudyCard';
 import { PageHeader } from '../ui/PageHeader';
+import { caseStudiesContent } from '@/constants/page-content';
 
 export function CaseStudiesClient({ initialData }: { initialData: CaseStudy[] }) {
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+    const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
-  const allTags = useMemo(() => {
-    return Array.from(
-      new Set(initialData.flatMap((study) => study.tags))
-    ).sort();
-  }, [initialData]);
+    const allTags = useMemo(() => {
+        return Array.from(
+            new Set(initialData.flatMap((study) => study.tags))
+        ).sort();
+    }, [initialData]);
 
-  const filteredStudies = useMemo(() => {
-    return selectedTag
-      ? initialData.filter((study) => study.tags.includes(selectedTag))
-      : initialData;
-  }, [selectedTag, initialData]);
+    const filteredStudies = useMemo(() => {
+        return selectedTag
+            ? initialData.filter((study) => study.tags.includes(selectedTag))
+            : initialData;
+    }, [selectedTag, initialData]);
 
-  console.log(initialData)
+    const { header, filter } = caseStudiesContent;
 
-  return (
+    return (
         <div className="py-16 px-6 lg:px-12">
             <div className="max-w-7xl mx-auto">
                 <div className="mb-16 fade-up-reveal">
                     <PageHeader
-                        title='Transformation Portfolio'
-                        description='Real-world case studies of architectural modernization and legacy system evolution.
-                        Each transformation demonstrates strategic planning, incremental execution, and measurable business impact.'
+                        title={header.title}
+                        description={header.description}
                     />
                 </div>
 
@@ -39,19 +39,19 @@ export function CaseStudiesClient({ initialData }: { initialData: CaseStudy[] })
                         <button
                             onClick={() => setSelectedTag(null)}
                             className={`px-4 py-2 rounded-md btn-hover ${selectedTag === null
-                                    ? 'bg-primary text-primary-foreground'
-                                    : 'bg-card border border-border text-fg-70 hover:border-primary/30'
+                                ? 'bg-primary text-primary-foreground'
+                                : 'bg-card border border-border text-fg-70 hover:border-primary/30'
                                 }`}
                         >
-                            All
+                            {filter.allLabel}
                         </button>
                         {allTags.map((tag) => (
                             <button
                                 key={tag}
                                 onClick={() => setSelectedTag(tag)}
                                 className={`px-4 py-2 rounded-md btn-hover ${selectedTag === tag
-                                        ? 'bg-primary text-primary-foreground'
-                                        : 'bg-card border border-border text-fg-70 hover:border-primary/30'
+                                    ? 'bg-primary text-primary-foreground'
+                                    : 'bg-card border border-border text-fg-70 hover:border-primary/30'
                                     }`}
                             >
                                 {tag}

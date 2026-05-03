@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { SERVICE_BY_SLUG_QUERY } from '@/sanity/lib/queries';
@@ -7,6 +6,13 @@ import Timeline from '@/components/ui/Timeline';
 import { FeaturedCaseStudies } from '@/components/ui/FeaturedCaseStudies';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { FooterCTA } from '@/components/ui/FooterCTA';
+import { Metadata } from 'next';
+import { serviceDetailMetadata } from '@/constants/metadata';
+import { serviceDetailContent } from '@/constants/page-content';
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    return serviceDetailMetadata({ params: Promise.resolve(params) });
+}
 
 export default async function ServiceDetailPage({ params }: { params: { slug: string } }) {
     const { slug } = await params;
@@ -20,6 +26,8 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
         notFound();
     }
 
+    const { sections, navigation, footerCTA } = serviceDetailContent
+
     return (
         <div className="py-16 px-6 lg:px-12">
             <div className="max-w-6xl mx-auto">
@@ -27,7 +35,7 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
                 <PageHeader
                     title={service.title}
                     description={service.shortDescription}
-                    backLink={{ href: '/services', label: 'Services' }}
+                    backLink={{ href: navigation.backLink, label: navigation.linkText }}
                     icon={service.icon}
                 />
 
@@ -35,7 +43,7 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
                 <section className="grid lg:grid-cols-3 gap-16 mb-32">
                     <div className="lg:col-span-1">
                         <h2 className="text-sm uppercase tracking-[0.3em] text-primary font-semibold sticky top-24">
-                            Capabilities
+                            {sections.capabilities.title}
                         </h2>
                     </div>
                     <div className="lg:col-span-2 space-y-12">
@@ -57,7 +65,7 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
                 <section className="grid lg:grid-cols-3 gap-16 mb-32 py-24 bg-card/30 -mx-6 px-6 lg:-mx-12 lg:px-12 rounded-xl">
                     <div className="lg:col-span-1">
                         <h2 className="text-sm uppercase tracking-[0.3em] text-primary font-semibold">
-                            Addressing Your Challenges
+                            {sections.solutions.title}
                         </h2>
                     </div>
                     <div className="lg:col-span-2">
@@ -79,7 +87,7 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
                 <section className="grid lg:grid-cols-3 gap-16 mb-32">
                     <div className="lg:col-span-1">
                         <h2 className="text-sm uppercase tracking-[0.3em] text-primary font-semibold">
-                            Engagement Workflow
+                            {sections.process.title}
                         </h2>
                     </div>
                     <div className="lg:col-span-2">
@@ -90,12 +98,12 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
                 <FeaturedCaseStudies relatedCaseStudies={service.featuredCaseStudies} />
 
                 <FooterCTA
-  title={service.footerCTA?.title || "Engineering with integrity"}
-  description={service.footerCTA?.description || "I specialize in bridging the gap between complex technical debt and high-performance business goals. Let's ensure your technical foundation is as resilient as your vision."}
-  buttonText={service.footerCTA?.buttonText || "Discuss Your Project"}
-  variant={service.footerCTA?.variant || 'solid'}
-  buttonHref="/contact"
-/>
+                    title={service.footerCTA?.title || footerCTA.defaultTitle}
+                    description={service.footerCTA?.description || footerCTA.defaultDescription}
+                    buttonText={service.footerCTA?.buttonText || footerCTA.defaultButtonText}
+                    variant={service.footerCTA?.variant || footerCTA.defaultVariant}
+                    buttonHref={service.footerCTA?.buttonHref || footerCTA.defaultButtonHref}
+                />
 
             </div>
         </div>

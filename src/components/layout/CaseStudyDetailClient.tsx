@@ -1,12 +1,12 @@
 'use client';
 
-import Link from 'next/link';
 import { CaseStudy, RelatedLink } from '@/types/case-study';
-import { ArrowLeft } from 'lucide-react';
 import { FooterCTA } from '../ui/FooterCTA';
 import { PageHeader } from '../ui/PageHeader';
+import { caseStudyDetailsContent } from '@/constants/page-content';
 
 export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
+    const { navigation, sections, sidebar, footerDefaults } = caseStudyDetailsContent;
     return (
         <article className="min-h-screen py-16 px-6 lg:px-12 selection:bg-primary selection:text-primary-foreground">
             <div className="max-w-7xl mx-auto">
@@ -14,7 +14,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                     title={study.title}
                     subtitle={study.subtitle}
                     tags={study.tags}
-                    backLink={{ href: '/case-studies', label: 'Back to Portfolio' }}
+                    backLink={{ href: navigation.backHref, label: navigation.backLabel }}
                 />
 
 
@@ -24,13 +24,13 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                         {/* Executive Summary: Two-Column Clarity */}
                         <section className="grid md:grid-cols-2 gap-16 border-t border-border pt-12 fade-up-reveal">
                             <div className="space-y-6">
-                                <h3 className="text-xs uppercase tracking-[0.3em] text-primary-60 font-semibold">The Challenge</h3>
+                                <h3 className="text-xs uppercase tracking-[0.3em] text-primary-60 font-semibold">The {sections.challenge.label}</h3>
                                 <p className="text-fg-80 text-xl font-light leading-relaxed italic border-l-2 border-primary/10 pl-6">
                                     {study.executiveSummary.challenge}
                                 </p>
                             </div>
                             <div className="space-y-6">
-                                <h3 className="text-xs uppercase tracking-[0.3em] text-primary-60 font-semibold">The Approach</h3>
+                                <h3 className="text-xs uppercase tracking-[0.3em] text-primary-60 font-semibold">The {sections.approach.label}</h3>
                                 <p className="text-fg-80 text-xl font-light leading-relaxed">
                                     {study.executiveSummary.approach}
                                 </p>
@@ -39,7 +39,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
 
                         {/* Key Decisions: New Strategic Section */}
                         <section className="space-y-12 fade-up-reveal">
-                            <h2 className="text-4xl">Pivotal Decisions</h2>
+                            <h2 className="text-4xl">{sections.decisions.title}</h2>
                             <div className="grid md:grid-cols-2 gap-8">
                                 {study.keyDecisions?.map((decision: any, index: number) => (
                                     <div key={index} className="p-8 border border-border bg-card/20 rounded-lg group hover:border-primary/30 transition-colors">
@@ -57,7 +57,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
 
                         {/* Technical Implementation Timeline */}
                         <section className="space-y-16 fade-up-reveal">
-                            <h2 className="text-4xl">Technical Execution</h2>
+                            <h2 className="text-4xl">{sections.execution.title}</h2>
                             <div className="relative">
                                 {study.solution.technicalImplementation.map((phase: any, index: number) => (
                                     <div key={index} className="group relative pl-16 pb-20 border-l border-border last:border-l-0 last:pb-0">
@@ -77,7 +77,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                         {Array.isArray(study.outcomes) && study.outcomes.length > 0 && (
                         <section className="bg-card border border-border p-12 lg:p-16 rounded-xl fade-up-reveal">
                             <h3 className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-16">
-                            Key Outcomes
+                            {sections.outcomes.label}
                             </h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
                             {study.outcomes.map((outcome: any, index: number) => (
@@ -100,7 +100,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                     <aside className="lg:w-80 space-y-8 fade-up-reveal">
                         <div className="sticky top-12 space-y-1 border-t border-border pt-12">
                             <div className="pb-8">
-                                <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-3">Context</label>
+                                <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-3">{sidebar.contextLabel}</label>
                                 <div className="space-y-1">
                                     <p className="text-lg font-light">{study.context.industry}</p>
                                     <p className="text-xs text-muted-foreground italic">{study.context.timeline}</p>
@@ -108,7 +108,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                             </div>
 
                             <div className="pb-8">
-                                <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-4">Architecture</label>
+                                <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-4">{sidebar.architectureLabel}</label>
                                 <div className="flex flex-wrap gap-2">
                                     {study.context.technologies.map((tech: string) => (
                                         <span key={tech} className="px-2 py-1 bg-muted/20 text-fg-70 text-[10px] tracking-wider rounded-sm border border-border/30">
@@ -120,7 +120,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
 
                             {study.relevantLinks && (
                                 <div className="pt-8 border-t border-border/50">
-                                    <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-4">Artifacts</label>
+                                    <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-4">{sidebar.artifactsLabel}</label>
                                     <div className="space-y-4">
                                         {study.relevantLinks.map((link: RelatedLink, index: number) => (
                                             <a key={index} href={link.url} className="group flex items-center justify-between text-sm text-fg-60 hover:text-primary transition-colors">
@@ -137,9 +137,9 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
 
                 <FooterCTA
                     variant="outline"
-                    title={study.footerCTA?.title || "Inspired by this transformation?"}
-                    description={study.footerCTA?.description || "If this case study resonated with your challenges, let's discuss how we can achieve similar results for your organization."}
-                    buttonText="Start a Conversation"
+                    title={study.footerCTA?.title || footerDefaults.title}
+                    description={study.footerCTA?.description || footerDefaults.description}
+                    buttonText={study.footerCTA?.buttonText || footerDefaults.buttonText}
                     />
 
             </div>
