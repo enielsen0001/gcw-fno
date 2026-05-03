@@ -16,7 +16,7 @@ export const baseMetadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: 'GrayCoast',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }]
+    images: [{ url: '/images/gcw-og-image.png', width: 1424, height: 752, alt: 'Gray Coast Web' }],
   }
 };
 
