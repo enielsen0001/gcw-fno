@@ -1,3 +1,5 @@
+import { view } from "motion/react-client";
+
 export const homeContent = {
     hero: {
         heading: "Modernizing Legacy Systems for Modern Growth",
@@ -59,6 +61,16 @@ export const serviceDetailContent = {
     },
 };
 
+export const featuredCaseStudiesContent = {// service detail page
+    eyebrow: "Transformation Portfolio",
+    title: "See This Service in Action",
+    viewAllLink: {
+        text: "View All Work",
+        href: "/case-studies",
+    },
+    cardLinkText: "Read Case Study",
+};
+
 export const caseStudiesContent = {
     header: {
         title: "Transformation Portfolio",
@@ -107,7 +119,6 @@ export const caseStudyDetailsContent = {
 
 export const aboutContent = {
     header: {
-        eyebrow: "The Philosophy",
         title: "Stack Agnostic. Structure Obsessed.",
         subtitle: "Building resilient systems with a timeless approach.",
     },
@@ -290,3 +301,5 @@ export const footerContent = {
         tagline: "Architectural Modernization & Legacy System Stewardship",
     },
 };
+
+

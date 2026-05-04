@@ -52,7 +52,7 @@ export function Header() {
                                     className={`hover-underline transition-colors ${
                                         isActive(link.path)
                                             ? "text-foreground"
-                                            : "text-fg-70 hover:text-foreground"
+                                        : "text-fg-80 hover:text-foreground"
                                     }`}
                                 >
                                     {link.label}
@@ -81,7 +81,7 @@ export function Header() {
                 {mobileMenuOpen && (
                     <div className="md:hidden py-6 border-t border-border bg-background">
                         <nav className="flex flex-col gap-4">
-                            {navLinks.map((link) => (
+                            {navigation.map((link) => (
                                 <Link
                                     key={link.path}
                                     href={link.path}

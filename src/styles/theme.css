@@ -3,7 +3,8 @@
 :root {
     --font-size: 16px;
     --background: #f7f8f9;
-    --foreground: #3d4451;
+    /* --foreground: #3d4451; */
+        --foreground: #374151;
     --card: #ffffff;
     --card-foreground: #3d4451;
     --popover: #ffffff;
@@ -43,17 +44,10 @@
     --font-weight-light: 300; /* Narrative & Body */
     --font-weight-medium: 500; /* Functional UI */
     --font-weight-bold: 700;
-    /* Safe for body text (Passes 4.5:1) */
-    --text-foreground-80: #646974;
 
-    /* Borderline: Safe for large text (Passes 3:1), but fails small text */
-    --text-foreground-70: #777c85;
-    --text-foreground-60: #8b8f97;
+    --text-foreground-80: #525B6A;
+        --text-foreground-70: #71717A;
 
-    /* Decorative only: Do not use for informative text */
-    --text-foreground-50: #9ea2a8;
-    --text-foreground-40: #b1b5ba;
-    --text-foreground-30: #c5c8cb;
     --text-foreground-20: #d8dadc; /* Structural Headlines */
 
     --primary-80: #5b8f91;
@@ -62,7 +56,7 @@
     --primary-50: #93b1b2;
     --primary-40: #a5bcbd;
     --primary-30: #b8c7c8;
-    --primary-20: #ccd3d4;
+    --primary-20: #F7F8F8;
 }
 
 .dark {
@@ -109,6 +103,7 @@
     --text-foreground-60: #72757c;
     --text-foreground-50: #828992;
     --text-foreground-40: #6e757e;
+
 
     /* UI Elements / Secondary Text (Use with caution) */
     --text-foreground-30: #59626b;
@@ -244,17 +239,8 @@
     .text-fg-70 {
         color: var(--text-foreground-70);
     }
-    .text-fg-60 {
-        color: var(--text-foreground-60);
-    }
-    .text-fg-50 {
-        color: var(--text-foreground-50);
-    }
-    .text-fg-40 {
-        color: var(--text-foreground-40);
-    }
-    .text-fg-30 {
-        color: var(--text-foreground-30);
+    .text-fg-20 {
+        color: var(--text-foreground-20);
     }
 }
 
@@ -305,6 +291,10 @@
             stroke;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms; /* transition-colors */
+    }
+
+    .btn-ghost.mist:not(:hover) {
+        background-color: rgba(255, 255, 255, 0.3)!important;
     }
 
     .btn-ghost:hover {

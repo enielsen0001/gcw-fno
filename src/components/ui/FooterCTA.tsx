@@ -42,8 +42,8 @@ export function FooterCTA({
                     className={cn(
                         "mb-12 max-w-xl mx-auto font-light",
                         variant === "solid"
-                            ? "text-primary-foreground/80"
-                            : "text-fg-60",
+                            ? "text-primary-20"
+                            : "text-fg-70",
                     )}
                 >
                     {description}

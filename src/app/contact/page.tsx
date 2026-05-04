@@ -64,7 +64,7 @@ export default function ContactPage() {
                                         <p className="text-foreground font-medium group-hover:text-primary transition-colors mb-0">
                                             {channel.label}
                                         </p>
-                                        <p className="text-sm text-fg-60 mb-0">
+                                        <p className="text-sm text-fg-70 mb-0">
                                             {channel.description}
                                         </p>
                                     </div>
@@ -78,7 +78,7 @@ export default function ContactPage() {
                             <h3 className="text-xl mb-4 text-foreground font-semibold">
                                 {sidebar.consultation.title}
                             </h3>
-                            <p className="text-fg-60 leading-relaxed mb-4">
+                            <p className="text-fg-70 leading-relaxed mb-4">
                                 {sidebar.consultation.text}
                             </p>
                             <ul className="space-y-3">
@@ -86,7 +86,7 @@ export default function ContactPage() {
                                     (item, index) => (
                                         <li
                                             key={index}
-                                            className="flex gap-2 text-fg-60"
+                                            className="flex gap-2 text-fg-70"
                                         >
                                             <span className="text-primary ">
                                                 •
@@ -102,14 +102,14 @@ export default function ContactPage() {
                             <h3 className="text-xl mb-4 text-foreground font-semibold">
                                 {sidebar.intake.title}
                             </h3>
-                            <p className="text-fg-60 leading-relaxed mb-4">
+                            <p className="text-fg-70 leading-relaxed mb-4">
                                 {sidebar.intake.text}
                             </p>
                             <ul className="space-y-3">
                                 {sidebar.intake.items.map((item, index) => (
                                     <li
                                         key={index}
-                                        className="flex gap-2 text-fg-60"
+                                        className="flex gap-2 text-fg-70"
                                     >
                                         <span className="text-primary">•</span>
                                         <span>{item}</span>
@@ -126,7 +126,7 @@ export default function ContactPage() {
                     {footer.text.map((paragraph, index) => (
                         <p
                             key={index}
-                            className="text-fg-60 mb-6 max-w-xl mx-auto font-light"
+                            className="text-fg-80 mb-6 max-w-xl mx-auto font-light"
                         >
                             {paragraph}
                         </p>

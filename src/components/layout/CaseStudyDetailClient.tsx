@@ -4,6 +4,8 @@ import { CaseStudy, RelatedLink } from "@/types/case-study";
 import { FooterCTA } from "../ui/FooterCTA";
 import { PageHeader } from "../ui/PageHeader";
 import { caseStudyDetailsContent } from "@/constants/page-content";
+import { ArrowUp, ArrowUpRight, Badge } from "lucide-react";
+import InfoBadge from "../ui/InfoBadge";
 
 export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
     const { navigation, sections, sidebar, footerDefaults } =
@@ -26,16 +28,16 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                         {/* Executive Summary: Two-Column Clarity */}
                         <section className="grid md:grid-cols-2 gap-16 border-t border-border pt-12 fade-up-reveal">
                             <div className="space-y-6">
-                                <h3 className="text-xs uppercase tracking-[0.3em] text-primary-60 font-semibold">
-                                    The {sections.challenge.label}
+                                <h3 className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">
+                                    {sections.challenge.label}
                                 </h3>
                                 <p className="text-fg-80 text-xl font-light leading-relaxed italic border-l-2 border-primary/10 pl-6">
                                     {study.executiveSummary.challenge}
                                 </p>
                             </div>
                             <div className="space-y-6">
-                                <h3 className="text-xs uppercase tracking-[0.3em] text-primary-60 font-semibold">
-                                    The {sections.approach.label}
+                                <h3 className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">
+                                    {sections.approach.label}
                                 </h3>
                                 <p className="text-fg-80 text-xl font-light leading-relaxed">
                                     {study.executiveSummary.approach}
@@ -56,7 +58,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                                             className="p-8 border border-border bg-card/20 rounded-lg group hover:border-primary/30 transition-colors"
                                         >
                                             <div className="flex gap-4 mb-4">
-                                                <span className="text-xs font-mono text-primary-40">
+                                                <span className="text-xs font-mono text-primary">
                                                     [
                                                     {String(index + 1).padStart(
                                                         2,
@@ -68,7 +70,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                                                     {decision.title}
                                                 </h4>
                                             </div>
-                                            <p className="text-fg-60 text-sm leading-relaxed">
+                                            <p className="text-fg-70 text-sm leading-relaxed">
                                                 {decision.rationale}
                                             </p>
                                         </div>
@@ -98,7 +100,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                                             <h4 className="text-2xl mb-4 group-hover:text-primary transition-colors">
                                                 {phase.phase}
                                             </h4>
-                                            <p className="text-fg-60 text-lg max-w-2xl font-light">
+                                            <p className="text-fg-70 text-lg max-w-2xl font-light">
                                                 {phase.details}
                                             </p>
                                         </div>
@@ -125,7 +127,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                                                     <h5 className="text-sm font-semibold uppercase tracking-wider">
                                                         {outcome.label}
                                                     </h5>
-                                                    <p className="text-fg-60 font-light leading-relaxed">
+                                                    <p className="text-fg-70 font-light leading-relaxed">
                                                         {outcome.description}
                                                     </p>
                                                 </div>
@@ -140,7 +142,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                     <aside className="lg:w-80 space-y-8 fade-up-reveal">
                         <div className="sticky top-12 space-y-1 border-t border-border pt-12">
                             <div className="pb-8">
-                                <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-3">
+                                <label className="text-[10px] uppercase tracking-[0.4em] text-primary block mb-3">
                                     {sidebar.contextLabel}
                                 </label>
                                 <div className="space-y-1">
@@ -154,18 +156,18 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                             </div>
 
                             <div className="pb-8">
-                                <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-4">
+                                <label className="text-[10px] uppercase tracking-[0.4em] text-primary block mb-4">
                                     {sidebar.architectureLabel}
                                 </label>
                                 <div className="flex flex-wrap gap-2">
                                     {study.context.technologies.map(
                                         (tech: string) => (
-                                            <span
+                                            <InfoBadge
+                                                variant="subtle"
                                                 key={tech}
-                                                className="px-2 py-1 bg-muted/20 text-fg-70 text-[10px] tracking-wider rounded-sm border border-border/30"
                                             >
                                                 {tech}
-                                            </span>
+                                            </InfoBadge>
                                         ),
                                     )}
                                 </div>
@@ -173,7 +175,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
 
                             {study.relevantLinks && (
                                 <div className="pt-8 border-t border-border/50">
-                                    <label className="text-[10px] uppercase tracking-[0.4em] text-primary-50 block mb-4">
+                                    <label className="text-[10px] uppercase tracking-[0.4em] text-primary block mb-4">
                                         {sidebar.artifactsLabel}
                                     </label>
                                     <div className="space-y-4">
@@ -185,14 +187,12 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                                                 <a
                                                     key={index}
                                                     href={link.url}
-                                                    className="group flex items-center justify-between text-sm text-fg-60 hover:text-primary transition-colors"
+                                                    className="group flex items-center text-sm text-fg-70 gap-2 hover:text-primary transition-colors"
                                                 >
                                                     <span className="border-b border-transparent group-hover:border-primary/30">
                                                         {link.label}
                                                     </span>
-                                                    <span className="text-xs">
-                                                        ↗
-                                                    </span>
+                                                    <ArrowUpRight className="transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] relative opacity-0 group-hover:translate-x-[5px] group-hover:opacity-100" width={16} height={16} />
                                                 </a>
                                             ),
                                         )}

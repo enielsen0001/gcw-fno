@@ -49,7 +49,7 @@ export function CaseStudyCard({
                 `}
                     />
                 </div>
-                <p className="text-fg-60 uppercase leading-tight">{subtitle}</p>
+                <p className="text-fg-70 uppercase leading-tight">{subtitle}</p>
             </div>
 
             <p className="text-fg-70 mb-6 ">{description}</p>

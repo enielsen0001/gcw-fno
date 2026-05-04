@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Service } from "@/types/service";
 import { CaseStudy } from "@/types/case-study";
 import { ArrowRight } from "lucide-react";
+import { featuredCaseStudiesContent } from "@/constants/page-content";
 
 interface ServiceDetailProps {
     service: Service;
@@ -23,19 +24,19 @@ export function FeaturedCaseStudies({
             <div className="space-y-16">
                 <header className="flex flex-col md:flex-row justify-between items-end gap-8">
                     <div className="max-w-2xl space-y-6">
-                        <h3 className="text-xs uppercase tracking-[0.4em] text-primary-60 font-semibold">
-                            Transformation Portfolio
+                        <h3 className="text-xs uppercase tracking-[0.4em] text-primary font-semibold">
+                            {featuredCaseStudiesContent.eyebrow}
                         </h3>
                         <h2 className="text-4xl lg:text-5xl font-light">
-                            See this service in action.
+                            {featuredCaseStudiesContent.title}
                         </h2>
                     </div>
 
                     <Link
-                        href="/case-studies"
+                        href={featuredCaseStudiesContent.viewAllLink.href}
                         className="group flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-fg-40 hover:text-primary transition-colors"
                     >
-                        View All Work
+                        {featuredCaseStudiesContent.viewAllLink.text}
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                 </header>
@@ -66,13 +67,13 @@ export function FeaturedCaseStudies({
                                     <h4 className="text-xl font-medium group-hover:text-primary transition-colors">
                                         {study.title}
                                     </h4>
-                                    <p className="text-sm text-fg-60 line-clamp-3 font-light leading-relaxed">
+                                    <p className="text-sm text-fg-70 line-clamp-3 font-light leading-relaxed">
                                         {study.cardDescription}
                                     </p>
                                 </div>
 
                                 <div className="pt-4 flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-bold text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                                    Read Case Study{" "}
+                                    {featuredCaseStudiesContent.cardLinkText}{" "}
                                     <ArrowRight className="w-3 h-3" />
                                 </div>
                             </div>

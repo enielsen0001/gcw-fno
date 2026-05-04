@@ -54,7 +54,7 @@ export default function AboutPage() {
                 <section className="py-24 border-t border-border">
                     <div className="grid lg:grid-cols-2 gap-20">
                         <div className="space-y-8 text-lg font-light text-fg-80 leading-relaxed">
-                            <h3 className="text-xs uppercase tracking-[0.4em] text-primary-60 font-semibold">
+                            <h3 className="text-xs uppercase tracking-[0.4em] text-primary font-semibold">
                                 {philosophy.label}
                             </h3>
                             {philosophy.content.map((paragraph, index) => (
@@ -65,7 +65,7 @@ export default function AboutPage() {
                                 href={philosophy.linkedinHref}
                                 className="group inline-flex items-center gap-3 text-fg-50 hover:text-primary transition-colors mt-8"
                             >
-                                <span className="text-[10px] uppercase tracking-[0.3em] font-bold">
+                                <span className="text-[12px] uppercase tracking-[0.3em] font-bold">
                                     {philosophy.linkedinLabel}
                                 </span>
                                 <div className="h-px w-8 bg-border group-hover:w-12 group-hover:bg-primary transition-all" />
@@ -74,7 +74,7 @@ export default function AboutPage() {
                         </div>
 
                         <div className="bg-card/30 border border-border p-12 rounded-xl">
-                            <h4 className="text-xs uppercase tracking-[0.4em] text-primary-60 font-semibold mb-8">
+                            <h4 className="text-xs uppercase tracking-[0.4em] text-primary font-semibold mb-8">
                                 Core Competencies
                             </h4>
                             <div className="space-y-6">
@@ -83,7 +83,7 @@ export default function AboutPage() {
                                         <span className="text-sm font-bold block mb-1">
                                             {item.principle}
                                         </span>
-                                        <p className="text-sm text-fg-60">
+                                        <p className="text-sm text-fg-70">
                                             {item.description}
                                         </p>
                                     </div>
@@ -98,7 +98,7 @@ export default function AboutPage() {
                         <h2 className="text-4xl font-light tracking-tight">
                             {identity.title}
                         </h2>
-                        <p className="text-xl text-fg-60 leading-relaxed font-light">
+                        <p className="text-xl text-fg-70 leading-relaxed font-light">
                             {identity.description}
                         </p>
                     </div>

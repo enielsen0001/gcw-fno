@@ -41,7 +41,7 @@ function Hero() {
                     <p className="text-xl md:text-2xl text-fg-80 mb-12 max-w-2xl leading-relaxed">
                         {hero.subheading}
                     </p>
-                    <Link href={hero.ctaLink} className="btn-ghost">
+                    <Link href={hero.ctaLink} className="btn-ghost mist">
                         {hero.cta}
                     </Link>
                 </div>
@@ -70,7 +70,7 @@ export default async function HomePage() {
                         <h2 className="text-4xl md:text-5xl">
                             {servicesContent.title}
                         </h2>
-                        <p className="text-xl text-fg-60 max-w-3xl">
+                        <p className="text-xl text-fg-70 max-w-3xl">
                             {servicesContent.description}
                         </p>
                     </header>

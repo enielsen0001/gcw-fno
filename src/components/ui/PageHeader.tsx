@@ -37,21 +37,21 @@ export function PageHeader({
         <header className={cn("mb-20 lg:mb-32 fade-up-reveal", className)}>
             {/* Top Meta Row */}
             {(backLink || (tags && tags.length > 0)) && (
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+                <div className="flex flex-col gap-6 ">
                     {backLink && (
                         <Link
                             href={backLink.href}
-                            className="group inline-flex items-center gap-3 text-fg-80 hover:text-primary transition-colors"
+                            className="group inline-flex items-center gap-3 text-fg-80 hover:text-primary transition-colors mb-12"
                         >
                             <Icons.ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                            <span className="text-[10px] uppercase tracking-[0.3em] font-bold">
+                            <span className="text-[12px] uppercase tracking-[0.3em] font-bold">
                                 {backLink.label}
                             </span>
                         </Link>
                     )}
 
                     {tags && tags.length > 0 && (
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2 mb-10">
                             {tags.map((tag) => (
                                 <span
                                     key={tag}
@@ -83,23 +83,23 @@ export function PageHeader({
                             )}
 
                             {eyebrow && (
-                                <span className="text-primary text-[12px] uppercase tracking-[0.4em] font-bold block">
+                                <span className="text-primary text-[14px] uppercase tracking-[0.4em] font-bold block mb-10">
                                     {eyebrow}
                                 </span>
                             )}
-                            <h1 className="text-5xl lg:text-8xl font-light leading-[1.05] tracking-tight text-foreground">
+                            <h1 className="text-5xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-foreground">
                                 {title}
                             </h1>
                         </div>
 
                         {subtitle && (
-                            <span className="text-2xl text-fg-60 max-w-4xl leading-relaxed">
+                            <span className="text-xl lg:text-2xl text-fg-70 font-medium max-w-4xl leading-relaxed">
                                 {subtitle}
                             </span>
                         )}
 
                         {description && (
-                            <p className="text-xl lg:text-2xl text-fg-60 max-w-3xl font-light leading-relaxed">
+                            <p className="text-xl lg:text-xl text-fg-70 max-w-3xl font-light leading-relaxed">
                                 {description}
                             </p>
                         )}
@@ -108,7 +108,7 @@ export function PageHeader({
             </div>
 
             {/* Decorative Anchor */}
-            <div className="h-px w-24 bg-primary/20 mt-16" />
+            {/* <div className="h-px w-[25%] bg-primary/20 mt-16" /> */}
         </header>
     );
 }
