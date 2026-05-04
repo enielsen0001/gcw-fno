@@ -5,6 +5,7 @@ import { CaseStudy } from "@/types/case-study";
 import { CaseStudyCard } from "../ui/CaseStudyCard";
 import { PageHeader } from "../ui/PageHeader";
 import { caseStudiesContent } from "@/constants/page-content";
+import { s } from "motion/react-client";
 
 export function CaseStudiesClient({
     initialData,
@@ -71,18 +72,13 @@ export function CaseStudiesClient({
                         const impact =
                             typeof study.featuredMetric === "string"
                                 ? study.featuredMetric
-                                : (study.featuredMetric?.value ?? "");
+                                : (study.featuredMetric ?? "");
 
                         return (
                             <CaseStudyCard
-                                key={study.slug}
-                                slug={study.slug}
-                                title={study.title}
-                                subtitle={study.subtitle}
-                                description={study.cardDescription}
-                                tags={study.tags}
-                                impact={impact}
-                                index={0}
+                                key={study._id}
+                                study={study}
+                                index={index}
                             />
                         );
                     })}

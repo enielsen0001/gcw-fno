@@ -242,6 +242,35 @@
     .text-fg-20 {
         color: var(--text-foreground-20);
     }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* 2. The background of the scrollbar track */
+        ::-webkit-scrollbar-track {
+            background: var(--background);
+        }
+
+        /* 3. The draggable handle */
+        ::-webkit-scrollbar-thumb {
+            background: color-mix(in srgb, var(--primary), transparent 20%);
+            border-radius: 10px;
+            border: 2px solid var(--background);
+            /* Creates a "floating" effect */
+        }
+
+        /* 4. Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+            /* Matches the curve of your cards/buttons */
+        }
 }
 
 .text-primary-80 {

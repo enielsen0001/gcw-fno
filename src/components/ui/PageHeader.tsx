@@ -26,7 +26,7 @@ export function PageHeader({
     description,
     backLink,
     tags,
-    iconName, // Destructure and capitalize for component usage
+    iconName,
     className,
 }: PageHeaderProps) {
     const IconComponent = iconName

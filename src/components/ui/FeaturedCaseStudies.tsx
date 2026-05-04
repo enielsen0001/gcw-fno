@@ -53,12 +53,9 @@ export function FeaturedCaseStudies({
 
                             <div className="relative z-10 space-y-6">
                                 <div className="flex justify-between items-start">
-                                    {study.featuredMetric && (
+                                    {study.featuredMetric && typeof study.featuredMetric === "string" && (
                                         <span className="text-primary font-mono text-sm">
-                                            {typeof study.featuredMetric ===
-                                            "string"
-                                                ? study.featuredMetric
-                                                : study.featuredMetric.value}
+                                            {study.featuredMetric}
                                         </span>
                                     )}
                                 </div>

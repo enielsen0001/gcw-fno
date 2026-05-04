@@ -46,7 +46,7 @@ export default async function ServiceDetailPage({
                         href: navigation.backLink,
                         label: navigation.linkText,
                     }}
-                    icon={service.icon}
+                    iconName={service.icon}
                 />
 
                 {/* 03. The Decoder Section: Jargon vs. Value */}

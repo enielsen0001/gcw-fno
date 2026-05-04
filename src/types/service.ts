@@ -31,9 +31,7 @@ export interface Service {
     _id: string;
     _type: 'service';
     title: string;
-    slug: {
-        current: string;
-    };
+    slug: string;
     icon: string; // Lucide icon name
     cardDescription: string;
     shortDescription: string;

@@ -23,7 +23,6 @@ export default function AboutPage() {
 
             <div className="relative py-24 px-6 lg:px-12 max-w-7xl mx-auto">
                 <PageHeader
-                    eyebrow={header.eyebrow}
                     title={header.title}
                     subtitle={header.subtitle}
                 />

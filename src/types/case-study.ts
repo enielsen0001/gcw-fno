@@ -38,9 +38,7 @@ export interface CaseStudy {
     _id: string;
     _type: 'caseStudy';
     title: string;
-    slug: {
-        current: string;
-    };
+    slug: string;
     subtitle: string;
     tags: string[];
     cardDescription: string;

@@ -1,4 +1,3 @@
-import { footerLinksCol1, footerLinksCol2 } from "@/constants/layout";
 import { footerContent } from "@/constants/page-content";
 import Link from "next/link";
 

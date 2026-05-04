@@ -1,6 +1,6 @@
 "use client";
 
-import { CaseStudy, RelatedLink } from "@/types/case-study";
+import { CaseStudy, RelevantLink } from "@/types/case-study";
 import { FooterCTA } from "../ui/FooterCTA";
 import { PageHeader } from "../ui/PageHeader";
 import { caseStudyDetailsContent } from "@/constants/page-content";
@@ -51,7 +51,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                                 {sections.decisions.title}
                             </h2>
                             <div className="grid md:grid-cols-2 gap-8">
-                                {study.keyDecisions?.map(
+                                {study.solution?.keyDecisions?.map(
                                     (decision: any, index: number) => (
                                         <div
                                             key={index}
@@ -181,7 +181,7 @@ export function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                                     <div className="space-y-4">
                                         {study.relevantLinks.map(
                                             (
-                                                link: RelatedLink,
+                                                link: RelevantLink,
                                                 index: number,
                                             ) => (
                                                 <a
