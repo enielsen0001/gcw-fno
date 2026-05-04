@@ -1,26 +1,18 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import InfoBadge from "./InfoBadge";
+import { CaseStudy } from "@/types/case-study";
 
 interface CaseStudyProps {
-    slug: string;
-    title: string;
-    subtitle: string;
-    description: string;
-    tags: string[];
-    impact: string;
-    index: number;
+    study: CaseStudy,
+    index: number
 }
 
 export function CaseStudyCard({
-    slug,
-    title,
-    subtitle,
-    description,
-    tags,
-    impact,
     index,
+    study,
 }: CaseStudyProps) {
+    const { slug, title, subtitle, cardDescription, tags, featuredMetric } = study;
     const staggerClass = `stagger-${Math.min(index + 1, 4)}`;
 
     return (
@@ -52,7 +44,7 @@ export function CaseStudyCard({
                 <p className="text-fg-70 uppercase leading-tight">{subtitle}</p>
             </div>
 
-            <p className="text-fg-70 mb-6 ">{description}</p>
+            <p className="text-fg-70 mb-6 ">{cardDescription}</p>
 
             <div className="flex flex-wrap gap-2 mb-4">
                 {tags.map((tag) => (
@@ -62,10 +54,10 @@ export function CaseStudyCard({
                 ))}
             </div>
 
-            {impact && (
+            {featuredMetric && typeof featuredMetric === 'string' && (
                 <div className="pt-4 mt-auto border-t border-border transition-colors group-hover:border-primary/20">
                     <p className="text-primary font-medium  m-0 leading-tight">
-                        {impact}
+                        {featuredMetric}
                     </p>
                 </div>
             )}

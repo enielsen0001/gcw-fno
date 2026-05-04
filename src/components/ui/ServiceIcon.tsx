@@ -13,7 +13,7 @@ export const ServiceIcon = ({ iconName, className }: ServiceIconProps) => {
     return (
         <LucideIcon
             className={cn(
-                "w-10 h-10 mb-6 text-primary stroke-[1.5]",
+                "w-10 h-10 text-primary stroke-[1.5]",
                 className, // Your overrides
             )}
         />

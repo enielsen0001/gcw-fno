@@ -1,9 +1,3 @@
-import { CaseStudy } from "./case-study"; // Adjust path as needed
-import { SanitySlug } from "./case-study";
-
-/**
- * Service Sub-Interfaces
- */
 export interface Capability {
     term: string;
     definition: string;
@@ -17,32 +11,37 @@ export interface ProcessPhase {
 export interface Testimonial {
     quote: string;
     author: string;
-    role?: string;
+    role?: string; // Optional since it wasn't marked validation: rule => rule.required()
 }
 
-/**
- * Main Service Interface
- */
+export interface FooterCTA {
+    title: string;
+    description: string;
+    buttonText: string;
+    variant: 'solid' | 'outline';
+}
+
+export interface FeaturedCaseStudy {
+    _key: string;
+    _ref: string;
+    _type: string;
+}
+
 export interface Service {
     _id: string;
-    _type: "service";
+    _type: 'service';
     title: string;
-    slug: SanitySlug;
-    icon: string; // The Lucide icon name string
-
-    // High-level Narrative
+    slug: {
+        current: string;
+    };
+    icon: string; // Lucide icon name
     cardDescription: string;
     shortDescription: string;
+    capabilities?: Capability[];
     valueProposition: string;
-
-    // Strategic Content
-    capabilities: Capability[];
-    solutions: string[]; // The "Target Problems" list
-    process: ProcessPhase[];
-
-    // Relationships
-    featuredCaseStudies?: CaseStudy[];
-
-    // Feedback
+    solutions: string[];
+    process?: ProcessPhase[];
+    featuredCaseStudies?: FeaturedCaseStudy[];
     testimonials?: Testimonial[];
+    footerCTA?: FooterCTA;
 }

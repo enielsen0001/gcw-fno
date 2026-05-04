@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { CaseStudyCard } from "@/components//ui/CaseStudyCard";
-import { caseStudiesPreview } from "@/constants/case-studies";
-import { services } from "@/constants/services";
 import heroImage from "@/../public/images/gray-horizon.jpg";
 import { ArrowRight } from "lucide-react";
 import { homeMetadata } from "@/constants/metadata";
@@ -77,7 +75,7 @@ export default async function HomePage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {serviceCards.map((service: Service, index: number) => (
-                            <ServiceCard key={service._id} {...service} />
+                            <ServiceCard key={service._id} service={service} index={index} />
                         ))}
                     </div>
                 </div>
@@ -98,7 +96,7 @@ export default async function HomePage() {
                     <div className="grid md:grid-cols-2 gap-8 mb-16">
                         {caseStudyCardsPreview.map(
                             (study: CaseStudy, index: number) => (
-                                <CaseStudyCard key={study._id} {...study} />
+                                <CaseStudyCard key={study._id} study={study} index={index} />
                             ),
                         )}
                     </div>
