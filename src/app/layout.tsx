@@ -1,14 +1,20 @@
 import { ThemeProvider } from "@/context/ThemeContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Poppins } from "next/font/google";
+import { Plus_Jakarta_Sans, Poppins } from "next/font/google";
 import "@/lib/main.js";
 import { baseMetadata } from "@/constants/metadata";
 
-const poppins = Poppins({
+// const poppins = Poppins({
+//     subsets: ["latin"],
+//     weight: ["400", "500", "600", "700"],
+//     variable: "--font-poppins",
+// });
+
+const plusJakartaSans = Plus_Jakarta_Sans({
     subsets: ["latin"],
     weight: ["400", "500", "600", "700"],
-    variable: "--font-poppins",
+    variable: "--font-plus-jakarta-sans",
 });
 
 export const metadata = baseMetadata;

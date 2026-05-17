@@ -95,7 +95,7 @@ export default async function HomePage() {
                     </header>
 
                     <div className="grid md:grid-cols-2 gap-8 mb-16">
-                        {caseStudyCardsPreview.map((work: Work, index: number) => (
+                        {caseStudyCardsPreview?.map((work: Work, index: number) => (
                             <WorkCard
                                 key={work._id}
                                 work={work}

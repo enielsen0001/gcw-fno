@@ -9,6 +9,10 @@ interface WorkCardProps {
 }
 
 export function WorkCard({ index, work }: WorkCardProps) {
+    if (!work) {
+        return null;
+    }
+
     const { slug, title, subtitle, cardDescription, tags, featuredMetric, context } = work;
     const staggerClass = `stagger-${Math.min(index + 1, 4)}`;
 
