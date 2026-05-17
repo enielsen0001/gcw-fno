@@ -1,19 +1,19 @@
 import { sanityFetch } from "@/sanity/lib/fetch";
 import {
     CASE_STUDY_BY_SLUG_QUERY,
-    SERVICE_BY_SLUG_QUERY,
+    CAPABILITY_BY_SLUG_QUERY,
 } from "@/sanity/lib/queries";
-import { CaseStudy } from "@/types/case-study";
+import { Work } from "@/types/work";
 
 const SITE_URL = "https://www.graycoastweb.com";
 
 export const baseMetadata = {
     title: {
-        default: "GrayCoast | Web Design & Asset Lifecycle Engineering",
+        default: "GrayCoast | Senior Cross-Stack Engineering & Ecosystem Orchestration",
         template: "%s | GrayCoast",
     },
     description:
-        "Senior front-end development and high-fidelity digitization for artists and legacy software modernization.",
+        "Senior front-end development, full-stack application engineering, and seamless platform integration without agency overhead.",
     openGraph: {
         type: "website",
         locale: "en_US",
@@ -32,19 +32,19 @@ export const baseMetadata = {
 
 export const homeMetadata = {
     ...baseMetadata,
-    title: "GrayCoast | Senior Web Development & Digital Archival",
+    title: "GrayCoast | Senior Cross-Stack Engineering",
 };
 
 export const aboutMetadata = {
     title: "About",
     description:
-        "The intersection of software architecture and tactile problem-solving. Lead by a senior generalist focused on delivery and cooperation.",
+        "Meet an experienced, stack-agnostic generalist focused on full-stack infrastructure, clean UI architecture, and long-term product success.",
 };
 
 export const servicesIndexMetadata = {
-    title: "Services",
+    title: "Capabilities", // Updated from Services
     description:
-        "Specializing in Laravel/Vanilla JS modernization, responsive web design, and asset security for artists.",
+        "Full-stack engineering, front-end architecture, API integration, and system modernization to deliver elegant, useful web solutions.",
 };
 
 export async function serviceDetailMetadata({
@@ -54,7 +54,7 @@ export async function serviceDetailMetadata({
 }) {
     const { slug } = await params;
     const service = await sanityFetch<any>({
-        query: SERVICE_BY_SLUG_QUERY,
+        query: CAPABILITY_BY_SLUG_QUERY,
         params: { slug: slug },
     });
 
@@ -62,14 +62,14 @@ export async function serviceDetailMetadata({
         title: service?.title,
         description:
             service?.excerpt ||
-            `Expert ${service?.title} services by GrayCoast.`,
+            `Expert engineering capabilities in ${service?.title} by GrayCoast.`,
     };
 }
 
 export const caseStudyIndexMetadata = {
-    title: "Case Studies",
+    title: "Work", // Updated from Case Studies
     description:
-        "A deep dive into software modernization projects and the Asset Lifecycle Engine.",
+        "Explore real-world technical execution, architectural choices, and system integration projects designed for long-term health.",
 };
 
 export async function caseStudyMetadata({
@@ -78,19 +78,19 @@ export async function caseStudyMetadata({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const study = await sanityFetch<CaseStudy>({
+    const study = await sanityFetch<Work>({
         query: CASE_STUDY_BY_SLUG_QUERY,
         params: { slug: slug },
     });
 
     return {
         title: `${study?.title} Project`,
-        description: `Case study: How we modernized ${study?.title} using high-fidelity digitization and secure archival.`,
+        description: `Technical deep dive: Architectural choices, integration solutions, and engineering execution for ${study?.title}.`,
     };
 }
 
 export const contactMetadata = {
     title: "Contact",
     description:
-        "Get in touch to discuss legacy project modernization or professional web design.",
+        "Start a technical discovery conversation regarding your product features, agency projects, or ecosystem integration needs.",
 };

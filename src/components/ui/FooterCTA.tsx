@@ -40,7 +40,7 @@ export function FooterCTA({
 
                 <p
                     className={cn(
-                        "mb-12 max-w-xl mx-auto font-light",
+                        "mb-12 max-w-2xl mx-auto font-light",
                         variant === "solid"
                             ? "text-primary-20"
                             : "text-fg-70",

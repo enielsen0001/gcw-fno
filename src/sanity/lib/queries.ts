@@ -1,68 +1,72 @@
-// ONLY GROQ string constants
-/* example use: const caseStudies = await sanityFetch<any[]>({
-    query: ALL_CASE_STUDIES_QUERY
-  })
-*/
-
 // src/sanity/lib/queries.ts
 import { groq } from "next-sanity";
 
-// Fragment for repeated card data to keep things DRY
-const CASE_STUDY_CARD_FIELDS = groq`
+// Fragment for repeated card data to keep things DRY across Work grids
+const WORK_CARD_FIELDS = groq`
+  _id,
   "slug": slug.current,
   title,
   subtitle,
   cardDescription,
   tags,
-  featuredMetric
+  featuredMetric,
+  context {
+    role,
+    industry,
+    timeline
+  }
 `;
 
+// Fragment for capability preview data
+const CAPABILITY_CARD_FIELDS = groq`
+  _id,
+  "slug": slug.current,
+  title,
+  cardDescription,
+  icon
+`;
+
+// Fetch all work pieces for the main portfolio index page
 export const ALL_CASE_STUDIES_QUERY = groq`
   *[_type == "caseStudy"] | order(_createdAt desc) {
-    ${CASE_STUDY_CARD_FIELDS}
+    ${WORK_CARD_FIELDS}
   }
 `;
 
+// Fetch a subset of work for the homepage preview layout
 export const CASE_STUDIES_PREVIEW_QUERY = groq`
   *[_type == "caseStudy"] | order(_createdAt desc) [0...4] {
-    ${CASE_STUDY_CARD_FIELDS}
+    ${WORK_CARD_FIELDS}
   }
 `;
 
+// Fetch a single work profile deep dive by slug
 export const CASE_STUDY_BY_SLUG_QUERY = groq`
   *[_type == "caseStudy" && slug.current == $slug][0] {
-    ...,
-    "impact": executiveSummary.impact[] {
-       metric,
-       detail
-    }
+    ...
   }
 `;
 
-// For the landing page cards
+// Fetch all capabilities for the homepage preview grid deck
 export const SERVICE_CARD_QUERY = groq`
-  *[_type == "service"] | order(title asc) {
-    "slug": slug.current,
-    title,
-    icon,
-    "description": shortDescription
+  *[_type == "capability"] | order(title asc) {
+    ${CAPABILITY_CARD_FIELDS}
   }
 `;
 
-// For the service detail pages
-export const SERVICE_BY_SLUG_QUERY = groq`
-  *[_type == "service" && slug.current == $slug][0] {
+// Fetch all capability documents for the main index list page
+export const ALL_CAPABILITIES_QUERY = groq`
+  *[_type == "capability"] | order(title asc) {
+    ${CAPABILITY_CARD_FIELDS}
+  }
+`;
+
+// Fetch a single capability deep dive section by slug
+export const CAPABILITY_BY_SLUG_QUERY = groq`
+  *[_type == "capability" && slug.current == $slug][0] {
     ...,
-    process[] {
-      phase,
-      description
-    },
-    testimonials[] {
-      quote,
-      author
-    },
     "featuredCaseStudies": featuredCaseStudies[]-> {
-      ${CASE_STUDY_CARD_FIELDS}
+      ${WORK_CARD_FIELDS}
     }
   }
 `;

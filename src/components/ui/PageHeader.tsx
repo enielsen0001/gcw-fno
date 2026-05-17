@@ -88,7 +88,12 @@ export function PageHeader({
                                 </span>
                             )}
                             <h1 className="text-5xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-foreground">
-                                {title}
+                                {title.split('<br>').map((line, index, array) => (
+                                    <span key={index}>
+                                        {line}
+                                        {index < array.length - 1 && <br />}
+                                    </span>
+                                ))}
                             </h1>
                         </div>
 

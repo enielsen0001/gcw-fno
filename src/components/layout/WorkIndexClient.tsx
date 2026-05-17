@@ -1,35 +1,36 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { CaseStudy } from "@/types/case-study";
-import { CaseStudyCard } from "../ui/CaseStudyCard";
+import { CaseStudy } from "@/types/work";
+import { WorkCard } from "../ui/WorkCard";
 import { PageHeader } from "../ui/PageHeader";
 import { caseStudiesContent } from "@/constants/page-content";
-import { s } from "motion/react-client";
 
-export function CaseStudiesClient({
+export function WorkIndexClient({
     initialData,
 }: {
     initialData: CaseStudy[];
 }) {
     const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
+    // Dynamic, data-driven array deduction for your tag filtering architecture
     const allTags = useMemo(() => {
+        if (!initialData) return [];
         return Array.from(
-            new Set(initialData.flatMap((study) => study.tags)),
+            new Set(initialData.flatMap((study) => study.tags || [])),
         ).sort();
     }, [initialData]);
 
     const filteredStudies = useMemo(() => {
         return selectedTag
-            ? initialData.filter((study) => study.tags.includes(selectedTag))
+            ? initialData.filter((study) => study.tags?.includes(selectedTag))
             : initialData;
     }, [selectedTag, initialData]);
 
     const { header, filter } = caseStudiesContent;
 
     return (
-        <div className="py-16 px-6 lg:px-12">
+        <div className="py-24 px-6 lg:px-12">
             <div className="max-w-7xl mx-auto">
                 <div className="mb-16 fade-up-reveal">
                     <PageHeader
@@ -38,15 +39,15 @@ export function CaseStudiesClient({
                     />
                 </div>
 
+                {/* Filter Controls */}
                 <div className="mb-12 fade-up-reveal stagger-1">
                     <div className="flex flex-wrap gap-3">
                         <button
                             onClick={() => setSelectedTag(null)}
-                            className={`px-4 py-2 rounded-md btn-hover ${
-                                selectedTag === null
+                            className={`px-4 py-2 text-sm font-medium rounded-sm transition-all duration-200 ${selectedTag === null
                                     ? "bg-primary text-primary-foreground"
                                     : "bg-card border border-border text-fg-70 hover:border-primary/30"
-                            }`}
+                                }`}
                         >
                             {filter.allLabel}
                         </button>
@@ -54,11 +55,10 @@ export function CaseStudiesClient({
                             <button
                                 key={tag}
                                 onClick={() => setSelectedTag(tag)}
-                                className={`px-4 py-2 rounded-md btn-hover ${
-                                    selectedTag === tag
+                                className={`px-4 py-2 text-sm font-medium rounded-sm transition-all duration-200 ${selectedTag === tag
                                         ? "bg-primary text-primary-foreground"
                                         : "bg-card border border-border text-fg-70 hover:border-primary/30"
-                                }`}
+                                    }`}
                             >
                                 {tag}
                             </button>
@@ -66,22 +66,15 @@ export function CaseStudiesClient({
                     </div>
                 </div>
 
+                {/* Grid Deck */}
                 <div className="grid md:grid-cols-2 gap-8">
-                    {filteredStudies.map((study, index) => {
-                        const staggerClass = `stagger-${Math.min(index + 1, 4)}`;
-                        const impact =
-                            typeof study.featuredMetric === "string"
-                                ? study.featuredMetric
-                                : (study.featuredMetric ?? "");
-
-                        return (
-                            <CaseStudyCard
-                                key={study._id}
-                                study={study}
-                                index={index}
-                            />
-                        );
-                    })}
+                    {filteredStudies.map((study, index) => (
+                        <WorkCard
+                            key={study._id}
+                            study={study}
+                            index={index}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

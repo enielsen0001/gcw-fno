@@ -8,11 +8,12 @@ import { aboutContent } from "@/constants/page-content";
 export const metadata = aboutMetadata;
 
 export default function AboutPage() {
-    const { header, tactile, philosophy, competencies, identity, footer } =
+    const { header, philosophy, competencies, toolkit, identity, footer } =
         aboutContent;
+
     return (
         <div className="relative min-h-screen bg-background">
-            {/* Subtle Architectural Texture */}
+
             <div
                 className="absolute inset-0 opacity-[0.03] pointer-events-none"
                 style={{
@@ -27,31 +28,9 @@ export default function AboutPage() {
                     subtitle={header.subtitle}
                 />
 
-                <div className="grid lg:grid-cols-12 gap-16 mb-40 items-start">
-                    <div className="lg:col-span-5 lg:order-2 fade-up-reveal stagger-2">
-                        <div className="aspect-[4/5] bg-muted/20 border border-border flex items-center justify-center p-12">
-                            <div className="text-center">
-                                <p className="text-[10px] uppercase tracking-widest text-muted-foreground italic">
-                                    [ Multimedia Drawing / Technical Blueprint
-                                    Placeholder ]
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:col-span-6 lg:order-1 space-y-12 fade-up-reveal stagger-1">
-                        <h2 className="text-4xl tracking-tight text-foreground">
-                            {tactile.title}
-                        </h2>
-                        <div className="space-y-6 text-lg text-fg-70 leading-relaxed font-light">
-                            {tactile.description.map((paragraph, index) => (
-                                <p key={index}>{paragraph}</p>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
+                {/* Narrative Section: Philosophy & Specializations */}
                 <section className="py-24 border-t border-border">
-                    <div className="grid lg:grid-cols-2 gap-20">
+                    <div className="grid lg:grid-cols-2 gap-20 items-start">
                         <div className="space-y-8 text-lg font-light text-fg-80 leading-relaxed">
                             <h3 className="text-xs uppercase tracking-[0.4em] text-primary font-semibold">
                                 {philosophy.label}
@@ -64,7 +43,7 @@ export default function AboutPage() {
                                 href={philosophy.linkedinHref}
                                 className="group inline-flex items-center gap-3 text-fg-50 hover:text-primary transition-colors mt-8"
                             >
-                                <span className="text-[12px] uppercase tracking-[0.3em] font-bold">
+                                <span className="text-xs uppercase tracking-[0.3em] font-bold">
                                     {philosophy.linkedinLabel}
                                 </span>
                                 <div className="h-px w-8 bg-border group-hover:w-12 group-hover:bg-primary transition-all" />
@@ -74,10 +53,10 @@ export default function AboutPage() {
 
                         <div className="bg-card/30 border border-border p-12 rounded-xl">
                             <h4 className="text-xs uppercase tracking-[0.4em] text-primary font-semibold mb-8">
-                                Core Competencies
+                                {competencies.label}
                             </h4>
-                            <div className="space-y-6">
-                                {competencies.defaults.map((item, index) => (
+                            <div className="space-y-8">
+                                {competencies.defaults.map((item) => (
                                     <div key={item.principle}>
                                         <span className="text-sm font-bold block mb-1">
                                             {item.principle}
@@ -92,14 +71,42 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                <div className="grid lg:grid-cols-12 gap-16 mb-40">
-                    <div className="lg:col-span-8 lg:col-start-3 text-center space-y-8 fade-up-reveal">
+                <section className="py-24 border-t border-border">
+                    <div className="grid lg:grid-cols-12 gap-12">
+                        <div className="lg:col-span-4">
+                            <h3 className="text-xs uppercase tracking-[0.4em] text-primary font-semibold mb-4">
+                                {toolkit.label}
+                            </h3>
+                            <p className="text-sm text-fg-60 leading-relaxed">
+                                {toolkit.description}
+                            </p>
+                        </div>
+
+                        <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                            {toolkit.categories.map((category) => (
+                                <div key={category.type} className="space-y-4">
+                                    <h5 className="text-xs uppercase tracking-widest text-muted-foreground font-bold border-b border-border pb-2">
+                                        {category.type}
+                                    </h5>
+                                    <ul className="flex flex-wrap gap-x-4 gap-y-2">
+                                        {category.items.map((item) => (
+                                            <li key={item} className="text-sm text-fg-80 font-light">
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                <div className="pt-32 border-t border-border">
+                    <div className="max-w-3xl mx-auto text-center space-y-8">
                         <h2 className="text-4xl font-light tracking-tight">
                             {identity.title}
                         </h2>
-                        <p className="text-xl text-fg-70 leading-relaxed font-light">
-                            {identity.description}
-                        </p>
+                        <p className="text-xl text-fg-70 leading-relaxed font-light italic">{identity.description}</p>
                     </div>
                 </div>
 

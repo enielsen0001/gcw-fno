@@ -1,23 +1,23 @@
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { CASE_STUDY_BY_SLUG_QUERY } from "@/sanity/lib/queries";
-import { CaseStudy } from "@/types/case-study";
+import { CaseStudy } from "@/types/work";
 import { notFound } from "next/navigation";
-import { CaseStudyDetailClient } from "@/components/layout/CaseStudyDetailClient";
+import { WorkDetailClient } from "@/components/layout/WorkDetailClient"; // Updated name
 import { caseStudyMetadata } from "@/constants/metadata";
 import { Metadata } from "next";
 
 export async function generateMetadata({
     params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>; // Aligned with Next.js App Router typing specs
 }): Promise<Metadata> {
-    return caseStudyMetadata({ params: Promise.resolve(params) });
+    return caseStudyMetadata({ params });
 }
 
-export default async function CaseStudyPage({
+export default async function WorkDetailPage({
     params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
     const study = await sanityFetch<CaseStudy>({
@@ -29,5 +29,5 @@ export default async function CaseStudyPage({
         notFound();
     }
 
-    return <CaseStudyDetailClient study={study} />;
+    return <WorkDetailClient study={study} />;
 }

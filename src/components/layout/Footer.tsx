@@ -10,7 +10,12 @@ export function Footer() {
                 <div className="grid md:grid-cols-2 gap-12 mb-12">
                     <div>
                         <h2 className="text-3xl tracking-tight mb-4 text-foreground">
-                            {cta.title}
+                            {cta.title.split('<br>').map((line, index, array) => (
+                                <span key={index}>
+                                    {line}
+                                    {index < array.length - 1 && <br />}
+                                </span>
+                            ))}
                         </h2>
                         <p className="text-fg-70 mb-6 leading-relaxed">
                             {cta.description}

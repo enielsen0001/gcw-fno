@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ServiceCard } from "@/components/ui/ServiceCard";
-import { CaseStudyCard } from "@/components//ui/CaseStudyCard";
+import { CapabilityCard } from "@/components/ui/CapabilityCard";
+import { WorkCard } from "@/components/ui/WorkCard";
 import heroImage from "@/../public/images/gray-horizon.jpg";
 import { ArrowRight } from "lucide-react";
 import { homeMetadata } from "@/constants/metadata";
@@ -11,8 +11,8 @@ import {
     CASE_STUDIES_PREVIEW_QUERY,
     SERVICE_CARD_QUERY,
 } from "@/sanity/lib/queries";
-import { Service } from "@/types/service";
-import { CaseStudy } from "@/types/case-study";
+import { Capability } from "@/types/capability";
+import { Work } from "@/types/work";
 
 export const metadata = homeMetadata;
 
@@ -49,11 +49,12 @@ function Hero() {
 }
 
 export default async function HomePage() {
-    const { servicesContent, portfolio } = homeContent;
-    const serviceCards = await sanityFetch<any>({
+    const { capabilitiesContent, portfolio } = homeContent;
+
+    const serviceCards = await sanityFetch<Capability[]>({
         query: SERVICE_CARD_QUERY,
     });
-    const caseStudyCardsPreview = await sanityFetch<any>({
+    const caseStudyCardsPreview = await sanityFetch<Work[]>({
         query: CASE_STUDIES_PREVIEW_QUERY,
     });
 
@@ -61,27 +62,27 @@ export default async function HomePage() {
         <>
             <Hero />
 
-            {/* Services Section */}
+            {/* Capabilities Section */}
             <section className="py-24 px-6 lg:px-12 bg-card">
                 <div className="max-w-7xl mx-auto">
                     <header className="mb-16">
                         <h2 className="text-4xl md:text-5xl">
-                            {servicesContent.title}
+                            {capabilitiesContent.title}
                         </h2>
                         <p className="text-xl text-fg-70 max-w-3xl">
-                            {servicesContent.description}
+                            {capabilitiesContent.description}
                         </p>
                     </header>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {serviceCards.map((service: Service, index: number) => (
-                            <ServiceCard key={service._id} service={service} index={index} />
+                        {serviceCards.map((capability: Capability, index: number) => (
+                            <CapabilityCard key={capability._id} capability={capability} index={index} />
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Case Studies Section */}
+            {/* Portfolio Work Section */}
             <section className="py-24 px-6 lg:px-12">
                 <div className="max-w-7xl mx-auto">
                     <header className="mb-16">
@@ -94,11 +95,13 @@ export default async function HomePage() {
                     </header>
 
                     <div className="grid md:grid-cols-2 gap-8 mb-16">
-                        {caseStudyCardsPreview.map(
-                            (study: CaseStudy, index: number) => (
-                                <CaseStudyCard key={study._id} study={study} index={index} />
-                            ),
-                        )}
+                        {caseStudyCardsPreview.map((work: Work, index: number) => (
+                            <WorkCard
+                                key={work._id}
+                                work={work}
+                                index={index}
+                            />
+                        ))}
                     </div>
 
                     <div className="flex justify-center pt-8">
