@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CapabilityCard } from "@/components/ui/CapabilityCard";
 import { WorkCard } from "@/components/ui/WorkCard";
 import heroImage from "@/../public/images/gray-horizon.jpg";
 import { ArrowRight } from "lucide-react";
@@ -9,9 +8,7 @@ import { homeContent } from "@/constants/page-content";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import {
     CASE_STUDIES_PREVIEW_QUERY,
-    SERVICE_CARD_QUERY,
 } from "@/sanity/lib/queries";
-import { Capability } from "@/types/capability";
 import { Work } from "@/types/work";
 
 export const metadata = homeMetadata;
@@ -20,7 +17,7 @@ function Hero() {
     const { hero } = homeContent;
 
     return (
-        <section className="relative pt-12 pb-24 px-6 lg:px-12 overflow-hidden min-h-[60vh] flex items-center">
+        <section className="relative pt-12 md:pt-24 pb-24 px-6 lg:px-12 overflow-hidden min-h-[60vh] flex items-center">
             <Image
                 src={heroImage}
                 alt="Gray Horizon Background"
@@ -33,10 +30,11 @@ function Hero() {
 
             <div className="max-w-7xl mx-auto relative z-20">
                 <div className="max-w-4xl">
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl tracking-tight mb-8 text-foreground leading-none">
-                        {hero.heading}
+                    <h1 className="home-hero-hl tracking-tight mb-8 text-foreground leading-none">
+                        {hero.heading.ln1} <br />
+                        {hero.heading.ln2}
                     </h1>
-                    <p className="text-xl md:text-2xl text-fg-80 mb-12 max-w-2xl leading-relaxed">
+                    <p className="home-hero-subhl text-fg-80 mb-12 max-w-2xl leading-relaxed">
                         {hero.subheading}
                     </p>
                     <Link href={hero.ctaLink} className="btn-ghost mist">
@@ -49,11 +47,8 @@ function Hero() {
 }
 
 export default async function HomePage() {
-    const { capabilitiesContent, portfolio } = homeContent;
+    const { portfolio } = homeContent;
 
-    const serviceCards = await sanityFetch<Capability[]>({
-        query: SERVICE_CARD_QUERY,
-    });
     const caseStudyCardsPreview = await sanityFetch<Work[]>({
         query: CASE_STUDIES_PREVIEW_QUERY,
     });
@@ -62,37 +57,23 @@ export default async function HomePage() {
         <>
             <Hero />
 
-            {/* Capabilities Section */}
-            <section className="py-24 px-6 lg:px-12 bg-card">
-                <div className="max-w-7xl mx-auto">
-                    <header className="mb-16">
-                        <h2 className="text-4xl md:text-5xl">
-                            {capabilitiesContent.title}
-                        </h2>
-                        <p className="text-xl text-fg-70 max-w-3xl">
-                            {capabilitiesContent.description}
-                        </p>
-                    </header>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {serviceCards.map((capability: Capability, index: number) => (
-                            <CapabilityCard key={capability._id} capability={capability} index={index} />
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Portfolio Work Section */}
             <section className="py-24 px-6 lg:px-12">
                 <div className="max-w-7xl mx-auto">
-                    <header className="mb-16">
-                        <h2 className="text-4xl md:text-5xl">
+                    <div className="mb-16 md:mb-20 flex flex-col gap-6 lg:gap-8 border-l-2 border-primary/20 pl-6 lg:pl-8">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance max-w-5xl">
                             {portfolio.title}
                         </h2>
-                        <p className="text-xl text-fg-70 max-w-3xl">
-                            {portfolio.description}
-                        </p>
-                    </header>
+
+                        {/* Loop through paragraph array to give the copy room to breathe */}
+                        <div className="space-y-4 max-w-4xl">
+                            {portfolio.description.map((paragraph: string, idx: number) => (
+                                <p key={idx} className="text-base md:text-lg leading-relaxed text-muted-foreground/80">
+                                    {paragraph}
+                                </p>
+                            ))}
+                        </div>
+                    </div>
 
                     <div className="grid md:grid-cols-2 gap-8 mb-16">
                         {caseStudyCardsPreview?.map((work: Work, index: number) => (
@@ -109,7 +90,7 @@ export default async function HomePage() {
                             href={portfolio.ctaLink}
                             className="group flex items-center gap-4 text-xs uppercase tracking-[0.3em] font-medium text-muted-foreground hover:text-primary transition-all"
                         >
-                            <span>{portfolio.cta}</span>
+                            <span>{portfolio.viewAllText}</span>
                             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                         </Link>
                     </div>

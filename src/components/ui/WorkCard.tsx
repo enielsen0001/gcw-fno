@@ -36,7 +36,7 @@ export function WorkCard({ index, work }: WorkCardProps) {
                         <h3 className="group-hover:text-primary transition-colors duration-300 m-0 text-2xl font-semibold tracking-tight text-foreground">
                             {title}
                         </h3>
-                        <ArrowUpRight className="w-5 h-5 text-fg-40 shrink-0 transition-all duration-500 group-hover:text-primary" />
+                        <ArrowUpRight className="w-5 h-5 text-fg-40 shrink-0 transition-all duration-300 transform group-hover:text-primary group-hover:translate-x-[5px] group-hover:-translate-y-[5px]" />
                     </div>
 
                     {context?.role && (

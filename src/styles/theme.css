@@ -271,6 +271,20 @@
             border-radius: 4px;
             /* Matches the curve of your cards/buttons */
         }
+
+                .home-hero-hl {
+                    font-size: min(9vw, 60px);
+                }
+
+                @media (min-width: 768px) {
+                    .home-hero-hl {
+                        font-size: min(6vw, 60px);
+                    }
+                }
+
+                .home-hero-subhl {
+                    font-size: 18px;
+                }
 }
 
 .text-primary-80 {
@@ -294,6 +308,8 @@
 .text-primary-20 {
     color: var(--primary-20);
 }
+
+
 
 @layer components {
     .btn-ghost {
@@ -335,4 +351,6 @@
     .btn-ghost:active {
         transform: scale(0.98);
     }
+
+
 }

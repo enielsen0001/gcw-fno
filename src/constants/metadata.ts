@@ -1,7 +1,6 @@
 import { sanityFetch } from "@/sanity/lib/fetch";
 import {
     CASE_STUDY_BY_SLUG_QUERY,
-    CAPABILITY_BY_SLUG_QUERY,
 } from "@/sanity/lib/queries";
 import { Work } from "@/types/work";
 
@@ -40,31 +39,6 @@ export const aboutMetadata = {
     description:
         "Meet an experienced, stack-agnostic generalist focused on full-stack infrastructure, clean UI architecture, and long-term product success.",
 };
-
-export const servicesIndexMetadata = {
-    title: "Capabilities", // Updated from Services
-    description:
-        "Full-stack engineering, front-end architecture, API integration, and system modernization to deliver elegant, useful web solutions.",
-};
-
-export async function serviceDetailMetadata({
-    params,
-}: {
-    params: Promise<{ slug: string }>;
-}) {
-    const { slug } = await params;
-    const service = await sanityFetch<any>({
-        query: CAPABILITY_BY_SLUG_QUERY,
-        params: { slug: slug },
-    });
-
-    return {
-        title: service?.title,
-        description:
-            service?.excerpt ||
-            `Expert engineering capabilities in ${service?.title} by GrayCoast.`,
-    };
-}
 
 export const caseStudyIndexMetadata = {
     title: "Work", // Updated from Case Studies

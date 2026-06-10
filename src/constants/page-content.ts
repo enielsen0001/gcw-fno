@@ -1,72 +1,28 @@
 export const homeContent = {
     hero: {
-        heading: "Senior Front-End Engineering. Stack-Agnostic Execution.",
+        heading: {
+            ln1: "Senior Front-End Engineering.",
+            ln2: "Stack Agnostic Execution.",
+        },
         subheading:
-            "Twelve years of agency and product experience spent bridging the gap between complex code, intentional UI design, and actual business outcomes. I build clean front-end architectures, rescue legacy systems, and help teams launch products without the overhead of a massive agency.",
+            "Over twelve years of agency and product experience bridging the gap between complex code, intentional UI design, and actual business outcomes.",
         cta: "Explore the Work",
         ctaLink: "/work",
     },
-    capabilitiesContent: {
-        title: "Capabilities & Technical Scaffolding",
-        description:
-            "I don't sell packaged services or templated fixes. I bring cross-stack context and a decade plus of practical execution to solve messy digital problems and build stable software foundations.",
-    },
     portfolio: {
-        title: "Problem Solving in Practice",
-        description:
-            "A technical look at how I untangle ambiguity, make critical architectural choices, and deliver high-performance systems that last.",
-        cta: "View All Work",
+        sectionId: "work",
+        title: "A senior set of hands for complex codebases and new ideas.",
+        description: [
+            "I thrive in fast-paced environments where technical versatility is required. Whether stepping into an agency sprint to rescue an enterprise client's legacy system, collaborating with design teams on pixel-perfect UI, or helping a local business launch a custom tool from scratch, I jump in wherever the friction is.",
+            "Below is a look at the variety of challenges I enjoy solving, featuring a mix of deep engineering rescues and clean, ground up builds."
+        ],
+        viewAllText: "View All Work",
         ctaLink: "/work",
     },
 };
 
-export const capabilityIndexContent = {
-    title: "Capabilities & Ecosystem Stewardship",
-    description:
-        "Technical systems require a balance of architectural planning and active, cross-stack execution. Below are the primary environments where I step in to help teams and independent businesses untangle infrastructure ambiguity. Explore each capability to see how we can build clean, stable software foundations that are genuinely useful.",
-    footer: {
-        title: "Architecture engineered for operational longevity",
-        description:
-            "From connecting disparate APIs and modernizing legacy setups to architecting custom platforms from the ground up, my focus is on building stable, cohesive environments that empower your team and support your project's long-term success.",
-        buttonText: "Discuss Your Project",
-        buttonHref: "/contact",
-    },
-};
 
-export const capabilityDetailContent = {
-    navigation: {
-        linkText: "Back to All Capabilities",
-        backLink: "/capabilities",
-    },
-    sections: {
-        capabilities: {
-            title: "Areas of Expertise",
-        },
-        solutions: {
-            title: "Common Problems I Solve",
-        },
-        process: {
-            title: "How We'll Work Together",
-        },
-    },
-    footerCTA: {
-        defaultTitle: "How can I help you move forward?",
-        defaultDescription:
-            "From technical roadmaps and architectural design to hands-on development and legacy support, I enjoy wearing the different hats required to get a project across the line. If you have a complex problem or a new idea, let's find the best way to tackle it together.",
-        defaultButtonText: "Start a Conversation",
-        defaultButtonHref: "/contact",
-        defaultVariant: "solid",
-    },
-};
 
-export const featuredCaseStudiesContent = {
-    title: "See This Capability in Action",
-    viewAllLink: {
-        text: "View All Work",
-        href: "/work",
-    },
-    cardLinkText: "Explore Project",
-};
 
 export const caseStudiesContent = {
     header: {
@@ -221,7 +177,7 @@ export const contactContent = {
             value: "Connect professionally",
             href: "https://linkedin.com/in/graycoastweb",
             type: "linkedin",
-            description: "View my full professional profile and historical project timeline.",
+            description: "View my full profile and career history.",
         },
         {
             label: "GitHub",
@@ -265,7 +221,6 @@ export const contactContent = {
 export const headerContent = {
     navigation: [
         { path: "/", label: "Home" },
-        { path: "/capabilities", label: "Capabilities" },
         { path: "/work", label: "Work" },
         { path: "/about", label: "About" },
         { path: "/contact", label: "Contact" },
@@ -276,7 +231,7 @@ export const footerContent = {
     cta: {
         title: "Have a complex problem<br>or a product to launch?",
         description:
-            "From technical discovery and API architecture to full-stack execution and platform orchestration—I enjoy the variety of work it takes to get an application right. Let's find a practical, resilient path forward.",
+            "From technical discovery and API architecture to full-stack execution and platform orchestration - I enjoy the variety of work it takes to get an application right. Let's find a practical, resilient path forward.",
         buttonText: "Start a Conversation",
         buttonHref: "/contact",
     },
@@ -284,10 +239,8 @@ export const footerContent = {
         col1Title: "Navigation",
         col2Title: "Legal",
         col1Links: [
-            { name: "Capabilities", href: "/capabilities" },
             { name: "Work", href: "/work" },
             { name: "About", href: "/about" },
-            { name: "Process", href: "/process" },
         ],
         col2Links: [
             { name: "Privacy Policy", href: "/privacy" },
