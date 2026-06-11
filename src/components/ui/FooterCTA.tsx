@@ -29,7 +29,7 @@ export function FooterCTA({
     };
 
     return (
-        <footer className={cn("fade-up-reveal mt-32 lg:mt-48", className)}>
+        <div className={cn("fade-up-reveal mt-32 lg:mt-48", className)}>
             <div
                 className={cn(
                     "p-16 text-center rounded-sm border transition-all duration-500",
@@ -62,6 +62,6 @@ export function FooterCTA({
                     <ArrowRight className="w-4 h-4" />
                 </Link>
             </div>
-        </footer>
+        </div>
     );
 }

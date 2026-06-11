@@ -20,7 +20,7 @@ export default function InfoBadge({
     return (
         <span
             className={`
-        px-2 py-1 text-[11px] font-medium tracking-wide rounded-sm border
+        px-2 py-1 text-[12px] font-mono tracking-wide rounded-sm border
         transition-all duration-300
         ${variants[variant]}
         ${className}

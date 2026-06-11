@@ -126,7 +126,7 @@ export default function ContactPage() {
                     {footer.text.map((paragraph, index) => (
                         <p
                             key={index}
-                            className="text-fg-80 mb-6 max-w-xl mx-auto font-light"
+                            className="text-fg-80 mb-6 max-w-2xl mx-auto font-light"
                         >
                             {paragraph}
                         </p>

@@ -3,5 +3,7 @@
 @import "tw-animate-css";
 
 @theme {
-    --font-sans: "Poppins", ui-sans-serif, system-ui;
+    --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui;
+    --font-serif: "Lora", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono: "Source Code Pro", ui-monospace, SF Mono, Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
