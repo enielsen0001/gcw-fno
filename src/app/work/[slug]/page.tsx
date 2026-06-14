@@ -1,6 +1,6 @@
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { CASE_STUDY_BY_SLUG_QUERY } from "@/sanity/lib/queries";
-import { CaseStudy } from "@/types/work";
+import { Work } from "@/types/work";
 import { notFound } from "next/navigation";
 import { WorkDetailClient } from "@/components/layout/WorkDetailClient"; // Updated name
 import { caseStudyMetadata } from "@/constants/metadata";
@@ -20,7 +20,7 @@ export default async function WorkDetailPage({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const study = await sanityFetch<CaseStudy>({
+    const study = await sanityFetch<Work>({
         query: CASE_STUDY_BY_SLUG_QUERY,
         params: { slug: slug },
     });

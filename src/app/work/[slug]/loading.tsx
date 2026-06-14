@@ -1,4 +1,4 @@
-import { ServiceSkeleton } from "@/components/ui/CapabilitySkeleton";
+
 
 export default function ServicesLoading() {
     return (

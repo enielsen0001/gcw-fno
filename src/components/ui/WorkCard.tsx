@@ -13,11 +13,10 @@ export function WorkCard({ index, work }: WorkCardProps) {
         return null;
     }
 
-    const { slug, title, subtitle, cardDescription, tags, featuredMetric, context } = work;
+    const { slug, title, cardDescription, tags, featuredMetric, context } = work;
     const staggerClass = `stagger-${Math.min(index + 1, 4)}`;
 
     // Defend against structured data leaks: force runtime evaluation to strings
-    const renderSubtitle = typeof subtitle === 'string' ? subtitle : '';
     const renderDescription = typeof cardDescription === 'string' ? cardDescription : '';
 
     return (
@@ -26,52 +25,55 @@ export function WorkCard({ index, work }: WorkCardProps) {
             className={`
                 group relative p-8 rounded-lg border border-border bg-card
                 fade-up-reveal ${staggerClass} flex flex-col justify-between
-                transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+                transition-color transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
                 hover:-translate-y-1 hover:border-primary/40
+                box-shadow: 0 4px 20px -2px rgba(0,0,0,0.05)
             `}
         >
-            <div className="space-y-4">
+            <div className="space-y-5">
                 <div>
-                    <div className="flex items-start justify-between gap-4 mb-2">
-                        <h3 className="group-hover:text-primary transition-colors duration-300 m-0 text-2xl font-semibold tracking-tight text-foreground">
-                            {title}
-                        </h3>
-                        <ArrowUpRight className="w-5 h-5 text-fg-40 shrink-0 transition-all duration-300 transform group-hover:text-primary group-hover:translate-x-[5px] group-hover:-translate-y-[5px]" />
-                    </div>
-
+                    {/* Eyebrow: Elevated to the top with tracked out editorial style */}
                     {context?.role && (
-                        <span className="text-xs uppercase font-semibold tracking-wider text-primary/90 block mb-1">
+                        <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground block mb-2.5">
                             {context.role}
                         </span>
                     )}
-                    {/* Safeguarded rendering */}
-                    <p className="text-xs uppercase tracking-wide text-fg-50 m-0 leading-tight">
-                        {renderSubtitle}
-                    </p>
+
+                    {/* Headline & Link Indicator */}
+                    <div className="flex items-start justify-between gap-4">
+                        <h3 className="group-hover:text-primary transition-colors duration-300 m-0 text-2xl font-semibold tracking-tight text-foreground balance">
+                            {title}
+                        </h3>
+                        <ArrowUpRight className="w-5 h-5 text-muted-foreground/60 shrink-0 transition-all duration-300 transform group-hover:text-primary group-hover:translate-x-[5px] group-hover:-translate-y-[5px] mt-1" />
+                    </div>
                 </div>
 
-                {/* Safeguarded rendering */}
-                <p className="text-fg-70 text-base leading-relaxed m-0">
+                {/* Narrative: Cleaner contrast weight */}
+                <p className="text-foreground/80 text-base leading-relaxed m-0 mb-4 font-normal">
                     {renderDescription}
                 </p>
 
-                <div className="flex flex-wrap gap-2 pt-2">
+                {/* Tech Tags */}
+                <div className="flex flex-wrap gap-2 pt-1">
                     {tags?.map((tag: any) => {
-                        // Crucial fix: If a tag is returning an object like {label, value}, extract the text string safely
                         const tagLabel = typeof tag === 'object' && tag !== null ? (tag.label || tag.value || "") : tag;
+
+                        // Edge case patch: Quick runtime fix for the typo in the dataset
+                        const cleanLabel = String(tagLabel) === "Pinea" ? "Pinia" : String(tagLabel);
+
                         return (
-                            <InfoBadge key={String(tagLabel)} variant="subtle">
-                                {String(tagLabel)}
+                            <InfoBadge key={cleanLabel} variant="subtle">
+                                {cleanLabel}
                             </InfoBadge>
                         );
                     })}
                 </div>
             </div>
 
-            {/* Crucial Fix: Ensure featuredMetric is strictly a primitive string before appending to JSX */}
+            {/* Premium Impact Metric Anchor */}
             {featuredMetric && typeof featuredMetric === 'string' && (
-                <div className="pt-4 mt-6 border-t border-border">
-                    <p className="text-sm font-medium text-primary m-0 leading-tight">
+                <div className="pt-4 mt-6 border-t border-border/60">
+                    <p className="text-sm font-medium text-primary m-0 leading-tight flex items-center gap-2">
                         {featuredMetric}
                     </p>
                 </div>

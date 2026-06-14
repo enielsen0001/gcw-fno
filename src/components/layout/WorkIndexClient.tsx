@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { CaseStudy } from "@/types/work";
+import { Work } from "@/types/work";
 import { WorkCard } from "../ui/WorkCard";
 import { PageHeader } from "../ui/PageHeader";
 import { caseStudiesContent } from "@/constants/page-content";
@@ -9,7 +9,7 @@ import { caseStudiesContent } from "@/constants/page-content";
 export function WorkIndexClient({
     initialData,
 }: {
-    initialData: CaseStudy[];
+    initialData: Work[];
 }) {
     const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
@@ -71,7 +71,7 @@ export function WorkIndexClient({
                     {filteredStudies.map((study, index) => (
                         <WorkCard
                             key={study._id}
-                            study={study}
+                            work={study}
                             index={index}
                         />
                     ))}

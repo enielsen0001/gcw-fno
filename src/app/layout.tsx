@@ -10,18 +10,21 @@ const plusJakartaSans = Plus_Jakarta_Sans({
     subsets: ["latin"],
     weight: ["400", "500", "600", "700"],
     variable: "--font-plus-jakarta-sans",
+    display: 'swap',
 });
 
 const lora = Lora({
     subsets: ['latin'],
     style: ['italic', 'normal'],
     variable: '--font-serif',
+    display: 'swap',
 });
 
 const sourceCodePro = Source_Code_Pro({
     subsets: ['latin'],
     style: ['normal'],
     variable: '--font-mono',
+    display: 'swap',
 });
 
 export const metadata = baseMetadata;
@@ -36,7 +39,7 @@ export default function RootLayout({
             <body className="bg-background text-foreground">
                 <ThemeProvider>
                     <Header />
-                    <main className="pt-20">{children}</main>
+                    <main>{children}</main>
                     <Footer />
                 </ThemeProvider>
             </body>

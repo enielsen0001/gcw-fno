@@ -20,21 +20,21 @@ const WORK_CARD_FIELDS = groq`
 
 // Fetch all work pieces for the main portfolio index page
 export const ALL_CASE_STUDIES_QUERY = groq`
-  *[_type == "caseStudy"] | order(_createdAt desc) {
+  *[_type == "work"] | order(_createdAt desc) {
     ${WORK_CARD_FIELDS}
   }
 `;
 
 // Fetch a subset of work for the homepage preview layout
 export const CASE_STUDIES_PREVIEW_QUERY = groq`
-  *[_type == "caseStudy"] | order(_createdAt desc) [0...4] {
+  *[_type == "work"] | order(_createdAt desc) [0...4] {
     ${WORK_CARD_FIELDS}
   }
 `;
 
 // Fetch a single work profile deep dive by slug
 export const CASE_STUDY_BY_SLUG_QUERY = groq`
-  *[_type == "caseStudy" && slug.current == $slug][0] {
+  *[_type == "work" && slug.current == $slug][0] {
     ...
   }
 `;

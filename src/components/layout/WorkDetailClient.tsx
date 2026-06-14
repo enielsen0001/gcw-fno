@@ -1,6 +1,6 @@
 "use client";
 
-import { CaseStudy, RelevantLink } from "@/types/work";
+import { Work, RelevantLink } from "@/types/work";
 import { FooterCTA } from "../ui/FooterCTA";
 import { PageHeader } from "../ui/PageHeader";
 import { caseStudyDetailsContent } from "@/constants/page-content";
@@ -8,7 +8,7 @@ import { ArrowUpRight } from "lucide-react";
 import InfoBadge from "../ui/InfoBadge";
 import { CustomPortableText } from "../ui/CustomPortableText"; // Import your styled component wrapper
 
-export function WorkDetailClient({ study }: { study: CaseStudy }) {
+export function WorkDetailClient({ study }: { study: Work }) {
     const { navigation, sections, sidebar, footerDefaults } = caseStudyDetailsContent;
 
     return (
