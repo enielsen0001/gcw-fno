@@ -32,7 +32,7 @@ export default function AboutPage() {
                 <section className="py-24 border-t border-border">
                     <div className="grid lg:grid-cols-2 gap-20 items-start">
                         <div className="space-y-8 text-lg font-light text-fg-80 leading-relaxed">
-                            <h3 className="text-xs uppercase tracking-[0.4em] text-primary font-semibold">
+                            <h3 className="text-xs uppercase tracking-widest text-primary font-semibold">
                                 {philosophy.label}
                             </h3>
                             {philosophy.content.map((paragraph, index) => (
@@ -43,7 +43,7 @@ export default function AboutPage() {
                                 href={philosophy.linkedinHref}
                                 className="group inline-flex items-center gap-3 text-fg-50 hover:text-primary transition-colors mt-8"
                             >
-                                <span className="text-xs uppercase tracking-[0.3em] font-bold">
+                                <span className="text-xs uppercase tracking-widest font-bold">
                                     {philosophy.linkedinLabel}
                                 </span>
                                 <div className="h-px w-8 bg-border group-hover:w-12 group-hover:bg-primary transition-all" />
@@ -52,7 +52,7 @@ export default function AboutPage() {
                         </div>
 
                         <div className="bg-card/30 border border-border p-12 rounded-xl">
-                            <h4 className="text-xs uppercase tracking-[0.4em] text-primary font-semibold mb-8">
+                            <h4 className="text-xs uppercase tracking-widest text-primary font-semibold mb-8">
                                 {competencies.label}
                             </h4>
                             <div className="space-y-8">
@@ -74,7 +74,7 @@ export default function AboutPage() {
                 <section className="py-24 border-t border-border">
                     <div className="grid lg:grid-cols-12 gap-12">
                         <div className="lg:col-span-4">
-                            <h3 className="text-xs uppercase tracking-[0.4em] text-primary font-semibold mb-4">
+                            <h3 className="text-xs uppercase tracking-widest text-primary font-semibold mb-4">
                                 {toolkit.label}
                             </h3>
                             <p className="text-sm text-fg-60 leading-relaxed">
@@ -106,7 +106,14 @@ export default function AboutPage() {
                         <h2 className="text-4xl font-light tracking-tight">
                             {identity.title}
                         </h2>
-                        <p className="text-xl text-fg-70 leading-relaxed font-light italic">{identity.description}</p>
+                        {identity.description.map((paragraph, index) => (
+                            <p
+                                key={index}
+                                className="text-xl text-fg-70 leading-relaxed font-light"
+                            >
+                                {paragraph}
+                            </p>
+                        ))}
                     </div>
                 </div>
 

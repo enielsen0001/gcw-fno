@@ -20,29 +20,31 @@ export function WorkCard({ index, work }: WorkCardProps) {
     const renderDescription = typeof cardDescription === 'string' ? cardDescription : '';
 
     return (
-        <Link
-            href={`/work/${slug}`}
+        <div
             className={`
                 group relative p-8 rounded-lg border border-border bg-card
                 fade-up-reveal ${staggerClass} flex flex-col justify-between
-                transition-color transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+                transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
                 hover:-translate-y-1 hover:border-primary/40
-                box-shadow: 0 4px 20px -2px rgba(0,0,0,0.05)
+                shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)]
             `}
         >
             <div className="space-y-5">
                 <div>
-                    {/* Eyebrow: Elevated to the top with tracked out editorial style */}
                     {context?.role && (
                         <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground block mb-2.5">
                             {context.role}
                         </span>
                     )}
 
-                    {/* Headline & Link Indicator */}
                     <div className="flex items-start justify-between gap-4">
                         <h3 className="group-hover:text-primary transition-colors duration-300 m-0 text-2xl font-semibold tracking-tight text-foreground balance">
-                            {title}
+                            <Link
+                                href={`/work/${slug}`}
+                                className="focus:outline-none after:absolute after:inset-0 after:content-[''] after:z-10"
+                            >
+                                {title}
+                            </Link>
                         </h3>
                         <ArrowUpRight className="w-5 h-5 text-muted-foreground/60 shrink-0 transition-all duration-300 transform group-hover:text-primary group-hover:translate-x-[5px] group-hover:-translate-y-[5px] mt-1" />
                     </div>
@@ -53,8 +55,8 @@ export function WorkCard({ index, work }: WorkCardProps) {
                     {renderDescription}
                 </p>
 
-                {/* Tech Tags */}
-                <div className="flex flex-wrap gap-2 pt-1">
+                {/* Tech Tags - given relative z-20 so they stay interactive if needed over the link layer */}
+                <div className="flex flex-wrap gap-2 pt-1 relative z-20">
                     {tags?.map((tag: any) => {
                         const tagLabel = typeof tag === 'object' && tag !== null ? (tag.label || tag.value || "") : tag;
 
@@ -62,9 +64,13 @@ export function WorkCard({ index, work }: WorkCardProps) {
                         const cleanLabel = String(tagLabel) === "Pinea" ? "Pinia" : String(tagLabel);
 
                         return (
-                            <InfoBadge key={cleanLabel} variant="subtle">
+                            <span
+                                key={cleanLabel}
+                                className="px-3 py-1 text-[10px] uppercase tracking-widest border border-border text-muted-foreground rounded-sm bg-card/30"
+                                aria-hidden="true"
+                            >
                                 {cleanLabel}
-                            </InfoBadge>
+                            </span>
                         );
                     })}
                 </div>
@@ -78,6 +84,6 @@ export function WorkCard({ index, work }: WorkCardProps) {
                     </p>
                 </div>
             )}
-        </Link>
+        </div>
     );
 }

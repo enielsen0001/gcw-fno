@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { Work } from "@/types/work";
-import { WorkCard } from "../ui/WorkCard";
+import { WorkListRow } from "../ui/WorkListRow";
 import { PageHeader } from "../ui/PageHeader";
 import { caseStudiesContent } from "@/constants/page-content";
 
@@ -30,7 +30,7 @@ export function WorkIndexClient({
     const { header, filter } = caseStudiesContent;
 
     return (
-        <div className="py-24 px-6 lg:px-12">
+        <main id="main-content" className="py-24 px-6 lg:px-12">
             <div className="max-w-7xl mx-auto">
                 <div className="mb-16 fade-up-reveal">
                     <PageHeader
@@ -40,13 +40,15 @@ export function WorkIndexClient({
                 </div>
 
                 {/* Filter Controls */}
-                <div className="mb-12 fade-up-reveal stagger-1">
+                <fieldset className="mb-12 fade-up-reveal stagger-1 border-0 p-0">
+                    <legend className="sr-only">Filter projects by tag</legend>
                     <div className="flex flex-wrap gap-3">
                         <button
                             onClick={() => setSelectedTag(null)}
-                            className={`px-4 py-2 text-sm font-medium rounded-sm transition-all duration-200 ${selectedTag === null
-                                    ? "bg-primary text-primary-foreground"
-                                    : "bg-card border border-border text-fg-70 hover:border-primary/30"
+                            aria-pressed={selectedTag === null}
+                            className={`px-4 py-2 text-sm font-medium rounded-sm border transition-all duration-200 ${selectedTag === null
+                                    ? "bg-primary text-primary-foreground border-primary" // Kept a matching border layout footprint
+                                    : "bg-card border-border text-fg-70 hover:border-primary/30"
                                 }`}
                         >
                             {filter.allLabel}
@@ -55,28 +57,30 @@ export function WorkIndexClient({
                             <button
                                 key={tag}
                                 onClick={() => setSelectedTag(tag)}
-                                className={`px-4 py-2 text-sm font-medium rounded-sm transition-all duration-200 ${selectedTag === tag
-                                        ? "bg-primary text-primary-foreground"
-                                        : "bg-card border border-border text-fg-70 hover:border-primary/30"
+                                aria-pressed={selectedTag === tag}
+                                className={`px-4 py-2 text-sm font-medium rounded-sm border transition-all duration-200 ${selectedTag === tag
+                                        ? "bg-primary text-primary-foreground border-primary" // Kept a matching border layout footprint
+                                        : "bg-card border-border text-fg-70 hover:border-primary/30"
                                     }`}
                             >
                                 {tag}
                             </button>
                         ))}
                     </div>
-                </div>
+                </fieldset>
 
                 {/* Grid Deck */}
-                <div className="grid md:grid-cols-2 gap-8">
+                <section aria-labelledby="projects-heading" className="grid md:grid-cols-1 gap-8">
+                    <h2 id="projects-heading" className="sr-only">Projects</h2>
                     {filteredStudies.map((study, index) => (
-                        <WorkCard
+                        <WorkListRow
                             key={study._id}
                             work={study}
                             index={index}
                         />
                     ))}
-                </div>
+                </section>
             </div>
-        </div>
+        </main>
     );
 }

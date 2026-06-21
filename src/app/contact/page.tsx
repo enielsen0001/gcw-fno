@@ -38,7 +38,7 @@ export default function ContactPage() {
                         {main.description.map((paragraph, index) => (
                             <p
                                 key={index}
-                                className="text-fg-70 mb-4 leading-relaxed"
+                                className="text-fg-80 mb-4 leading-relaxed"
                             >
                                 {paragraph}
                             </p>

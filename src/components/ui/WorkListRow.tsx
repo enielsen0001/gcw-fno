@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Circle } from "lucide-react"; // Imported Circle for the tag divider
 import { Work } from "@/types/work";
 
 interface WorkListRowProps {
@@ -13,48 +13,63 @@ export function WorkListRow({ index, work }: WorkListRowProps) {
     const { slug, title, cardDescription, tags } = work;
     const staggerClass = `stagger-${Math.min(index + 1, 4)}`;
 
-    // Fallback or short explicit summary line
     const renderDescription = typeof cardDescription === 'string' ? cardDescription : '';
 
     return (
-        <Link
-            href={`/work/${slug}`}
-            className={`
-                group flex items-center justify-between py-6 border-b border-border/50
-                fade-up-reveal ${staggerClass} transition-all duration-300
-                hover:border-primary/40 px-2
-            `}
-        >
-            {/* Left Frame: Title & Micro Context */}
-            <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 flex-grow">
-                <h3 className="text-lg font-medium text-foreground group-hover:text-primary transition-colors duration-300 m-0 tracking-tight">
-                    {title}
-                </h3>
-            </div>
+        <article className={`
+            group relative flex items-start md:items-center justify-between py-6 border-b border-border/50
+            fade-up-reveal ${staggerClass} transition-all duration-300
+            hover:border-primary/40 px-2
+        `}>
+            <div className="flex items-center flex-col md:flex-row gap-4 w-full">
+                {/* Left Frame: Title, Short Description, & Micro Context */}
+                <div className="flex flex-col gap-1 flex-grow pr-4">
+                    <h3 className="text-lg font-medium text-foreground group-hover:text-primary transition-colors duration-300 m-0 tracking-tight">
+                        <Link
+                            href={`/work/${slug}`}
+                            className=" focus:outline-none after:absolute after:inset-0 after:content-[''] after:z-10"
+                        >
+                            {title}
+                        </Link>
+                    </h3>
 
-            {/* Right Frame: Monospace Scannable Tech Stack */}
-            <div className="hidden sm:flex items-center gap-3 text-xs font-mono tracking-wide">
-                {tags.slice(0, 3).map((tag: any, i: number) => {
-                    const tagLabel = typeof tag === 'object' && tag !== null ? (tag.label || tag.value || "") : tag;
-                    const cleanLabel = String(tagLabel) === "Pinea" ? "Pinia" : String(tagLabel);
+                    {/* Short Description added beneath the title */}
+                    {renderDescription && (
+                        <p className="text-sm text-muted-foreground m-0 max-w-2xl ">
+                            {renderDescription}
+                        </p>
+                    )}
+                </div>
 
-                    return (
-                        <span key={cleanLabel} className="flex items-center gap-3">
-                            {/* Divider: Using a mid-tone gray since it's a non-text decorative element (3:1 threshold) */}
-                            {i > 0 && <span className="text-zinc-400 font-light select-none">/</span>}
+                {/* Right Frame: Monospace Scannable Tech Stack */}
+                <div className="flex items-center gap-3 text-xs font-mono tracking-wide relative z-20">
+                    {tags.slice(0, 3).map((tag: any, i: number) => {
+                        const tagLabel = typeof tag === 'object' && tag !== null ? (tag.label || tag.value || "") : tag;
 
-                            {/* Tag Text: Using deep zinc/slate tones to pass the 4.5:1 small text threshold */}
-                            <span className="font-medium text-zinc-700 dark:text-zinc-300 group-hover:text-zinc-950 dark:group-hover:text-white transition-colors duration-200">
-                                {cleanLabel}
+
+                        return (
+                            <span key={tagLabel} className="flex items-center gap-3">
+                                {/* Divider: Replaced "/" with a decorative circle icon */}
+                                {i > 0 && (
+                                    <Circle
+                                        className="w-1.5 h-1.5 fill-zinc-400 text-zinc-400 dark:fill-zinc-600 dark:text-zinc-600 select-none"
+                                        aria-hidden="true"
+                                    />
+                                )}
+
+                                <span className="font-medium text-zinc-700 dark:text-zinc-300 group-hover:text-zinc-950 dark:group-hover:text-white transition-colors duration-200">
+                                    {tagLabel}
+                                </span>
                             </span>
-                        </span>
-                    );
-                })}
+                        );
+                    })}
+                </div>
+
             </div>
 
             {/* Icon Indicator: Bumping up color weight to ensure visibility */}
-            <ArrowRight className="w-4 h-4 ms-4 text-zinc-400 group-hover:text-primary transition-colors transition-transform duration-300 transform group-hover:translate-x-1" />
+            <ArrowRight className="w-4 h-4 ms-4 text-zinc-400 flex-shrink-0  group-hover:text-primary transition-colors transition-transform duration-300 transform group-hover:translate-x-1" aria-hidden="true" />
 
-        </Link>
+        </article>
     );
 }

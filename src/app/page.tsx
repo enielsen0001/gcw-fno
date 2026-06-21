@@ -18,19 +18,23 @@ function HeroAsymmetricSplit() {
     const { hero } = homeContent;
 
     return (
-        <section className="relative w-full min-h-screen flex flex-col justify-center md:flex-row overflow-hidden bg-white text-zinc-900">
+        <section className="relative w-full min-h-[calc(100vh-var(--spacing)*16)] flex flex-col justify-center md:flex-row overflow-hidden bg-background text-foreground">
 
             {/* LEFT SIDE: Copy & Conversion (60% Width on Desktop) */}
             <div className="w-full md:w-[60%] flex flex-col justify-center gap-4 md:gap-12 p-8 sm:p-12 lg:p-16 z-10">
 
                 {/* Core Message Container */}
                 <div className="max-w-2xl space-y-8">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.05] mb-4">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.05] mb-4">
                         {hero.heading.ln1} <br />
-                        <span className="font-serif italic font-normal text-zinc-600 mt-3 block">{hero.heading.ln2}</span>
+                        {/* Italian serif phrase mapped to your secondary high-contrast gray hook */}
+                        <span className="font-serif italic font-normal text-fg-70 mt-3 block">
+                            {hero.heading.ln2}
+                        </span>
                     </h1>
 
-                    <p className="text-zinc-600 text-base sm:text-lg leading-relaxed max-w-xl font-light">
+                    {/* Narrative description cleanly targeted to your body text contrast standard */}
+                    <p className="text-fg-80 text-base sm:text-lg leading-relaxed max-w-xl font-light">
                         {hero.subheading}
                     </p>
                 </div>
@@ -47,7 +51,8 @@ function HeroAsymmetricSplit() {
             </div>
 
             {/* RIGHT SIDE: Immersive Pure Imagery Panel (40% Width on Desktop) */}
-            <div className="relative w-full h-[45vh] md:h-screen md:w-[40%] bg-zinc-100 overflow-hidden hidden md:block">
+            {/* Swapped background fill to map to your system --card context container token */}
+            <div className="relative w-full h-[45vh] md:min-h-[calc(100vh-var(--spacing)*16)] md:w-[40%] bg-card overflow-hidden hidden md:block group/panel">
                 <Image
                     src={heroImage}
                     alt="A dramatic, minimalist black and white photograph of a stormy ocean under a heavy, dark overcast sky, featuring textured rolling waves with white seafoam breaking near the shore."
@@ -113,7 +118,7 @@ export default async function HomePage() {
                         {/* Loop through paragraph array to give the copy room to breathe */}
                         <div className="space-y-4 max-w-4xl">
                             {portfolio.description.map((paragraph: string, idx: number) => (
-                                <p key={idx} className="text-base md:text-lg leading-relaxed  text-foreground/3030">
+                                <p key={idx} className="text-base md:text-lg leading-relaxed text-fg-80">
                                     {paragraph}
                                 </p>
                             ))}

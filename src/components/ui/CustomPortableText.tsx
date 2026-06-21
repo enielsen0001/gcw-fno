@@ -41,7 +41,7 @@ const components: PortableTextComponents = {
         ),
         em: ({ children }) => <em className="italic text-fg-80">{children}</em>,
         code: ({ children }) => (
-            <code className="px-1.5 py-0.5 font-mono text-sm bg-primary/10 text-primary rounded-sm border border-primary/20">
+            <code className="px-1.5 py-0.5 font-mono font-medium text-sm bg-primary/5 text-primary rounded-sm border border-primary/20">
                 {children}
             </code>
         ),

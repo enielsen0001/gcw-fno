@@ -39,7 +39,7 @@ export default function RootLayout({
             <body className="bg-background text-foreground">
                 <ThemeProvider>
                     <Header />
-                    <main>{children}</main>
+                    <main className="pt-16">{children}</main>
                     <Footer />
                 </ThemeProvider>
             </body>

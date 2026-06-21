@@ -34,7 +34,7 @@ export function PageHeader({
         : undefined;
 
     return (
-        <header className={cn("mb-20 lg:mb-32 fade-up-reveal", className)}>
+        <header className={cn("mb-20 mt-10 lg:mb-32 fade-up-reveal", className)}>
             {/* Top Meta Row */}
             {(backLink || (tags && tags.length > 0)) && (
                 <div className="flex flex-col gap-6 ">
@@ -83,28 +83,28 @@ export function PageHeader({
                             )}
 
                             {eyebrow && (
-                                <span className="text-primary text-[14px] uppercase tracking-[0.4em] font-bold block mb-10">
+                                <p className="text-primary text-[14px] uppercase tracking-[0.4em] font-bold block mb-10 m-0">
                                     {eyebrow}
-                                </span>
+                                </p>
                             )}
-                            <h1 className="text-5xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-foreground">
+                            <h2 className="text-5xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-foreground">
                                 {title.split('<br>').map((line, index, array) => (
                                     <span key={index}>
                                         {line}
                                         {index < array.length - 1 && <br />}
                                     </span>
                                 ))}
-                            </h1>
+                            </h2>
                         </div>
 
                         {subtitle && (
-                            <span className="text-xl lg:text-2xl text-fg-70 font-medium max-w-4xl leading-relaxed">
+                            <span className="text-xl lg:text-2xl text-fg-80 font-medium max-w-4xl leading-relaxed">
                                 {subtitle}
                             </span>
                         )}
 
                         {description && (
-                            <p className="text-xl lg:text-xl text-fg-70 max-w-3xl font-light leading-relaxed">
+                            <p className="text-xl lg:text-xl text-fg-80 max-w-3xl font-light leading-relaxed">
                                 {description}
                             </p>
                         )}
