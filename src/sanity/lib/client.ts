@@ -6,5 +6,6 @@ export const client = createClient({
     projectId,
     dataset,
     apiVersion,
-    useCdn: process.env.NODE_ENV === "production", // `false` if you want to ensure fresh data
+    token: process.env.SANITY_API_TOKEN,
+    useCdn: false, // `false` if you want to ensure fresh data
 });
