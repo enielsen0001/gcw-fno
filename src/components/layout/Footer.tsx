@@ -9,12 +9,12 @@ export function Footer() {
     const socialChannels = [
         {
             name: "GitHub",
-            href: "https://github.com/your-username", // Replace with your profile link
+            href: "https://github.com/enielsen0001", // Replace with your profile link
             icon: <GithubIcon className="w-5 h-5 text-zinc-700 dark:text-zinc-300 transition-all duration-300 transform group-hover:text-primary group-hover:-translate-y-0.5" />
         },
         {
             name: "LinkedIn",
-            href: "https://linkedin.com/in/your-profile", // Replace with your profile link
+            href: "https://www.linkedin.com/in/enielsen0001", // Replace with your profile link
             icon: <LinkedinIcon className="w-5 h-5 text-zinc-700 dark:text-zinc-300 transition-all duration-300 transform group-hover:text-primary group-hover:-translate-y-0.5" />
         }
     ];
