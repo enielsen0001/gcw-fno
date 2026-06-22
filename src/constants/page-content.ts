@@ -175,14 +175,14 @@ export const contactContent = {
         {
             label: "LinkedIn",
             value: "Connect professionally",
-            href: "https://linkedin.com/in/graycoastweb",
+            href: "https://www.linkedin.com/in/enielsen0001",
             type: "linkedin",
             description: "View my full profile and career history.",
         },
         {
             label: "GitHub",
             value: "View source code",
-            href: "https://github.com/graycoastweb",
+            href: "https://github.com/enielsen0001",
             type: "github",
             description: "Review repository structures, custom scripts, and architectural proofs.",
         },
