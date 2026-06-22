@@ -21,7 +21,7 @@ export function Footer() {
 
     return (
         <footer className="py-16 px-6 lg:px-12 border-t border-border/50 bg-background transition-colors duration-300">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto">
 
                 {/* Upper Frame: Asymmetric Split Layout */}
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">

@@ -29,7 +29,7 @@ export function FooterCTA({
     };
 
     return (
-        <div className={cn("fade-up-reveal mt-32 lg:mt-48", className)}>
+        <div className={cn("fade-up-reveal my-24", className)}>
             <div
                 className={cn(
                     "p-16 text-center rounded-sm border transition-all duration-500",

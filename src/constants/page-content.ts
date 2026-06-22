@@ -170,7 +170,7 @@ export const contactContent = {
             value: "hello@graycoastweb.com",
             href: "mailto:hello@graycoastweb.com",
             type: "email",
-            description: "Reach out directly with project briefs or technical requirements.",
+            description: "For jobs, projects, or just about anything else, drop me a line at hello@graycoastweb.com.",
         },
         {
             label: "LinkedIn",

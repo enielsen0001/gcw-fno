@@ -17,14 +17,14 @@ export function WorkListRow({ index, work }: WorkListRowProps) {
 
     return (
         <article className={`
-            group relative flex items-start md:items-center justify-between py-6 border-b border-border/50
+            group relative flex items-center md:items-center justify-between py-6 border-b border-border/50
             fade-up-reveal ${staggerClass} transition-all duration-300
             hover:border-primary/40 px-2
         `}>
-            <div className="flex items-center flex-col md:flex-row gap-4 w-full">
+            <div className="flex items-start md:items-center flex-col md:flex-row gap-4 w-full">
                 {/* Left Frame: Title, Short Description, & Micro Context */}
                 <div className="flex flex-col gap-1 flex-grow pr-4">
-                    <h3 className="text-lg font-medium text-foreground group-hover:text-primary transition-colors duration-300 m-0 tracking-tight">
+                    <h3 className="text-2xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 m-0 tracking-tight">
                         <Link
                             href={`/work/${slug}`}
                             className=" focus:outline-none after:absolute after:inset-0 after:content-[''] after:z-10"
@@ -35,14 +35,14 @@ export function WorkListRow({ index, work }: WorkListRowProps) {
 
                     {/* Short Description added beneath the title */}
                     {renderDescription && (
-                        <p className="text-sm text-muted-foreground m-0 max-w-2xl ">
+                        <p className="text-muted-foreground m-0 max-w-2xl ">
                             {renderDescription}
                         </p>
                     )}
                 </div>
 
                 {/* Right Frame: Monospace Scannable Tech Stack */}
-                <div className="flex items-center gap-3 text-xs font-mono tracking-wide relative z-20">
+                <div className="flex flex-wrap items-center gap-3 text-sm font-mono tracking-wide relative z-20">
                     {tags.slice(0, 3).map((tag: any, i: number) => {
                         const tagLabel = typeof tag === 'object' && tag !== null ? (tag.label || tag.value || "") : tag;
 
@@ -68,7 +68,7 @@ export function WorkListRow({ index, work }: WorkListRowProps) {
             </div>
 
             {/* Icon Indicator: Bumping up color weight to ensure visibility */}
-            <ArrowRight className="w-4 h-4 ms-4 text-zinc-400 flex-shrink-0  group-hover:text-primary transition-colors transition-transform duration-300 transform group-hover:translate-x-1" aria-hidden="true" />
+            <ArrowRight className="w-6 h-6 ms-4 text-zinc-400 flex-shrink-0  group-hover:text-primary transition-colors transition-transform duration-300 transform group-hover:translate-x-1" aria-hidden="true" />
 
         </article>
     );

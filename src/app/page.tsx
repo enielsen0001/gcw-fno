@@ -20,34 +20,33 @@ function HeroAsymmetricSplit() {
     return (
         <section className="relative w-full min-h-[calc(100vh-var(--spacing)*16)] flex flex-col justify-center md:flex-row overflow-hidden bg-background text-foreground">
 
-            {/* LEFT SIDE: Copy & Conversion (60% Width on Desktop) */}
-            <div className="w-full md:w-[60%] flex flex-col justify-center gap-4 md:gap-12 p-8 sm:p-12 lg:p-16 z-10">
+            <div className="w-full md:w-[60%] flex flex-col justify-center p-8  lg:p-16 z-10 md:items-end">
 
-                {/* Core Message Container */}
-                <div className="max-w-2xl space-y-8">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.05] mb-4">
-                        {hero.heading.ln1} <br />
-                        {/* Italian serif phrase mapped to your secondary high-contrast gray hook */}
-                        <span className="font-serif italic font-normal text-fg-70 mt-3 block">
-                            {hero.heading.ln2}
-                        </span>
-                    </h1>
+                <div className="w-full max-w-xl lg:max-w-2xl xl:max-w-3xl space-y-4 md:space-y-12">
 
-                    {/* Narrative description cleanly targeted to your body text contrast standard */}
-                    <p className="text-fg-80 text-base sm:text-lg leading-relaxed max-w-xl font-light">
-                        {hero.subheading}
-                    </p>
-                </div>
+                    <div className="space-y-8">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.05] mb-4">
+                            {hero.heading.ln1} <br />
+                            {/* Italian serif phrase mapped to your secondary high-contrast gray hook */}
+                            <span className="font-serif italic font-normal text-fg-70 mt-3 block">
+                                {hero.heading.ln2}
+                            </span>
+                        </h1>
 
-                {/* Absolute Bottom Left Link */}
-                <div className="pt-4 md:pt-0">
+                        <p className="text-fg-80 text-base sm:text-lg leading-relaxed max-w-xl font-light">
+                            {hero.subheading}
+                        </p>
+                    </div>
+
+
+                <div className="pt-4">
                     <Link
                         href={hero.ctaLink}
                         className="btn-dark text-sm uppercase tracking-widest font-mono"
                     >
                         {hero.cta}
                     </Link>
-                </div>
+                </div></div>
             </div>
 
             {/* RIGHT SIDE: Immersive Pure Imagery Panel (40% Width on Desktop) */}
