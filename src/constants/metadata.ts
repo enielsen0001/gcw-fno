@@ -20,10 +20,10 @@ export const baseMetadata = {
         siteName: "GrayCoast",
         images: [
             {
-                url: "/images/gcw-og-image.png",
+                url: "/images/gcw-og-default.png",
                 width: 1424,
                 height: 752,
-                alt: "Gray Coast Web",
+                alt: "Gray Coast Web.  Solving Complex Digital Problems.  Building intuitive web solutions, bridging the gap between logic, arcitecture, and user experience.",
             },
         ],
     },
