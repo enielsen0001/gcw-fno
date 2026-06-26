@@ -70,7 +70,7 @@ export function WorkIndexClient({
                 </fieldset>
 
                 {/* Grid Deck */}
-                <section aria-labelledby="projects-heading" className="grid md:grid-cols-1 gap-8">
+                <section aria-labelledby="projects-heading" className="grid md:grid-cols-1">
                     <h2 id="projects-heading" className="sr-only">Projects</h2>
                     {filteredStudies.map((study, index) => (
                         <WorkListRow

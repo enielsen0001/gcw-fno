@@ -36,17 +36,17 @@ export function Footer() {
                                 </span>
                             ))}
                         </h2>
-                        <p className="text-fg-80 text-sm leading-relaxed font-light max-w-md">
+                        <p className="text-fg-80 text-md md:text-sm leading-relaxed font-light max-w-md">
                             {cta.description}
                         </p>
                         <div className="pt-2">
-                            <Link href={cta.buttonHref} className="btn-ghost text-xs">
+                            <Link href={cta.buttonHref} className="btn-ghost text-sm">
                                 {cta.buttonText}
                             </Link>
                         </div>
                     </div>
 
-                    {/* Right Column: Horizontal Social SVG Bar */}
+
                     <div className="flex items-center gap-4 shrink-0 pt-2">
                         {socialChannels.map((channel) => (
                             <a
