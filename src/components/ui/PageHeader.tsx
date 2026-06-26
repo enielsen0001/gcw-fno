@@ -51,14 +51,14 @@ export function PageHeader({
                     )}
 
                     {tags && tags.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mb-10">
-                            {tags.map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="px-3 py-1 text-[10px] uppercase tracking-widest border border-border text-muted-foreground rounded-sm bg-card/30"
-                                >
-                                    {tag}
-                                </span>
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-6 text-[11px] font-medium uppercase tracking-widest text-muted-foreground/80">
+                            {tags.map((tag, index) => (
+                                <>
+                                    <span key={tag}>{tag}</span>
+                                    {index < tags.length - 1 && (
+                                        <span className="text-muted-foreground/30 font-normal" aria-hidden="true">/</span>
+                                    )}
+                                </>
                             ))}
                         </div>
                     )}

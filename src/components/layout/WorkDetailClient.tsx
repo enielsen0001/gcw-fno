@@ -5,7 +5,6 @@ import { FooterCTA } from "../ui/FooterCTA";
 import { PageHeader } from "../ui/PageHeader";
 import { caseStudyDetailsContent } from "@/constants/page-content";
 import { ArrowUpRight } from "lucide-react";
-import InfoBadge from "../ui/InfoBadge";
 import { CustomPortableText } from "../ui/CustomPortableText";
 
 export function WorkDetailClient({ study }: { study: Work }) {
@@ -29,29 +28,41 @@ export function WorkDetailClient({ study }: { study: Work }) {
                 {/* 2. Horizontal Metadata Strip (Replaces the cramped aside column) */}
                 <section aria-labelledby="metadata-heading" className="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 my-12 border-y border-border/60 font-mono text-xs">
                     <h2 id="metadata-heading" className="sr-only">Project metadata</h2>
-                    {study.context.role && (
+                    {study.context?.role && (
                         <div className="space-y-2">
                             <span className="text-primary uppercase tracking-wider block font-semibold">Contribution</span>
                             <p className="text-foreground text-sm m-0 font-sans font-medium">{study.context.role}</p>
                         </div>
                     )}
+                    {(study.context?.industry || study.context?.timeline) && (
                     <div className="space-y-2">
                         <span className="text-primary uppercase tracking-wider block font-semibold">{sidebar.contextLabel}</span>
                         <div className="text-sm m-0 font-sans text-fg-80 space-y-0.5">
-                            <p className="m-0 font-light">{study.context.industry}</p>
-                            <p className="m-0 text-xs text-fg-60 italic">{study.context.timeline}</p>
+                            {study.context.industry && (
+                                <p className="m-0 font-light">{study.context.industry}</p>
+                            )}
+                            {study.context.timeline && (
+                                <p className="m-0 text-xs text-fg-60 italic">{study.context.timeline}</p>
+                            )}
                         </div>
                     </div>
+                    )}
+                    {study.context?.technologies?.length > 0 && (
                     <div className="col-span-2 space-y-3">
                         <span className="text-primary uppercase tracking-wider block font-semibold">{sidebar.architectureLabel}</span>
-                        <div className="flex flex-wrap gap-1.5">
-                            {study.context.technologies.map((tech: string) => (
-                                <InfoBadge variant="subtle" key={tech}>
+                        <p className="text-foreground text-sm m-0 font-sans font-medium leading-relaxed">
+                            {study.context.technologies.map((tech: string, index: number) => (
+                                <span key={tech} className="inline-block">
                                     {tech}
-                                </InfoBadge>
+                                    {index < study.context.technologies.length - 1 && (
+                                        <span className="text-muted-foreground/40 font-mono mx-2" aria-hidden="true">//
+                                        </span>
+                                    )}
+                                </span>
                             ))}
-                        </div>
+                        </p>
                     </div>
+                    )}
                 </section>
 
                 {/* 3. Deep-Dive Storytelling Canvas */}
@@ -59,59 +70,65 @@ export function WorkDetailClient({ study }: { study: Work }) {
 
                     {/* Executive Summary Block (Now wide and asymmetric) */}
                     <section aria-labelledby="challenge-heading" className="space-y-16 max-w-3xl">
-                        <div className="space-y-4">
-                            <h3 id="challenge-heading" className="text-sm uppercase tracking-widest text-primary font-semibold font-mono">
-                                {sections.challenge.label}
-                            </h3>
-                            <div className="text-xl text-fg-80 font-light italic leading-relaxed border-l-2 border-primary/20 pl-6">
-                                <CustomPortableText value={study.executiveSummary.challenge} />
+                        {study.executiveSummary?.challenge && (
+                            <div className="space-y-4">
+                                <h3 id="challenge-heading" className="text-sm uppercase tracking-widest text-primary font-semibold font-mono">
+                                    {sections.challenge.label}
+                                </h3>
+                                <div className="text-xl text-fg-80 font-light  leading-relaxed border-l-2 border-primary/20 pl-6">
+                                    <CustomPortableText value={study.executiveSummary.challenge} />
+                                </div>
                             </div>
-                        </div>
+                        )}
 
-                        <div className="space-y-4">
-                            <h3 id="approach-heading" className="text-sm uppercase tracking-widest text-primary font-semibold font-mono">
-                                {sections.approach.label}
-                            </h3>
-                            <div className="text-base text-fg-80 leading-relaxed font-light">
-                                <CustomPortableText value={study.executiveSummary.approach} />
+                        {study.executiveSummary?.approach && (
+
+                            <div className="space-y-4">
+                                <h3 id="approach-heading" className="text-sm uppercase tracking-widest text-primary font-semibold font-mono">
+                                    {sections.approach.label}
+                                </h3>
+                                <div className="text-base text-fg-80 leading-relaxed font-light">
+                                    <CustomPortableText value={study.executiveSummary.approach} />
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </section>
 
-                    {/* Architectural Decisions Block */}
-                    <section aria-labelledby="decisions-heading" className="space-y-12">
-                        <h2 id="decisions-heading" className="text-3xl tracking-tight font-bold text-foreground">{sections.decisions.title}</h2>
-                        <div className="space-y-6">
-                            {study.solution?.keyDecisions?.map((decision: any, index: number) => (
-                                <div
-                                    key={index}
-                                    className="p-8 border-b border-border/60 bg-transparent flex flex-col md:flex-row items-start gap-6 md:gap-12 hover:bg-card/10 transition-colors duration-300"
-                                >
-                                    <div className="flex items-center gap-3 font-mono shrink-0 select-none pt-1" aria-hidden="true">
-                                        <span className="text-sm text-primary  text-primary tracking-wider">
-                                            {String(index + 1).padStart(2, "0")}
-                                        </span>
+                    {study.solution?.keyDecisions?.length > 0 && (
+                        <section aria-labelledby="decisions-heading" className="space-y-12">
+                            <h2 id="decisions-heading" className="text-3xl mb-2 tracking-tight font-bold text-foreground">{sections.decisions.title}</h2>
+                            <div className="space-y-6">
+                                {study.solution?.keyDecisions?.map((decision: any, index: number) => (
+                                    <div
+                                        key={index}
+                                        className="py-8 border-b border-border/60 bg-transparent flex flex-col md:flex-row items-start gap-3 md:gap-6 hover:bg-card/10 transition-colors duration-300"
+                                    >
+                                        <div className="flex items-center gap-3 font-mono shrink-0 select-none pt-1" aria-hidden="true">
+                                            <span className="font-mono font-semibold text-sm text-primary" aria-hidden="true">
+                                                //
+                                            </span>
 
-                                    </div>
-                                    <div className="space-y-3 flex-1">
-                                        <h4 className="text-xl font-semibold tracking-tight text-foreground m-0">
-                                            {decision.title}
-                                        </h4>
-                                        <div className="text-sm text-fg-80 font-light leading-relaxed">
-                                            <CustomPortableText value={decision.rationale} />
+                                        </div>
+                                        <div className="space-y-3 flex-1">
+                                            <h4 className="text-xl font-semibold tracking-tight text-foreground m-0">
+                                                {decision.title}
+                                            </h4>
+                                            <div className="text-sm text-fg-80 font-light leading-relaxed">
+                                                <CustomPortableText value={decision.rationale} />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
+                                ))}
+                            </div>
+                        </section>
+                    )}
 
-                    {/* Development Phases / Timeline */}
-                    <section aria-labelledby="execution-heading" className="space-y-16">
-                        <h2 id="execution-heading" className="text-3xl tracking-tight font-bold text-foreground">{sections.execution.title}</h2>
-                        <div className="space-y-12">
-                            {study.solution.technicalImplementation.map((phase: any, index: number) => (
-                                <div
+                    {study.solution?.technicalImplementation?.length > 0 && (
+                        <section aria-labelledby="execution-heading" className="space-y-16">
+                            <h2 id="execution-heading" className="text-3xl mb-2  tracking-tight font-bold text-foreground mb-2">{sections.execution.title}</h2>
+                            <div className="space-y-12 py-8">
+                                {study.solution.technicalImplementation.map((phase: any, index: number) => (
+                                    <div
                                     key={index}
                                     className="relative grid md:grid-cols-[60px_1fr] gap-4 md:gap-8 items-start"
                                 >
@@ -130,9 +147,10 @@ export function WorkDetailClient({ study }: { study: Work }) {
                             ))}
                         </div>
                     </section>
+                    )}
 
                     {/* Project Assets / Artifacts Section */}
-                    {study.relevantLinks && study.relevantLinks.length > 0 && (
+                    {study.relevantLinks?.length && (
                         <section aria-labelledby="artifacts-heading" className="py-8 border-t border-border/60 space-y-6">
                             <h3 id="artifacts-heading" className="text-sm uppercase tracking-widest text-primary font-semibold font-mono">
                                 {sidebar.artifactsLabel}
@@ -159,7 +177,7 @@ export function WorkDetailClient({ study }: { study: Work }) {
                     {/* System Outcomes Tray */}
                     {Array.isArray(study.outcomes) && study.outcomes.length > 0 && (
                         <section aria-labelledby="outcomes-heading" className="bg-card/30 border border-border/60 p-10 lg:p-12 rounded-sm">
-                            <h3 id="outcomes-heading" className="text-sm uppercase tracking-widest text-primary font-semibold font-mono mb-10">
+                            <h3 id="outcomes-heading" className="text-sm uppercase tracking-widest text-primary font-semibold font-mono">
                                 {sections.outcomes.label}
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

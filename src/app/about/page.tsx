@@ -43,7 +43,7 @@ export default function AboutPage() {
                                 href={philosophy.linkedinHref}
                                 className="group inline-flex items-center gap-3 text-fg-50 hover:text-primary transition-colors mt-8"
                             >
-                                <span className="text-xs uppercase tracking-widest font-bold">
+                                <span className="text-sm md:text-xs uppercase tracking-widest font-bold">
                                     {philosophy.linkedinLabel}
                                 </span>
                                 <div className="h-px w-8 bg-border group-hover:w-12 group-hover:bg-primary transition-all" />
@@ -58,10 +58,10 @@ export default function AboutPage() {
                             <div className="space-y-8">
                                 {competencies.defaults.map((item) => (
                                     <div key={item.principle}>
-                                        <span className="text-sm font-bold block mb-1">
+                                        <span className="text-ms md:text-sm font-bold block mb-1">
                                             {item.principle}
                                         </span>
-                                        <p className="text-sm text-fg-70">
+                                        <p className="text-md md:text-sm text-fg-70">
                                             {item.description}
                                         </p>
                                     </div>
@@ -74,10 +74,10 @@ export default function AboutPage() {
                 <section className="py-24 border-t border-border">
                     <div className="grid lg:grid-cols-12 gap-12">
                         <div className="lg:col-span-4">
-                            <h3 className="text-xs uppercase tracking-widest text-primary font-semibold mb-4">
+                            <h3 className="text-sm md:text-xs uppercase tracking-widest text-primary font-semibold mb-4">
                                 {toolkit.label}
                             </h3>
-                            <p className="text-sm text-fg-60 leading-relaxed">
+                            <p className="text-md md:text-sm text-fg-60 leading-relaxed">
                                 {toolkit.description}
                             </p>
                         </div>
@@ -85,12 +85,12 @@ export default function AboutPage() {
                         <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
                             {toolkit.categories.map((category) => (
                                 <div key={category.type} className="space-y-4">
-                                    <h5 className="text-xs uppercase tracking-widest text-muted-foreground font-bold border-b border-border pb-2">
+                                    <h5 className="text-sm md:text-xs uppercase tracking-widest text-muted-foreground font-bold border-b border-border pb-2">
                                         {category.type}
                                     </h5>
                                     <ul className="flex flex-wrap gap-x-4 gap-y-2">
                                         {category.items.map((item) => (
-                                            <li key={item} className="text-sm text-fg-80 font-light">
+                                            <li key={item} className="text-md md:text-sm text-fg-80 font-light">
                                                 {item}
                                             </li>
                                         ))}

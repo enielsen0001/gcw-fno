@@ -17,7 +17,7 @@ export function WorkListRow({ index, work }: WorkListRowProps) {
 
     return (
         <article className={`
-            group relative flex items-center md:items-center justify-between py-8 border-b border-border/50
+            group relative flex items-center md:items-center justify-between py-8 border-b-2 border-border/50
             fade-up-reveal ${staggerClass} transition-all duration-300
             hover:border-primary/40 px-2
         `}>
@@ -41,7 +41,7 @@ export function WorkListRow({ index, work }: WorkListRowProps) {
                                         />
                                     )}
 
-                                    <span className="text-gray-500 group-hover:text-foreground transition-colors duration-200">
+                                    <span className="text-gray-600 group-hover:text-foreground transition-colors duration-200">
                                         {tagLabel}
                                     </span>
                                 </span>
@@ -60,7 +60,7 @@ export function WorkListRow({ index, work }: WorkListRowProps) {
 
                     {/* Short Description added beneath the title */}
                     {renderDescription && (
-                        <p className="text-gray-500 group-hover:text-foreground m-0 max-w-3xl duration-300">
+                        <p className="text-gray-600 group-hover:text-foreground m-0 max-w-3xl duration-300">
                             {renderDescription}
                         </p>
                     )}

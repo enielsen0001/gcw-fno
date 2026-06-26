@@ -13,12 +13,12 @@ export function WorkIndexClient({
 }) {
     const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
-    // Dynamic, data-driven array deduction for your tag filtering architecture
+
     const allTags = useMemo(() => {
         if (!initialData) return [];
         return Array.from(
             new Set(initialData.flatMap((study) => study.tags || [])),
-        ).sort();
+        ).sort((a, b) => a.localeCompare(b));
     }, [initialData]);
 
     const filteredStudies = useMemo(() => {
@@ -40,15 +40,15 @@ export function WorkIndexClient({
                 </div>
 
                 {/* Filter Controls */}
-                <fieldset className="mb-12 fade-up-reveal stagger-1 border-0 p-0">
+                <fieldset className="mb-12 pl-4 py-2 border-l-2 border-muted/40 fade-up-reveal stagger-1 p-0 max-w-5xl">
                     <legend className="sr-only">Filter projects by tag</legend>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-1.5">
                         <button
                             onClick={() => setSelectedTag(null)}
                             aria-pressed={selectedTag === null}
-                            className={`px-4 py-2 text-sm font-medium rounded-sm border transition-all duration-200 ${selectedTag === null
-                                    ? "bg-primary text-primary-foreground border-primary" // Kept a matching border layout footprint
-                                    : "bg-card border-border text-fg-70 hover:border-primary/30"
+                            className={`px-2.5 py-0.5 text-xs font-medium rounded-full border transition-all duration-200 ${selectedTag === null
+                                    ? "bg-primary/10 text-primary border-transparent hover:bg-primary/15"
+                                    : "bg-transparent border-transparent text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                                 }`}
                         >
                             {filter.allLabel}
@@ -58,9 +58,9 @@ export function WorkIndexClient({
                                 key={tag}
                                 onClick={() => setSelectedTag(tag)}
                                 aria-pressed={selectedTag === tag}
-                                className={`px-4 py-2 text-sm font-medium rounded-sm border transition-all duration-200 ${selectedTag === tag
-                                        ? "bg-primary text-primary-foreground border-primary" // Kept a matching border layout footprint
-                                        : "bg-card border-border text-fg-70 hover:border-primary/30"
+                                className={`px-2.5 py-0.5 text-xs font-medium rounded-full border transition-all duration-200 ${selectedTag === tag
+                                        ? "bg-primary/10 text-primary border-transparent hover:bg-primary/15"
+                                        : "bg-transparent border-transparent text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                                     }`}
                             >
                                 {tag}

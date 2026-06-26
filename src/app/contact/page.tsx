@@ -64,7 +64,7 @@ export default function ContactPage() {
                                         <p className="text-foreground font-medium group-hover:text-primary transition-colors mb-0">
                                             {channel.label}
                                         </p>
-                                        <p className="text-sm text-fg-70 mb-0">
+                                        <p className="text-md md:text-sm text-fg-70 mb-0">
                                             {channel.description}
                                         </p>
                                     </div>
