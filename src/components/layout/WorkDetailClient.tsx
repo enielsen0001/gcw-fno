@@ -55,7 +55,7 @@ export function WorkDetailClient({ study }: { study: Work }) {
                                 <span key={tech} className="inline-block">
                                     {tech}
                                     {index < study.context.technologies.length - 1 && (
-                                        <span className="text-muted-foreground/40 font-mono mx-2" aria-hidden="true">//
+                                        <span className="text-muted-foreground/40 font-mono mx-2" aria-hidden="true">/
                                         </span>
                                     )}
                                 </span>
@@ -101,10 +101,10 @@ export function WorkDetailClient({ study }: { study: Work }) {
                                 {study.solution?.keyDecisions?.map((decision: any, index: number) => (
                                     <div
                                         key={index}
-                                        className="py-8 border-b border-border/60 bg-transparent flex flex-col md:flex-row items-start gap-3 md:gap-6 hover:bg-card/10 transition-colors duration-300"
+                                        className="py-8 border-b border-border/60 bg-transparent flex items-start gap-3 md:gap-6 hover:bg-card/10 transition-colors duration-300"
                                     >
                                         <div className="flex items-center gap-3 font-mono shrink-0 select-none pt-1" aria-hidden="true">
-                                            <span className="font-mono font-semibold text-sm text-primary" aria-hidden="true">
+                                            <span className="text-muted-foreground/40 font-mono" aria-hidden="true">
                                                 //
                                             </span>
 
@@ -133,7 +133,7 @@ export function WorkDetailClient({ study }: { study: Work }) {
                                     className="relative grid md:grid-cols-[60px_1fr] gap-4 md:gap-8 items-start"
                                 >
                                     <div className="font-mono text-sm text-primary pt-1.5" aria-hidden="true">
-                                        Phase {String(index + 1).padStart(2, "0")}
+                                        Phase {String(index + 1)}
                                     </div>
                                     <div className="space-y-3">
                                         <h4 className="text-2xl font-medium tracking-tight text-foreground m-0">
@@ -162,7 +162,7 @@ export function WorkDetailClient({ study }: { study: Work }) {
                                         href={link.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="group inline-flex items-center text-sm text-fg-80 gap-1.5 hover:text-primary transition-colors font-mono"
+                                        className="group inline-flex items-center text-md text-fg-80 gap-1.5 hover:text-primary transition-colors font-mono"
                                     >
                                         <span className="underline underline-offset-4 decoration-border/80 group-hover:decoration-primary/40">
                                             {link.label}
@@ -183,10 +183,10 @@ export function WorkDetailClient({ study }: { study: Work }) {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                 {study.outcomes.map((outcome: any, index: number) => (
                                     <div key={index} className="space-y-2">
-                                        <h5 className="text-base font-semibold text-foreground m-0">
+                                        <h5 className="text-base font-semibold text-foreground mt-0 mb-1">
                                             {outcome.label}
                                         </h5>
-                                        <p className="text-fg-80 text-sm font-light leading-relaxed m-0">
+                                        <p className="text-fg-80 text-md font-light leading-relaxed m-0">
                                             {outcome.description}
                                         </p>
                                     </div>

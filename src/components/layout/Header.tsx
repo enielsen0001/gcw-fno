@@ -30,19 +30,10 @@ export function Header() {
                     <div className="flex items-center justify-between max-w-7xl mx-auto ">
                         <div className="flex-shrink-0">
                             <Link href="/" className="flex items-center gap-2">
-                                <Image
-                                    src={logo}
-                                    alt="Gray Coast Web Logo"
-                                    width={48}
-                                    height={48}
-                                    className="h-12 w-12"
-                                />
-                                <div className="flex flex-col leading-tight">
-                                    <span className="text-med font-bold tracking-tight text-foreground hover:text-primary transition-colors leading-none">
-                                        Gray
-                                        <br /> Coast <br />
-                                        Web
-                                    </span>
+                                <div className="flex items-center gap-2 font-bold tracking-tight text-fg-100">
+                                    <span className="text-accent text-xl">//</span>
+                                    <span className="text-lg">Erika Nielsen</span>
+                                    <span className="text-xs text-fg-50 font-mono font-normal">.dev</span>
                                 </div>
                             </Link>
                         </div>

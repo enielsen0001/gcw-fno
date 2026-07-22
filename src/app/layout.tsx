@@ -1,9 +1,10 @@
 import { ThemeProvider } from "@/context/ThemeContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Plus_Jakarta_Sans, Lora, Source_Code_Pro } from "next/font/google";
+import { Plus_Jakarta_Sans, Lora, Source_Code_Pro, Albert_Sans, Syne, IBM_Plex_Mono } from "next/font/google";
 import "@/lib/main.js";
 import { baseMetadata } from "@/constants/metadata";
+
 
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -26,6 +27,7 @@ const sourceCodePro = Source_Code_Pro({
     variable: '--font-mono',
     display: 'swap',
 });
+
 
 export const metadata = baseMetadata;
 

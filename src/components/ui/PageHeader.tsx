@@ -51,7 +51,7 @@ export function PageHeader({
                     )}
 
                     {tags && tags.length > 0 && (
-                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-6 text-[11px] font-medium uppercase tracking-widest text-muted-foreground/80">
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-6 text-[12px] font-medium uppercase tracking-widest text-muted-foreground/80">
                             {tags.map((tag, index) => (
                                 <>
                                     <span key={tag}>{tag}</span>
@@ -98,7 +98,10 @@ export function PageHeader({
                         </div>
 
                         {subtitle && (
-                            <span className="text-xl lg:text-2xl text-fg-80 font-medium max-w-4xl leading-relaxed">
+                            <span
+                                className={`text-xl lg:text-2xl text-fg-80 max-w-4xl leading-relaxed ${description ? "font-medium" : ""
+                                    }`}
+                            >
                                 {subtitle}
                             </span>
                         )}

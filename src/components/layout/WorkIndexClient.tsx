@@ -46,7 +46,7 @@ export function WorkIndexClient({
                         <button
                             onClick={() => setSelectedTag(null)}
                             aria-pressed={selectedTag === null}
-                            className={`px-2.5 py-0.5 text-xs font-medium rounded-full border transition-all duration-200 ${selectedTag === null
+                            className={`px-2.5 py-0.5 text-sm font-medium rounded-full border transition-all duration-200 ${selectedTag === null
                                     ? "bg-primary/10 text-primary border-transparent hover:bg-primary/15"
                                     : "bg-transparent border-transparent text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                                 }`}
@@ -58,7 +58,7 @@ export function WorkIndexClient({
                                 key={tag}
                                 onClick={() => setSelectedTag(tag)}
                                 aria-pressed={selectedTag === tag}
-                                className={`px-2.5 py-0.5 text-xs font-medium rounded-full border transition-all duration-200 ${selectedTag === tag
+                                className={`px-2.5 py-0.5 text-sm font-medium rounded-full border transition-all duration-200 ${selectedTag === tag
                                         ? "bg-primary/10 text-primary border-transparent hover:bg-primary/15"
                                         : "bg-transparent border-transparent text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                                     }`}

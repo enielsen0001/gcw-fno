@@ -41,13 +41,13 @@ export default function AboutPage() {
 
                             <Link
                                 href={philosophy.linkedinHref}
-                                className="group inline-flex items-center gap-3 text-fg-50 hover:text-primary transition-colors mt-8"
+                                className="group inline-flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors mt-8"
                             >
-                                <span className="text-sm md:text-xs uppercase tracking-widest font-bold">
+                                <span className="text-[12px] uppercase tracking-widest font-bold">
                                     {philosophy.linkedinLabel}
                                 </span>
                                 <div className="h-px w-8 bg-border group-hover:w-12 group-hover:bg-primary transition-all" />
-                                <LinkedinIcon className="w-4 h-4" />
+                                <LinkedinIcon className="w-5 h-5" />
                             </Link>
                         </div>
 
@@ -58,7 +58,7 @@ export default function AboutPage() {
                             <div className="space-y-8">
                                 {competencies.defaults.map((item) => (
                                     <div key={item.principle}>
-                                        <span className="text-ms md:text-sm font-bold block mb-1">
+                                        <span className="text-md md:text-sm font-bold block mb-1">
                                             {item.principle}
                                         </span>
                                         <p className="text-md md:text-sm text-fg-70">
@@ -74,10 +74,10 @@ export default function AboutPage() {
                 <section className="py-24 border-t border-border">
                     <div className="grid lg:grid-cols-12 gap-12">
                         <div className="lg:col-span-4">
-                            <h3 className="text-sm md:text-xs uppercase tracking-widest text-primary font-semibold mb-4">
+                            <h3 className="text-sm uppercase tracking-widest text-primary font-semibold mb-4">
                                 {toolkit.label}
                             </h3>
-                            <p className="text-md md:text-sm text-fg-60 leading-relaxed">
+                            <p className="text-md text-fg-60 leading-relaxed">
                                 {toolkit.description}
                             </p>
                         </div>

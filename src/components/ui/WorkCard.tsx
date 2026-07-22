@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import InfoBadge from "./InfoBadge";
 import { Work } from "@/types/work";
+import React from "react";
 
 interface WorkCardProps {
     work: Work;
@@ -32,7 +33,7 @@ export function WorkCard({ index, work }: WorkCardProps) {
             <div className="space-y-5">
                 <div>
                     {context?.role && (
-                        <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground block mb-2.5">
+                        <span className="text-[12px] uppercase font-bold tracking-widest text-muted-foreground block mb-2.5">
                             {context.role}
                         </span>
                     )}
@@ -56,21 +57,19 @@ export function WorkCard({ index, work }: WorkCardProps) {
                 </p>
 
                 {/* Tech Tags - given relative z-20 so they stay interactive if needed over the link layer */}
-                <div className="flex flex-wrap gap-2 pt-1 relative z-20">
-                    {tags?.map((tag: any) => {
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 pt-1 relative z-20 text-[12px] font-mono text-muted-foreground">
+                    {tags?.map((tag: any, index: number) => {
                         const tagLabel = typeof tag === 'object' && tag !== null ? (tag.label || tag.value || "") : tag;
 
-                        // Edge case patch: Quick runtime fix for the typo in the dataset
-                        const cleanLabel = String(tagLabel) === "Pinea" ? "Pinia" : String(tagLabel);
-
                         return (
-                            <span
-                                key={cleanLabel}
-                                className="px-3 py-1 text-[10px] uppercase tracking-widest border border-border text-muted-foreground rounded-sm bg-card/30"
-                                aria-hidden="true"
-                            >
-                                {cleanLabel}
-                            </span>
+                            <React.Fragment key={tagLabel}>
+                                <span
+                                    key={tagLabel}
+                                    className="px-2 py-0.5 font-mono tracking-wider text-muted-foreground bg-muted/50 rounded-none"
+                                >
+                                    {tagLabel}
+                                </span>
+                            </React.Fragment>
                         );
                     })}
                 </div>

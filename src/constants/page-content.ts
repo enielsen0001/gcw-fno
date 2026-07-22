@@ -70,14 +70,14 @@ export const caseStudyDetailsContent = {
 export const aboutContent = {
     header: {
         title: "Cross-Stack Engineering. <br>Intuitive Design.",
-        subtitle: "I am a senior frontend engineer, cross-stack developer, and UX advocate who builds clean, genuinely useful web applications. I spend my time bridging the gap between complex backend integration, seamless interface design, and fast, highly responsive user interfaces. More than that, I am an analytical problem solver who looks at the entire system to find the most practical, accessible path forward, no matter what tools the solution requires.",
+        subtitle: "I am a senior frontend engineer, product experience developer, and UX advocate who builds clean, genuinely useful web applications. I spend my time bridging the gap between complex backend integration, seamless interface design, and fast, highly responsive user interfaces. More than that, I am an analytical problem solver who looks at the entire system to find the most practical, accessible path forward, no matter what tools the solution requires.",
     },
     philosophy: {
         label: "How I Work",
         content: [
-            "I am a generalist by choice. Having spent over a decade navigating the fast-paced, high-variety world of agency environments and product teams, I’ve learned that digital products thrive when they are guided by a broad technical and visual perspective. Operating across multiple layers of a project allows me to see the entire system, anticipate bottlenecks early, and ensure that every engineering decision respects the end-user experience.",
-            "I am a great developer, but I am an even better problem solver. For me, a language, a framework, or a design file is simply a tool to be leveraged. I don't just write code to match a static mockup; I design and advocate for intuitive user experiences throughout the entire lifecycle of a feature. Whether a project requires diving deep into a complex database schema, mapping out an interactive user flow in Figma, or architecting internal knowledge and automation systems, my focus remains the same: breaking down ambiguity and building clean, reliable solutions.",
-            "Ultimately, I believe a developer's greatest assets are curiosity and a genuine enjoyment of the craft. The tools and stacks we use will always shift, but the drive to pull a broken or complex system apart, figure out how it works, and put it back together better is what keeps a project healthy. I don't build tech for tech's sake, I solve problems so that applications scale cleanly, work predictably, and provide a seamless experience for the people using them.",
+            "I am a generalist by choice. Having spent over a decade navigating the fast-paced, high-variety world of agency environments and product teams, I have learned that digital products thrive when they are guided by a broad technical and visual perspective. Operating across multiple layers of a project allows me to see the entire system, anticipate bottlenecks early, and ensure that every engineering decision respects the end-user experience.",
+            "I am a great developer, but I am an even better problem solver. For me, a language, a framework, or a design file is simply a tool to be leveraged. I do not just write code to match a static mockup; I design and advocate for intuitive user experiences throughout the entire lifecycle of a feature. Whether a project requires diving deep into a complex database schema, mapping out an interactive user flow in Figma, or architecting internal knowledge and automation systems, my focus remains the same: breaking down ambiguity and building clean, reliable solutions.",
+            "Ultimately, I believe a developer's greatest assets are curiosity and a genuine enjoyment of the craft. The tools and stacks we use will always shift, but the drive to pull a broken or complex system apart, figure out how it works, and put it back together better is what keeps a project healthy. I do not build tech for tech's sake. I solve problems so that applications scale cleanly, work predictably, and provide a seamless experience for the people using them.",
         ],
         linkedinLabel: "Detailed Professional History",
         linkedinHref: "https://www.linkedin.com/in/enielsen0001",
@@ -108,7 +108,7 @@ export const aboutContent = {
             {
                 principle: "System Stewardship & Longevity",
                 description:
-                    "Approaching codebases with future maintainability in mind. I ensure that the systems, clean integrations, and documentation left behind are structured so that the internal team can easily scale and manage them long after a contract ends.",
+                    "Approaching codebases with future maintainability in mind. I ensure that the systems, clean integrations, and documentation left behind are structured so that the internal team can easily scale and manage them long after a project ends.",
             },
         ],
     },
@@ -135,11 +135,11 @@ export const aboutContent = {
         ]
     },
     identity: {
-        title: "The Gray Coast Identity",
+        title: "Working With Me",
         description:
             [
-                "Gray Coast Web is named for the winters here on Lake Michigan, a season of heavy cloud cover, unpredictable environments, and low visibility.",
-                "When software projects hit that exact same dark, overly complex phase where the codebase is foggy, the architecture is tangled, and no one knows the safe path forward, I step in. I navigate the technical unknowns, clean up the environment, and handle the engineering so you can clear the fog and ship a product that actually works."
+                "Good engineering comes down to clear communication and good habits. I like working on teams where information is shared freely, technical decisions are discussed openly, and people work together to solve hard problems.",
+                "I bring a practical, organized approach to daily development. I spend a lot of time unblocking technical hurdles, documenting how systems work so context is never lost, and building clean software that stands up to real use."
             ]
     },
     footer: {
@@ -153,15 +153,15 @@ export const aboutContent = {
 
 export const contactContent = {
     header: {
-        title: "Let's Talk Shop.",
+        title: "Get in Touch.",
         subtitle:
-            "Whether you need an experienced engineer to scale up a product feature, support an agency sprint, or safely connect a messy ecosystem of platforms, I'm here to help.",
+            "Whether you want to chat about front-end architecture, discuss an interesting technical problem, or connect professionally, I am always happy to talk shop.",
     },
     main: {
         title: "Start a Conversation",
         description: [
-            "Every project begins with a straightforward technical discovery conversation. We'll discuss what you are looking to build, look at any existing integrations or legacy data constraints, and map out a practical development strategy.",
-            "I typically respond within one business day. Let me know if you are working against an active production deadline or an agency launch schedule.",
+            "Feel free to reach out directly via email or connect on LinkedIn. I am always interested in discussing web development, UI architecture, and practical engineering solutions.",
+            "I typically respond within one business day.",
         ],
     },
     channels: [
@@ -170,51 +170,43 @@ export const contactContent = {
             value: "hello@graycoastweb.com",
             href: "mailto:hello@graycoastweb.com",
             type: "email",
-            description: "For jobs, projects, or just about anything else, drop me a line at hello@graycoastweb.com.",
+            description: "Drop me a line directly for questions, technical chats, or networking.",
         },
         {
             label: "LinkedIn",
             value: "Connect professionally",
             href: "https://www.linkedin.com/in/enielsen0001",
             type: "linkedin",
-            description: "View my full profile and career history.",
+            description: "View my professional history and background.",
         },
         {
             label: "GitHub",
             value: "View source code",
             href: "https://github.com/enielsen0001",
             type: "github",
-            description: "Review repository structures, custom scripts, and architectural proofs.",
+            description: "Check out my repositories, code samples, and open-source contributions.",
         },
     ],
     sidebar: {
         consultation: {
-            title: "What We'll Map Out",
-            text: "Our initial conversation is about discovering technical constraints, not a sales pitch. We will look at:",
+            title: "Areas of Expertise",
+            text: "I spend most of my time working across these core areas:",
             items: [
-                "The current architectural bottlenecks or integration hurdles",
-                "Your functional goals for the software, the team, and the end user",
-                "The cleanest, most stable path forward for the project timeline",
-                "Whether my cross-stack capabilities match your stack requirements",
+                "Front-end UI architecture, component design, and state management",
+                "Bridging user experience design with robust backend integrations",
+                "Writing clean, maintainable code and thorough system documentation",
+                "Navigating complex, legacy codebases and technical edge cases",
             ],
         },
         intake: {
-            title: "Helpful Context to Bring",
-            text: "If you have these details ready, they are highly useful for skipping the baseline discovery steps:",
+            title: "Topics I Enjoy Discussing",
+            text: "Always open to exchanging ideas on:",
             items: [
-                "A brief summary of your primary tech stack, hosting setup, or CMS platform",
-                "What core functionality or system integration constitutes an immediate win",
-                "Any rigid third-party API or deployment timeline constraints",
-                "The general scope or target budget you have allocated for the engineering",
+                "Modern front-end frameworks and build tools",
+                "Design systems, accessibility, and UI performance",
+                "API design, headless architectures, and data flows",
             ],
         },
-    },
-    footer: {
-        title: "Still defining the project architecture?",
-        text: [
-            "That is completely fine. Many of the most impactful projects start as a general goal that requires technical discovery to become an actual plan.",
-            "Feel free to reach out even if you are just evaluating platforms or running a preliminary proof-of-concept. A brief conversation can help cut through the ambiguity early.",
-        ],
     },
 };
 
@@ -229,18 +221,18 @@ export const headerContent = {
 
 export const footerContent = {
     cta: {
-        title: "Have a complex problem<br>or a product to launch?",
+        title: "Interested in working together or talking shop?",
         description:
-            "From technical discovery and API architecture to full-stack execution and platform orchestration, I enjoy the variety of work it takes to get an application right. Let's find a practical, resilient path forward.",
-        buttonText: "Start a Conversation",
+            "I am always glad to connect with other engineers, product leaders, and teams working on interesting technical problems. Drop me a line anytime.",
+        buttonText: "Reach Out",
         buttonHref: "/contact",
     },
     legal: {
         privacy: { name: "Privacy Policy", href: "/privacy" }
     },
     bottom: {
-        brandName: "GrayCoastWeb",
-        tagline: "Cross-Stack Engineering & Ecosystem Orchestration",
+        brandName: "Erika Nielsen",
+        tagline: "Cross-Stack Engineering & Product Experience Architecture.",
     },
 };
 

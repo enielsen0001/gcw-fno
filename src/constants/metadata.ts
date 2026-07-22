@@ -1,29 +1,42 @@
 import { sanityFetch } from "@/sanity/lib/fetch";
-import {
-    CASE_STUDY_BY_SLUG_QUERY,
-} from "@/sanity/lib/queries";
+import { CASE_STUDY_BY_SLUG_QUERY } from "@/sanity/lib/queries";
 import { Work } from "@/types/work";
 
-const SITE_URL = "https://www.graycoastweb.com";
+const SITE_URL = "https://erikanielsen.dev";
+
+const initialsFavicon = `data:image/svg+xml,${encodeURIComponent(`
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <rect width="32" height="32" rx="6" fill="#0F172A"/>
+    <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" fill="#F8FAFC" font-family="sans-serif" font-weight="700" font-size="14">
+      EN
+    </text>
+  </svg>
+`)}`;
 
 export const baseMetadata = {
     title: {
-        default: "GrayCoast | Senior Cross-Stack Engineering & Ecosystem Orchestration",
-        template: "%s | GrayCoast",
+        default: "Erika Nielsen | Senior Frontend & Product Experience Engineer",
+        template: "%s | Erika Nielsen",
     },
     description:
-        "Senior front-end development, full-stack application engineering, and seamless platform integration without agency overhead.",
+        "Senior frontend development, clean UI architecture, product experience engineering, and full-stack system integration.",
+    icons: {
+        icon: [
+            { url: initialsFavicon, type: "image/svg+xml" },
+        ],
+        apple: "/apple-touch-icon.png",
+    },
     openGraph: {
         type: "website",
         locale: "en_US",
         url: SITE_URL,
-        siteName: "GrayCoast",
+        siteName: "Erika Nielsen",
         images: [
             {
-                url: "/images/gcw-og-default.png",
-                width: 1424,
-                height: 752,
-                alt: "Gray Coast Web.  Solving Complex Digital Problems.  Building intuitive web solutions, bridging the gap between logic, arcitecture, and user experience.",
+                url: "/images/og-default.png",
+                width: 1200,
+                height: 630,
+                alt: "Erika Nielsen - Senior Frontend & Product Experience Engineer",
             },
         ],
     },
@@ -31,19 +44,19 @@ export const baseMetadata = {
 
 export const homeMetadata = {
     ...baseMetadata,
-    title: "GrayCoast | Senior Cross-Stack Engineering",
+    title: "Erika Nielsen | Senior Frontend & Product Experience Engineer",
 };
 
 export const aboutMetadata = {
     title: "About",
     description:
-        "Meet an experienced, stack-agnostic generalist focused on full-stack infrastructure, clean UI architecture, and long-term product success.",
+        "Senior frontend engineer and product experience developer focused on clean UI architecture, thoughtful design systems, and robust full-stack integrations.",
 };
 
 export const caseStudyIndexMetadata = {
-    title: "Work", // Updated from Case Studies
+    title: "Work",
     description:
-        "Explore real-world technical execution, architectural choices, and system integration projects designed for long-term health.",
+        "Technical execution, interface design, architectural choices, and system integration projects built for performance and long-term maintainability.",
 };
 
 export async function caseStudyMetadata({
@@ -59,12 +72,12 @@ export async function caseStudyMetadata({
 
     return {
         title: `${study?.title} Project`,
-        description: `Technical deep dive: Architectural choices, integration solutions, and engineering execution for ${study?.title}.`,
+        description: `Technical case study: Architectural decisions, front-end execution, and system integrations for ${study?.title}.`,
     };
 }
 
 export const contactMetadata = {
     title: "Contact",
     description:
-        "Start a technical discovery conversation regarding your product features, agency projects, or ecosystem integration needs.",
+        "Get in touch regarding web development, front-end architecture, or general technical discussions.",
 };

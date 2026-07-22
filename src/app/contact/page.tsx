@@ -120,18 +120,6 @@ export default function ContactPage() {
                     </aside>
                 </div>
 
-                <div className="p-16 text-center rounded-sm border transition-all duration-500 bg-primary/5 text-foreground border-primary/10">
-                    <h2 className="text-4xl font-light mb-8">{footer.title}</h2>
-
-                    {footer.text.map((paragraph, index) => (
-                        <p
-                            key={index}
-                            className="text-fg-80 mb-6 max-w-2xl mx-auto font-light"
-                        >
-                            {paragraph}
-                        </p>
-                    ))}
-                </div>
             </div>
         </div>
     );

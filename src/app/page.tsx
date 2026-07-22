@@ -137,7 +137,7 @@ export default async function HomePage() {
                     <div className="flex justify-center pt-8">
                         <Link
                             href={portfolio.ctaLink}
-                            className="group flex items-center gap-4 text-xs uppercase tracking-[0.3em] font-medium text-muted-foreground hover:text-primary transition-all"
+                            className="group flex items-center gap-4 text-sm uppercase tracking-[0.3em] font-medium text-muted-foreground hover:text-primary transition-all"
                         >
                             <span>{portfolio.viewAllText}</span>
                             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

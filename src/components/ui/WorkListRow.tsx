@@ -35,13 +35,10 @@ export function WorkListRow({ index, work }: WorkListRowProps) {
                                 <span key={tagLabel} className="flex items-center gap-3">
                                     {/* Divider: Replaced "/" with a decorative circle icon */}
                                     {i > 0 && (
-                                        <Circle
-                                            className="w-1 h-1 fill-zinc-400 text-zinc-400 dark:fill-zinc-600 dark:text-zinc-600 select-none"
-                                            aria-hidden="true"
-                                        />
+                                        <span className="text-muted-foreground/30 font-normal" aria-hidden="true">/</span>
                                     )}
 
-                                    <span className="text-gray-600 group-hover:text-foreground transition-colors duration-200">
+                                    <span className="font-medium uppercase tracking-wide text-muted-foreground/80 group-hover:text-foreground transition-colors duration-200">
                                         {tagLabel}
                                     </span>
                                 </span>

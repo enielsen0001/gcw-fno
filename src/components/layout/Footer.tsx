@@ -28,7 +28,7 @@ export function Footer() {
 
                     {/* Copy Column */}
                     <div className="max-w-xl space-y-4">
-                        <h2 className="text-2xl sm:text-3xl tracking-tight  text-foreground font-semibold balance">
+                        <h2 className="text-2xl tracking-tight  text-foreground font-semibold balance">
                             {cta.title.split('<br>').map((line, index, array) => (
                                 <span key={index}>
                                     {line}
