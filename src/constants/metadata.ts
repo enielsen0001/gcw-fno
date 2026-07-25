@@ -33,10 +33,10 @@ export const baseMetadata = {
         siteName: "Erika Nielsen",
         images: [
             {
-                url: "/images/og-default.png",
+                url: "/images/end-og-image-v2.png",
                 width: 1200,
                 height: 630,
-                alt: "Erika Nielsen - Senior Frontend & Product Experience Engineer",
+                alt: "Erika Nielsen. Senior Front-End Engineering. erikanielsne.dev",
             },
         ],
     },

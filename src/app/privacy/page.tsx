@@ -14,7 +14,7 @@ export default function PrivacyPage() {
 
                 {/* Header Section */}
                 <div className="border-b border-border/50 pb-8 space-y-2">
-                    <h1 className="text-3xl sm:text-4xl font-bold tracking-tight m-0 text-foreground">
+                    <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
                         {title}
                     </h1>
                     <p className="font-mono text-xs text-fg-60 m-0">

@@ -5,7 +5,7 @@ export const homeContent = {
             ln2: "Stack Agnostic Execution.",
         },
         subheading:
-            "Over twelve years of agency and product experience bridging the gap between complex code, intentional UI design, and actual business outcomes.",
+            "Proven agency and product experience bridging the gap between complex code, intentional UI design, and actual business outcomes.",
         cta: "Explore the Work",
         ctaLink: "/work",
     },
@@ -167,10 +167,10 @@ export const contactContent = {
     channels: [
         {
             label: "Direct Email",
-            value: "hello@graycoastweb.com",
-            href: "mailto:hello@graycoastweb.com",
+            value: "hello@erikanielsen.dev",
+            href: "mailto:hello@erikanielsen.dev",
             type: "email",
-            description: "Drop me a line directly for questions, technical chats, or networking.",
+            description: "Feel free to reach out directly at hello@erikanielsen.dev whether you have questions, want to talk shop, or just want to connect.",
         },
         {
             label: "LinkedIn",
@@ -205,6 +205,7 @@ export const contactContent = {
                 "Modern front-end frameworks and build tools",
                 "Design systems, accessibility, and UI performance",
                 "API design, headless architectures, and data flows",
+                "AI, local models, and the clever ways people are building with emerging tech"
             ],
         },
     },
@@ -238,7 +239,7 @@ export const footerContent = {
 
 export const privacyPolicyContent = {
     title: "Privacy Policy",
-    lastUpdated: "June 2026",
+    lastUpdated: "July 2026",
     sections: [
         {
             heading: "1. Information We Collect",

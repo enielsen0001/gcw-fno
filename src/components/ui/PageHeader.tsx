@@ -51,7 +51,7 @@ export function PageHeader({
                     )}
 
                     {tags && tags.length > 0 && (
-                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-6 text-[12px] font-medium uppercase tracking-widest text-muted-foreground/80">
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-6 text-[12px] font-medium uppercase tracking-widest text-muted-foreground">
                             {tags.map((tag, index) => (
                                 <>
                                     <span key={tag}>{tag}</span>

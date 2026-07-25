@@ -40,13 +40,13 @@ export function WorkIndexClient({
                 </div>
 
                 {/* Filter Controls */}
-                <fieldset className="mb-12 pl-4 py-2 border-l-2 border-muted/40 fade-up-reveal stagger-1 p-0 max-w-5xl">
+                <fieldset className="mb-12 pl-4 py-2 border-l-2 border-muted fade-up-reveal stagger-1 p-0 max-w-5xl">
                     <legend className="sr-only">Filter projects by tag</legend>
                     <div className="flex flex-wrap gap-1.5">
                         <button
                             onClick={() => setSelectedTag(null)}
                             aria-pressed={selectedTag === null}
-                            className={`px-2.5 py-0.5 text-sm font-medium rounded-full border transition-all duration-200 ${selectedTag === null
+                            className={`px-2.5 py-0.5 text-sm font-medium font-mono rounded-full border transition-all duration-200 ${selectedTag === null
                                     ? "bg-primary/10 text-primary border-transparent hover:bg-primary/15"
                                     : "bg-transparent border-transparent text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                                 }`}
@@ -58,7 +58,7 @@ export function WorkIndexClient({
                                 key={tag}
                                 onClick={() => setSelectedTag(tag)}
                                 aria-pressed={selectedTag === tag}
-                                className={`px-2.5 py-0.5 text-sm font-medium rounded-full border transition-all duration-200 ${selectedTag === tag
+                                className={`px-2.5 py-0.5 text-sm font-medium font-mono rounded-full border transition-all duration-200 ${selectedTag === tag
                                         ? "bg-primary/10 text-primary border-transparent hover:bg-primary/15"
                                         : "bg-transparent border-transparent text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                                     }`}

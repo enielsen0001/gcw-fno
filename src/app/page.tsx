@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { WorkCard } from "@/components/ui/WorkCard";
-import heroImage from "@/../public/images/gray-beach.jpg";
+import heroImage from "@/../public/images/dot-line-graphic.jpg";
 import { ArrowRight } from "lucide-react";
 import { homeMetadata } from "@/constants/metadata";
 import { homeContent } from "@/constants/page-content";
@@ -18,12 +18,22 @@ function HeroAsymmetricSplit() {
     const { hero } = homeContent;
 
     return (
-        <section className="relative w-full min-h-[calc(100vh-var(--spacing)*16)] flex flex-col justify-center md:flex-row overflow-hidden bg-background text-foreground">
+        <section className="relative w-full min-h-[calc(100vh-var(--spacing)*16)] flex align-items-center overflow-hidden bg-background text-foreground">
 
-            <div className="w-full md:w-[60%] flex flex-col justify-center p-8  lg:p-16 z-10 md:items-end">
+            <div className="absolute inset-0">
+                <Image
+                    src={heroImage}
+                    alt=""
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                    fetchPriority="high"
+                    className="object-cover object-right"
+                />
+            </div>
 
-                <div className="w-full max-w-xl lg:max-w-2xl xl:max-w-3xl space-y-4 md:space-y-12">
-
+            <div className="w-full max-w-7xl mx-auto relative z-10 w-full flex items-center py-8 lg:py-16 px-6 lg:px-12">
+                <div className="space-y-4 md:space-y-12 rounded-[1rem] bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(251,252,252,0.98)_80%,rgba(251,252,252,0)_100%)] relative p-8 md:p-10 right-8 md:right-10">
                     <div className="space-y-8">
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.05] mb-4">
                             {hero.heading.ln1} <br />
@@ -39,51 +49,15 @@ function HeroAsymmetricSplit() {
                     </div>
 
 
-                <div className="pt-4">
-                    <Link
-                        href={hero.ctaLink}
-                        className="btn-dark text-sm uppercase tracking-widest font-mono"
-                    >
-                        {hero.cta}
-                    </Link>
-                </div></div>
-            </div>
-
-            {/* RIGHT SIDE: Immersive Pure Imagery Panel (40% Width on Desktop) */}
-            {/* Swapped background fill to map to your system --card context container token */}
-            <div className="relative w-full h-[45vh] md:min-h-[calc(100vh-var(--spacing)*16)] md:w-[40%] bg-card overflow-hidden hidden md:block group/panel">
-                <Image
-                    src={heroImage}
-                    alt="A dramatic, minimalist black and white photograph of a stormy ocean under a heavy, dark overcast sky, featuring textured rolling waves with white seafoam breaking near the shore."
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                    fetchPriority="high"
-                    className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105"
-                />
-
-                {/* Editorial Image Attribution */}
-                <div className="absolute bottom-4 right-4 z-20 pointer-events-auto select-none backdrop-blur-md bg-black/10 text-[10px] font-mono uppercase tracking-widest text-white/90 px-3 py-1.5 rounded-sm border border-white/10 transition-opacity duration-300 opacity-60 group-hover/panel:opacity-100">
-                    Photo by{" "}
-                    <a
-                        href="https://unsplash.com/@anniespratt?utm_source=portfolio&utm_medium=referral"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary underline underline-offset-4 decoration-white/30 transition-colors font-bold"
-                    >
-                        Annie Spratt
-                    </a>{" "}
-                    on{" "}
-                    <a
-                        href="https://unsplash.com?utm_source=portfolio&utm_medium=referral"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary underline underline-offset-4 decoration-white/30 transition-colors font-bold"
-                    >
-                        Unsplash
-                    </a>
+                    <div className="pt-4">
+                        <Link
+                            href={hero.ctaLink}
+                            className="btn-dark text-sm uppercase tracking-widest font-mono"
+                        >
+                            {hero.cta}
+                        </Link>
+                    </div>
                 </div>
-
             </div>
 
         </section>

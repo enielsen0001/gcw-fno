@@ -66,7 +66,7 @@ export function Footer() {
                 </div>
 
                 {/* Lower Frame: High-Contrast Monospace Baseline */}
-                <div className="pt-8 border-t border-border/40 flex flex-col md:flex-row justify-between items-baseline gap-4 font-mono text-xs">
+                <div className="pt-8 border-t border-border/40 flex flex-col md:flex-row justify-between items-baseline gap-4  text-xs">
 
                     {/* Copyright & Tagline */}
                     <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 text-fg-60">
@@ -75,7 +75,7 @@ export function Footer() {
                         </span>
                         {bottom.tagline && (
                             <span className="text-fg-40 font-light hidden sm:inline" aria-hidden="true">
-                                — {bottom.tagline}
+                             {bottom.tagline}
                             </span>
                         )}
                     </div>

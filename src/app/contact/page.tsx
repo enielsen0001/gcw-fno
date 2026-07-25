@@ -3,22 +3,12 @@ import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { contactMetadata } from "@/constants/metadata";
 import { contactContent } from "@/constants/page-content";
+import { ContactCards } from "@/components/ui/ContactCards";
 
 export const metadata = contactMetadata;
 
 export default function ContactPage() {
-    const { header, main, channels, sidebar, footer } = contactContent;
-    const IconMap = {
-        email: (
-            <Mail className="w-6 h-6 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3" />
-        ),
-        linkedin: (
-            <LinkedinIcon className="w-6 h-6 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" />
-        ),
-        github: (
-            <GithubIcon className="w-6 h-6 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5" />
-        ),
-    };
+    const { header, main, sidebar } = contactContent;
 
     return (
         <div className="py-16 px-6 lg:px-12">
@@ -45,31 +35,7 @@ export default function ContactPage() {
                         ))}
 
                         <div className="space-y-4">
-                            {channels.map((channel, index) => (
-                                <a
-                                    key={index}
-                                    href={channel.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-4 p-4 rounded-lg bg-card border border-border
-               transition-all duration-300 ease-out group
-               hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
-                                >
-                                    <div className="p-2 rounded-md bg-primary/5 transition-colors group-hover:bg-primary/10">
-                                        {IconMap[
-                                            channel.type as keyof typeof IconMap
-                                        ] || null}
-                                    </div>
-                                    <div>
-                                        <p className="text-foreground font-medium group-hover:text-primary transition-colors mb-0">
-                                            {channel.label}
-                                        </p>
-                                        <p className="text-md md:text-sm text-fg-70 mb-0">
-                                            {channel.description}
-                                        </p>
-                                    </div>
-                                </a>
-                            ))}
+                            <ContactCards />
                         </div>
                     </section>
 
