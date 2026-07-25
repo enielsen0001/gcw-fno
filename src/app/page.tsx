@@ -18,7 +18,7 @@ function HeroAsymmetricSplit() {
     const { hero } = homeContent;
 
     return (
-        <section className="relative w-full min-h-[calc(100vh-var(--spacing)*16)] flex align-items-center overflow-hidden bg-background text-foreground">
+        <section className="border-b relative w-full min-h-[calc(100vh-var(--spacing)*16)] flex align-items-center overflow-hidden bg-background text-foreground">
 
             <div className="absolute inset-0">
                 <Image
