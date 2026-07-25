@@ -170,7 +170,7 @@ export const contactContent = {
             value: "hello@erikanielsen.dev",
             href: "mailto:hello@erikanielsen.dev",
             type: "email",
-            description: "Feel free to reach out directly at hello@erikanielsen.dev whether you have questions, want to talk shop, or just want to connect.",
+            description: "Reach out directly at hello@erikanielsen.dev for questions or technical chats.",
         },
         {
             label: "LinkedIn",
