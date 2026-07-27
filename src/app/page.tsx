@@ -14,30 +14,32 @@ import { Work } from "@/types/work";
 export const metadata = homeMetadata;
 
 
-function HeroAsymmetricSplit() {
+export function HeroAsymmetricSplit() {
     const { hero } = homeContent;
 
     return (
-        <section className="border-b relative w-full min-h-[calc(100vh-var(--spacing)*16)] flex align-items-center overflow-hidden bg-background text-foreground">
-
+        <section className="border-b border-border relative w-full min-h-[calc(100vh-var(--spacing)*16)] flex items-center overflow-hidden bg-background text-foreground transition-colors duration-300">
+            {/* Background Image Container */}
             <div className="absolute inset-0">
                 <Image
                     src={heroImage}
                     alt=""
                     fill
                     priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                    sizes="100vw"
                     fetchPriority="high"
-                    className="object-cover object-right"
+                    className="object-cover object-right dark:opacity-40 transition-opacity duration-300"
                 />
+                {/* Dark Mode Gradient Overlay to guarantee legibility */}
+                <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent dark:from-background dark:via-background/80 dark:to-transparent" />
             </div>
 
-            <div className="w-full max-w-7xl mx-auto relative z-10 w-full flex items-center py-8 lg:py-16 px-6 lg:px-12">
-                <div className="space-y-4 md:space-y-12 rounded-[1rem] bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(251,252,252,0.98)_80%,rgba(251,252,252,0)_100%)] relative p-8 md:p-10 right-8 md:right-10">
+            {/* Main Content Area */}
+            <div className="w-full max-w-7xl mx-auto relative z-10 flex items-center py-8 lg:py-16 px-6 lg:px-12">
+                <div className="space-y-4 md:space-y-12 rounded-[1rem] bg-card/85 dark:bg-card/90 backdrop-blur-md border border-border/40 p-8 md:p-10 relative right-0 md:-right-10 shadow-2xl transition-all duration-300">
                     <div className="space-y-8">
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.05] mb-4">
                             {hero.heading.ln1} <br />
-                            {/* Italian serif phrase mapped to your secondary high-contrast gray hook */}
                             <span className="font-serif italic font-normal text-fg-70 mt-3 block">
                                 {hero.heading.ln2}
                             </span>
@@ -47,7 +49,6 @@ function HeroAsymmetricSplit() {
                             {hero.subheading}
                         </p>
                     </div>
-
 
                     <div className="pt-4">
                         <Link
@@ -59,7 +60,6 @@ function HeroAsymmetricSplit() {
                     </div>
                 </div>
             </div>
-
         </section>
     );
 }

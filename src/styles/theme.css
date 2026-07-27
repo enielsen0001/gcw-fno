@@ -126,6 +126,10 @@
     --btn-hero-border: #F8FAFC;
     --btn-hero-hover: #468B99;
 
+    /* Reduce contrast of hero CTA in dark mode: use a soft light-gray */
+    --btn-hero-bg: #E6E9EE;
+    --btn-hero-border: #E6E9EE;
+
     /* Highly legible text scale tracking */
     --text-foreground-80: #E2E8F0;
     --text-foreground-70: #CBD5E1;
