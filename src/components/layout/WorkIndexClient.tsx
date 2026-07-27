@@ -77,6 +77,7 @@ export function WorkIndexClient({
                             key={study._id}
                             work={study}
                             index={index}
+                            selectedTag={selectedTag}
                         />
                     ))}
                 </section>
