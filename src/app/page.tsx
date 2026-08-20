@@ -38,9 +38,9 @@ export function HeroAsymmetricSplit() {
             <div className="w-full max-w-7xl mx-auto relative z-10 flex items-center py-8 lg:py-16 px-6 lg:px-12">
                 <div className="space-y-4 md:space-y-12 rounded-[1rem] bg-card/85 dark:bg-card/90 backdrop-blur-md border border-border/40 p-8 md:p-10 relative right-0 md:-right-10 shadow-2xl transition-all duration-300">
                     <div className="space-y-8">
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.05] mb-4">
-                            {hero.heading.ln1} <br />
-                            <span className="font-serif italic font-normal text-fg-70 mt-3 block">
+                        <h1 className="leading-[1.05] mb-4">
+                            <span className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-foreground block">{hero.heading.ln1}</span>
+                            <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-serif italic font-normal text-fg-70 mt-3 block">
                                 {hero.heading.ln2}
                             </span>
                         </h1>

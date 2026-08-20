@@ -4,28 +4,24 @@ import { Work } from "@/types/work";
 
 const SITE_URL = "https://erikanielsen.dev";
 
-const initialsFavicon = `data:image/svg+xml,${encodeURIComponent(`
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-    <rect width="32" height="32" rx="6" fill="#0F172A"/>
-    <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" fill="#F8FAFC" font-family="sans-serif" font-weight="700" font-size="14">
-      EN
-    </text>
-  </svg>
-`)}`;
-
 export const baseMetadata = {
     title: {
-        default: "Erika Nielsen | Senior Frontend & Product Experience Engineer",
+        default: "Erika Nielsen | Senior Web Application & Interface Engineer",
         template: "%s | Erika Nielsen",
     },
     description:
-        "Senior frontend development, clean UI architecture, product experience engineering, and full-stack system integration.",
+        "Senior web application engineering, clean UI architecture, systems integration, and legacy codebase modernization.",
     icons: {
         icon: [
-            { url: initialsFavicon, type: "image/svg+xml" },
+            { url: "/favicon.ico", sizes: "any" },
+            { url: "/favicon.svg", type: "image/svg+xml" },
+            { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
         ],
-        apple: "/apple-touch-icon.png",
+        apple: [
+            { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+        ],
     },
+    manifest: "/site.webmanifest",
     openGraph: {
         type: "website",
         locale: "en_US",
@@ -36,7 +32,7 @@ export const baseMetadata = {
                 url: "/images/end-og-image-v2.png",
                 width: 1200,
                 height: 630,
-                alt: "Erika Nielsen. Senior Front-End Engineering. erikanielsne.dev",
+                alt: "Erika Nielsen. Senior Web Application & Interface Engineer. erikanielsen.dev",
             },
         ],
     },
@@ -44,19 +40,19 @@ export const baseMetadata = {
 
 export const homeMetadata = {
     ...baseMetadata,
-    title: "Erika Nielsen | Senior Frontend & Product Experience Engineer",
+    title: "Erika Nielsen | Senior Web Application & Interface Engineer",
 };
 
 export const aboutMetadata = {
     title: "About",
     description:
-        "Senior frontend engineer and product experience developer focused on clean UI architecture, thoughtful design systems, and robust full-stack integrations.",
+        "Senior engineer focused on clean UI architecture, system integrations, internal workflows, and maintainable web applications.",
 };
 
 export const caseStudyIndexMetadata = {
     title: "Work",
     description:
-        "Technical execution, interface design, architectural choices, and system integration projects built for performance and long-term maintainability.",
+        "A collection of engineering projects featuring full-stack application modernizations, design systems, and workflow automations built for performance and maintainability.",
 };
 
 export async function caseStudyMetadata({
@@ -72,12 +68,12 @@ export async function caseStudyMetadata({
 
     return {
         title: `${study?.title} Project`,
-        description: `Technical case study: Architectural decisions, front-end execution, and system integrations for ${study?.title}.`,
+        description: `Technical case study: Architectural decisions, application engineering, and system integrations for ${study?.title}.`,
     };
 }
 
 export const contactMetadata = {
     title: "Contact",
     description:
-        "Get in touch regarding web development, front-end architecture, or general technical discussions.",
+        "Get in touch regarding web application engineering, UI architecture, or general technical discussions.",
 };

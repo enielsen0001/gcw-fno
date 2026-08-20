@@ -2,19 +2,19 @@ export const homeContent = {
     hero: {
         heading: {
             ln1: "Senior Front-End Engineering.",
-            ln2: "Stack Agnostic Execution.",
+            ln2: "Complex Applications & UI Engineering.",
         },
         subheading:
-            "Proven agency and product experience bridging the gap between complex code, intentional UI design, and actual business outcomes.",
+            "Translating high-level product goals into performant, accessible, and maintainable web applications.",
         cta: "Explore the Work",
         ctaLink: "/work",
     },
     portfolio: {
         sectionId: "work",
-        title: "A senior set of hands for complex codebases and new ideas.",
+        title: "Flexible front-end and full-stack solutions.",
         description: [
-            "I thrive in fast-paced environments where technical versatility is required. Whether stepping into an agency sprint to rescue an enterprise client's legacy system, collaborating with design teams on pixel-perfect UI, or helping a local business launch a custom tool from scratch, I jump in wherever the friction is.",
-            "Below is a look at the variety of challenges I enjoy solving, featuring a mix of deep engineering rescues and clean, ground-up builds."
+            "I bridge the space between complex code, UI design, and real-world utility. My work spans full-stack application modernizations, design systems, interactive data dashboards, and custom internal workflows.",
+            "Explore the selected projects below to see how I approach structural rescues and ground - up builds"
         ],
         viewAllText: "View All Work",
         ctaLink: "/work",
@@ -25,7 +25,7 @@ export const caseStudiesContent = {
     header: {
         title: "Work & Problem Solving",
         description:
-            "A collection of projects where I have stepped in to find clarity and build solutions. These stories cover a range of challenges, from untangling complex legacy systems to launching new ideas with a solid technical foundation.",
+            "A collection of projects showing how I approach complex software challenges, from modernizing established legacy codebases to building clean, maintainable tools from scratch.",
     },
     filter: {
         allLabel: "All Projects",
@@ -69,15 +69,15 @@ export const caseStudyDetailsContent = {
 
 export const aboutContent = {
     header: {
-        title: "Cross-Stack Engineering. <br>Intuitive Design.",
-        subtitle: "I am a senior frontend engineer, product experience developer, and UX advocate who builds clean, genuinely useful web applications. I spend my time bridging the gap between complex backend integration, seamless interface design, and fast, highly responsive user interfaces. More than that, I am an analytical problem solver who looks at the entire system to find the most practical, accessible path forward, no matter what tools the solution requires.",
+        title: "Senior Web Application <br>& Interface Engineering",
+        subtitle: "I build clean, reliable digital products by looking at the whole application, not just the front end. Backed by deep UI expertise and practical full-stack fundamentals, I comfortably navigate back-end APIs, custom data flows, and legacy code to turn complex software challenges into maintainable, easy-to-use tools."
     },
     philosophy: {
         label: "How I Work",
         content: [
-            "I am a generalist by choice. Having spent over a decade navigating the fast-paced, high-variety world of agency environments and product teams, I have learned that digital products thrive when they are guided by a broad technical and visual perspective. Operating across multiple layers of a project allows me to see the entire system, anticipate bottlenecks early, and ensure that every engineering decision respects the end-user experience.",
-            "I am a great developer, but I am an even better problem solver. For me, a language, a framework, or a design file is simply a tool to be leveraged. I do not just write code to match a static mockup; I design and advocate for intuitive user experiences throughout the entire lifecycle of a feature. Whether a project requires diving deep into a complex database schema, mapping out an interactive user flow in Figma, or architecting internal knowledge and automation systems, my focus remains the same: breaking down ambiguity and building clean, reliable solutions.",
-            "Ultimately, I believe a developer's greatest assets are curiosity and a genuine enjoyment of the craft. The tools and stacks we use will always shift, but the drive to pull a broken or complex system apart, figure out how it works, and put it back together better is what keeps a project healthy. I do not build tech for tech's sake. I solve problems so that applications scale cleanly, work predictably, and provide a seamless experience for the people using them.",
+            "I choose to work broadly across the stack. Over a decade of agency and product experience has taught me that digital products thrive when engineering and interface design work together from day one. Looking at the full system helps me spot bottlenecks early, write cleaner integrations, and ensure technical decisions support a great user experience.",
+            "Tools and frameworks change, but solid engineering fundamentals do not. Whether a project requires restructuring a database schema, mapping out UI flows in Figma, or automating internal workflows, I focus on breaking down ambiguity and leaving behind systems that are simple to maintain.",
+            "I build software with curiosity, care, and attention to detail. I enjoy taking complex or fragile systems apart, understanding how they work, and rebuilding them so they run predictably, scale cleanly, and serve the people using them."
         ],
         linkedinLabel: "Detailed Professional History",
         linkedinHref: "https://www.linkedin.com/in/enielsen0001",
@@ -86,35 +86,35 @@ export const aboutContent = {
         label: "Core Execution Capabilities",
         defaults: [
             {
-                principle: "Interface Design & UX Advocacy",
+                principle: "Interface Design & UX",
                 description:
-                    "Mapping user flows, building interactive prototypes in Figma, and designing intuitive architectures. I advocate for the end user at every stage of the lifecycle, ensuring that complex business logic is translated into seamless, accessible, and human experiences.",
+                    "Mapping user flows, building interactive prototypes in Figma, and designing clear information architectures. Translating complex business logic into accessible, human interfaces.",
             },
             {
                 principle: "Front-End UI Architecture",
                 description:
-                    "Translating designs into fast, performant, and component-driven production code. Writing clean, semantic frontends with tools like React, Next.js, and Vue, balancing strict visual fidelity with bulletproof engineering integrity.",
+                    "Building fast, component-driven production code. Writing clean, semantic front-ends in React, Next.js, and Vue while balancing visual fidelity with long-term performance.",
             },
             {
                 principle: "Full-Stack Systems & Integration",
                 description:
-                    "Designing maintainable data models, structuring reliable backend services, and architecting secure API endpoints. I focus on safely wiring third-party platforms, SaaS tools, and headless architectures into existing infrastructure without adding technical debt.",
+                    "Structuring reliable back-end services, designing clean APIs, and wiring headless platforms or third-party tools into existing codebases without adding technical debt.",
             },
             {
                 principle: "Technical Discovery & Strategy",
                 description:
-                    "Taking highly ambiguous product goals or messy internal organizational friction and breaking them down into concrete engineering requirements. I investigate edge cases and prototype concepts early to eliminate technical unknowns before production begins.",
+                    "Taking ambiguous product goals or legacy system challenges and breaking them down into clear technical requirements and early prototypes.",
             },
             {
                 principle: "System Stewardship & Longevity",
                 description:
-                    "Approaching codebases with future maintainability in mind. I ensure that the systems, clean integrations, and documentation left behind are structured so that the internal team can easily scale and manage them long after a project ends.",
+                    "Building for long-term maintainability. Leaving behind clean architecture, solid documentation, and organized code bases that internal teams can easily manage.",
             },
         ],
     },
     toolkit: {
-        label: "The Technical & Design Ecosystem",
-        description: "A versatile, intentional toolset leveraged to bridge the gap between initial discovery and a high-performance product.",
+        label: "Technical & Design Toolset",
+        description: "A focused, practical set of tools leveraged to move projects from initial discovery to production.",
         categories: [
             {
                 type: "Design & Strategy",
@@ -122,7 +122,7 @@ export const aboutContent = {
             },
             {
                 type: "Front-End & UI",
-                items: ["React", "Next.js", "Vue", "Pinia", "Vanilla JS (ES6+)", "Tailwind CSS", "SCSS"]
+                items: ["React", "Next.js", "Vue", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "SCSS"]
             },
             {
                 type: "Back-End & Systems",
@@ -138,14 +138,14 @@ export const aboutContent = {
         title: "Working With Me",
         description:
             [
-                "Good engineering comes down to clear communication and good habits. I like working on teams where information is shared freely, technical decisions are discussed openly, and people work together to solve hard problems.",
-                "I bring a practical, organized approach to daily development. I spend a lot of time unblocking technical hurdles, documenting how systems work so context is never lost, and building clean software that stands up to real use."
+                "Good engineering relies on clear communication, open technical discussions, and pragmatic decisions. I thrive in environments where information is shared freely and teams collaborate to solve tough problems.",
+                "I bring a steady, organized approach to development. My day-to-day work centers on unblocking technical hurdles, documenting how systems work, and writing software that stands up to real-world use."
             ]
     },
     footer: {
         title: "Let's build something useful together.",
         description:
-            "Whether you need an experienced frontend architect who can advocate for the user, support on a high-variety agency project, or an analytical problem solver to untangle a complex backend migration, let's connect.",
+            "Whether you need an experienced front-end architect, support on a high-variety application, or help untangling a complex legacy migration, let's connect.",
         buttonText: "Connect on LinkedIn",
         buttonHref: "https://www.linkedin.com/in/enielsen0001",
     },
@@ -155,12 +155,12 @@ export const contactContent = {
     header: {
         title: "Get in Touch.",
         subtitle:
-            "Whether you want to chat about front-end architecture, discuss an interesting technical problem, or connect professionally, I am always happy to talk shop.",
+            "Whether you want to discuss front-end architecture, talk through a complex software problem, or just connect professionally, my inbox is open.",
     },
     main: {
         title: "Start a Conversation",
         description: [
-            "Feel free to reach out directly via email or connect on LinkedIn. I am always interested in discussing web development, UI architecture, and practical engineering solutions.",
+            "Feel free to reach out directly via email or connect on LinkedIn. I am always happy to network with fellow engineers, discuss industry trends, or connect over interesting technical challenges.",
             "I typically respond within one business day.",
         ],
     },
@@ -170,42 +170,42 @@ export const contactContent = {
             value: "hello@erikanielsen.dev",
             href: "mailto:hello@erikanielsen.dev",
             type: "email",
-            description: "Reach out directly at hello@erikanielsen.dev for questions or technical chats.",
+            description: "Reach out directly for technical questions, networking, or just to say hello.",
         },
         {
             label: "LinkedIn",
             value: "Connect professionally",
             href: "https://www.linkedin.com/in/enielsen0001",
             type: "linkedin",
-            description: "View my professional history and background.",
+            description: "View my full professional history and network.",
         },
         {
             label: "GitHub",
             value: "View source code",
             href: "https://github.com/enielsen0001",
             type: "github",
-            description: "Check out my repositories, code samples, and open-source contributions.",
+            description: "Explore my repositories, personal builds, and code samples.",
         },
     ],
     sidebar: {
         consultation: {
-            title: "Areas of Expertise",
-            text: "I spend most of my time working across these core areas:",
+            title: "Core Areas of Expertise",
+            text: "My daily work and technical focus revolve around:",
             items: [
-                "Front-end UI architecture, component design, and state management",
-                "Bridging user experience design with robust backend integrations",
-                "Writing clean, maintainable code and thorough system documentation",
-                "Navigating complex, legacy codebases and technical edge cases",
+                "Front-end UI architecture and design systems",
+                "Full-application integration and API wiring",
+                "Modernizing fragile legacy codebases cleanly",
+                "Building internal tools and automated workflows",
             ],
         },
         intake: {
             title: "Topics I Enjoy Discussing",
             text: "Always open to exchanging ideas on:",
             items: [
-                "Modern front-end frameworks and build tools",
-                "Design systems, accessibility, and UI performance",
-                "API design, headless architectures, and data flows",
-                "AI, local models, and the clever ways people are building with emerging tech"
+                "Scaling modern front-end frameworks (React, Vue, Next.js)",
+                "Strategies for refactoring technical debt",
+                "Headless architecture and CMS integrations",
+                "Practical uses for AI and emerging tech in daily development"
             ],
         },
     },

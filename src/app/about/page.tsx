@@ -26,6 +26,7 @@ export default function AboutPage() {
                 <PageHeader
                     title={header.title}
                     subtitle={header.subtitle}
+                    description={header.description}
                 />
 
                 {/* Narrative Section: Philosophy & Specializations */}
