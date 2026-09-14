@@ -6,11 +6,11 @@ const SITE_URL = "https://erikanielsen.dev";
 
 export const baseMetadata = {
     title: {
-        default: "Erika Nielsen | Senior Web Application & Interface Engineer",
+        default: "Erika Nielsen | Full-Stack & Web Application Engineer",
         template: "%s | Erika Nielsen",
     },
     description:
-        "Senior web application engineering, clean UI architecture, systems integration, and legacy codebase modernization.",
+        "Full-stack web application engineering, clean UI architecture, systems integration, and legacy codebase modernization.",
     icons: {
         icon: [
             { url: "/favicon.ico", sizes: "any" },
@@ -32,7 +32,7 @@ export const baseMetadata = {
                 url: "/images/end-og-image-v2.png",
                 width: 1200,
                 height: 630,
-                alt: "Erika Nielsen. Senior Web Application & Interface Engineer. erikanielsen.dev",
+                alt: "Erika Nielsen. Full-Stack & Web Application Engineer. erikanielsen.dev",
             },
         ],
     },
@@ -40,13 +40,13 @@ export const baseMetadata = {
 
 export const homeMetadata = {
     ...baseMetadata,
-    title: "Erika Nielsen | Senior Web Application & Interface Engineer",
+    title: "Erika Nielsen | Full-Stack & Web Application Engineer",
 };
 
 export const aboutMetadata = {
     title: "About",
     description:
-        "Senior engineer focused on clean UI architecture, system integrations, internal workflows, and maintainable web applications.",
+        "Full-stack engineer focused on clean UI architecture, system integrations, internal workflows, and maintainable web applications.",
 };
 
 export const caseStudyIndexMetadata = {
