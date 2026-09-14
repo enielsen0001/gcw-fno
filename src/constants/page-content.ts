@@ -1,20 +1,20 @@
 export const homeContent = {
     hero: {
         heading: {
-            ln1: "Senior Front-End Engineering.",
+            ln1: "Advanced Web Development.",
             ln2: "Complex Applications & UI Engineering.",
         },
         subheading:
-            "Translating high-level product goals into performant, accessible, and maintainable web applications.",
+            "Turning product ideas into fast, accessible, and maintainable web applications.",
         cta: "Explore the Work",
         ctaLink: "/work",
     },
     portfolio: {
         sectionId: "work",
-        title: "Flexible front-end and full-stack solutions.",
+        title: "Front-end and full-stack solutions built for the real world.",
         description: [
-            "I bridge the space between complex code, UI design, and real-world utility. My work spans full-stack application modernizations, design systems, interactive data dashboards, and custom internal workflows.",
-            "Explore the selected projects below to see how I approach structural rescues and ground - up builds"
+            "I like building bridges between complex code, smart UI design, and practical utility. My work spans full-stack app modernizations, design systems, interactive data dashboards, and custom internal tools.",
+            "Take a look at the projects below to see how I tackle everything from ground-up builds to structural rescues."
         ],
         viewAllText: "View All Work",
         ctaLink: "/work",
@@ -25,7 +25,7 @@ export const caseStudiesContent = {
     header: {
         title: "Work & Problem Solving",
         description:
-            "A collection of projects showing how I approach complex software challenges, from modernizing established legacy codebases to building clean, maintainable tools from scratch.",
+            "A collection of projects showing how I handle tricky software challenges—whether that means untangling legacy codebases or building clean, maintainable tools from scratch.",
     },
     filter: {
         allLabel: "All Projects",
@@ -60,61 +60,60 @@ export const caseStudyDetailsContent = {
         artifactsLabel: "Project Assets",
     },
     footerDefaults: {
-        title: "Have a similar problem to solve?",
+        title: "Got a similar problem to solve?",
         description:
-            "Every project has its own unique hurdles. If any part of this story sounds familiar, I'd love to hear about what you're working on and see how I can help.",
+            "Every project comes with its own quirks and hurdles. If any part of this sounds like what you're dealing with, I'd love to hear what you're working on.",
         buttonText: "Start a Conversation",
     },
 };
 
 export const aboutContent = {
     header: {
-        title: "Senior Web Application <br>& Interface Engineering",
-        subtitle: "I build clean, reliable digital products by looking at the whole application, not just the front end. Backed by deep UI expertise and practical full-stack fundamentals, I comfortably navigate back-end APIs, custom data flows, and legacy code to turn complex software challenges into maintainable, easy-to-use tools."
+        title: "Web Application <br>& Interface Engineering",
+        subtitle: "I build clean, reliable digital products by looking at the whole application, not just the surface. Backed by solid UI expertise and practical full-stack fundamentals, I comfortably navigate back-end APIs, custom data flows, and legacy code to turn messy challenges into maintainable tools."
     },
     philosophy: {
         label: "How I Work",
         content: [
-            "I choose to work broadly across the stack. Over a decade of agency and product experience has taught me that digital products thrive when engineering and interface design work together from day one. Looking at the full system helps me spot bottlenecks early, write cleaner integrations, and ensure technical decisions support a great user experience.",
-            "Tools and frameworks change, but solid engineering fundamentals do not. Whether a project requires restructuring a database schema, mapping out UI flows in Figma, or automating internal workflows, I focus on breaking down ambiguity and leaving behind systems that are simple to maintain.",
-            "I build software with curiosity, care, and attention to detail. I enjoy taking complex or fragile systems apart, understanding how they work, and rebuilding them so they run predictably, scale cleanly, and serve the people using them."
+            "I enjoy working across the stack. Years of agency and product experience have shown me that digital products are most successful when engineering and interface design collaborate from day one. Looking at the big picture helps me spot bottlenecks early, write cleaner integrations, and make sure technical choices actually serve the people using the app.",
+            "Tools and frameworks shift over time, but solid engineering fundamentals don't. Whether a project calls for restructuring a database, mapping out UI flows in Figma, or automating internal workflows, I focus on cutting through ambiguity and leaving behind systems that are easy to live with.",
         ],
         linkedinLabel: "Detailed Professional History",
         linkedinHref: "https://www.linkedin.com/in/enielsen0001",
     },
     competencies: {
-        label: "Core Execution Capabilities",
+        label: "What I Bring to the Table",
         defaults: [
             {
                 principle: "Interface Design & UX",
                 description:
-                    "Mapping user flows, building interactive prototypes in Figma, and designing clear information architectures. Translating complex business logic into accessible, human interfaces.",
+                    "Mapping user flows, building interactive prototypes in Figma, and designing clear information architectures that turn complex business logic into human-friendly interfaces.",
             },
             {
                 principle: "Front-End UI Architecture",
                 description:
-                    "Building fast, component-driven production code. Writing clean, semantic front-ends in React, Next.js, and Vue while balancing visual fidelity with long-term performance.",
+                    "Building fast, component-driven code. Writing clean, semantic front-ends in React, Next.js, and Vue while keeping a close eye on performance and visual polish.",
             },
             {
                 principle: "Full-Stack Systems & Integration",
                 description:
-                    "Structuring reliable back-end services, designing clean APIs, and wiring headless platforms or third-party tools into existing codebases without adding technical debt.",
+                    "Wiring up reliable back-end services, designing clean APIs, and connecting headless platforms or third-party tools without accumulating technical debt.",
             },
             {
                 principle: "Technical Discovery & Strategy",
                 description:
-                    "Taking ambiguous product goals or legacy system challenges and breaking them down into clear technical requirements and early prototypes.",
+                    "Taking vague product goals or messy legacy challenges and breaking them down into actionable technical requirements and early prototypes.",
             },
             {
                 principle: "System Stewardship & Longevity",
                 description:
-                    "Building for long-term maintainability. Leaving behind clean architecture, solid documentation, and organized code bases that internal teams can easily manage.",
+                    "Building for the long haul. Leaving behind clean architecture, solid documentation, and organized codebases that any team can easily pick up and run with.",
             },
         ],
     },
     toolkit: {
         label: "Technical & Design Toolset",
-        description: "A focused, practical set of tools leveraged to move projects from initial discovery to production.",
+        description: "A focused, practical set of tools I lean on to take projects from initial idea all the way to production.",
         categories: [
             {
                 type: "Design & Strategy",
@@ -138,14 +137,14 @@ export const aboutContent = {
         title: "Working With Me",
         description:
             [
-                "Good engineering relies on clear communication, open technical discussions, and pragmatic decisions. I thrive in environments where information is shared freely and teams collaborate to solve tough problems.",
-                "I bring a steady, organized approach to development. My day-to-day work centers on unblocking technical hurdles, documenting how systems work, and writing software that stands up to real-world use."
+                "Good engineering comes down to clear communication, honest technical discussions, and pragmatic choices. I enjoy environments where teams share information freely and work together to solve tough problems.",
+                "I bring a steady, organized approach to development. My day-to-day focuses on unblocking hurdles, documenting how things work, and writing code that holds up under real-world use."
             ]
     },
     footer: {
         title: "Let's build something useful together.",
         description:
-            "Whether you need an experienced front-end architect, support on a high-variety application, or help untangling a complex legacy migration, let's connect.",
+            "Whether you're looking for a reliable developer for your team, need a hand on a complex application, or want help untangling a messy legacy migration, let's connect.",
         buttonText: "Connect on LinkedIn",
         buttonHref: "https://www.linkedin.com/in/enielsen0001",
     },
@@ -155,13 +154,12 @@ export const contactContent = {
     header: {
         title: "Get in Touch.",
         subtitle:
-            "Whether you want to discuss front-end architecture, talk through a complex software problem, or just connect professionally, my inbox is open.",
+            "Whether you want to chat about potential opportunities, talk through a tricky software problem, or just connect professionally, my inbox is open.",
     },
     main: {
         title: "Start a Conversation",
         description: [
-            "Feel free to reach out directly via email or connect on LinkedIn. I am always happy to network with fellow engineers, discuss industry trends, or connect over interesting technical challenges.",
-            "I typically respond within one business day.",
+            "Feel free to drop me an email or connect over on LinkedIn. I'm always happy to talk with engineering teams, recruiters, or folks working on interesting side gigs and contract projects.",
         ],
     },
     channels: [
@@ -170,14 +168,14 @@ export const contactContent = {
             value: "hello@erikanielsen.dev",
             href: "mailto:hello@erikanielsen.dev",
             type: "email",
-            description: "Reach out directly for technical questions, networking, or just to say hello.",
+            description: "Reach out directly for project inquiries, opportunities, or just to say hello.",
         },
         {
             label: "LinkedIn",
             value: "Connect professionally",
             href: "https://www.linkedin.com/in/enielsen0001",
             type: "linkedin",
-            description: "View my full professional history and network.",
+            description: "View my full background and professional history.",
         },
         {
             label: "GitHub",
@@ -189,8 +187,8 @@ export const contactContent = {
     ],
     sidebar: {
         consultation: {
-            title: "Core Areas of Expertise",
-            text: "My daily work and technical focus revolve around:",
+            title: "What I Focus On",
+            text: "My daily work and technical strengths center around:",
             items: [
                 "Front-end UI architecture and design systems",
                 "Full-application integration and API wiring",
@@ -199,13 +197,13 @@ export const contactContent = {
             ],
         },
         intake: {
-            title: "Topics I Enjoy Discussing",
-            text: "Always open to exchanging ideas on:",
+            title: "Things I Love Talking About",
+            text: "Always down to swap ideas on:",
             items: [
                 "Scaling modern front-end frameworks (React, Vue, Next.js)",
-                "Strategies for refactoring technical debt",
+                "Pragmatic strategies for tackling technical debt",
                 "Headless architecture and CMS integrations",
-                "Practical uses for AI and emerging tech in daily development"
+                "Practical uses for AI and automation in daily development"
             ],
         },
     },
@@ -222,9 +220,9 @@ export const headerContent = {
 
 export const footerContent = {
     cta: {
-        title: "Interested in working together or talking shop?",
+        title: "Looking for a developer or want to talk shop?",
         description:
-            "I am always glad to connect with other engineers, product leaders, and teams working on interesting technical problems. Drop me a line anytime.",
+            "I'm always glad to connect with engineering teams, hiring managers, and collaborators working on interesting technical challenges. Drop me a line anytime.",
         buttonText: "Reach Out",
         buttonHref: "/contact",
     },
