@@ -29,7 +29,7 @@ export const baseMetadata = {
         siteName: "Erika Nielsen",
         images: [
             {
-                url: "/images/end-og-image-v2.png",
+                url: "https://erikanielsen.dev/images/og-img-v3.png",
                 width: 1200,
                 height: 630,
                 alt: "Erika Nielsen. Full-Stack & Web Application Engineer. erikanielsen.dev",
